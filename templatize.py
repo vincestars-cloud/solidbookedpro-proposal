@@ -26,6 +26,16 @@ def sub(old, new, label=None, required=True):
     h = h.replace(old, new)
     report.append(('ok', label or (old[:52] + ('…' if len(old) > 52 else '')), n))
 
+# ---------------------------------------------------------------- 0a. demo-site URL -> GHL-filled token (runs before city/slug subs)
+sub('https://demo.solidbookedpro.com/gihon-family-care-home/', '{{DEMO_URL}}', 'demo url (iframe + CTAs)')
+sub('"https://demo.solidbookedpro.com/gihon-family-care-home"', '"{{DEMO_URL}}"', 'demo url (LIVE_PREVIEW_URL)', required=False)
+
+# ---------------------------------------------------------------- 0b. Google-review card copy (industry-specific)
+sub('Grace and the team have been wonderful with my mother &mdash; patient, dependable, and genuinely kind. For the first time in months, I sleep at night. <strong>Best care experience we&rsquo;ve had in Palm Coast.</strong>',
+    '{{REVIEW_TEXT}}', 'review text', required=False)
+sub('Thank you so much, that truly means the world to us. I&rsquo;ll pass it along to Grace and the whole team. Welcome to the Gihon Family Care Home family.',
+    '{{REVIEW_REPLY}}', 'review reply', required=False)
+
 # ---------------------------------------------------------------- 0. structured content blocks
 # The jargon-vs-customer comparison: every piece is industry-specific copy.
 sub('In-Home Non-Medical ADL Assistance &amp; Care Coordination', '{{JARGON_HEADLINE}}', 'jargon headline')

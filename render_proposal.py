@@ -115,6 +115,16 @@ def build_ctx(cfg, ind):
         'ASSET_MULTIPAGE': assets.get('multipage', ''),
         'ASSET_PROOF': assets.get('proof', ''),
         'BLUEPRINT_PDF': assets.get('blueprint', ''),
+        # ---- demo site: real URL for a saved client, else the GHL merge field ----
+        'DEMO_URL': cfg.get('demo_url') or '{{contact.demo_url}}',
+        # ---- Google-review card (bespoke per industry, else a sensible default) ----
+        'REVIEW_TEXT': ind.get('review_text') or (
+            f'The team was fantastic &mdash; professional, honest, and did exactly what they said. '
+            f'For the first time, I actually trust who I call. <strong>Best {prov} experience we&rsquo;ve had'
+            + (' in {{CITY}}.' if city else '.') + '</strong>'),
+        'REVIEW_REPLY': ind.get('review_reply') or (
+            'Thank you so much, that truly means a lot to us. I&rsquo;ll pass it along to the whole team. '
+            'Welcome to the {{COMPANY_NAME}} family.'),
     }
     # contact merge-fields stay literal unless overridden
     ctx['contact.first_name'] = cfg.get('first_name', '{{contact.first_name}}')
@@ -153,8 +163,10 @@ def main():
 
     ctx = build_ctx(cfg, ind)
     html = open(a.template, encoding='utf-8').read()
-    for k, v in sorted(ctx.items(), key=lambda kv: -len(kv[0])):
-        html = html.replace('{{' + k + '}}', str(v))
+    # two passes so a content block's own {{CITY}}/{{COMPANY_NAME}}/{{PROVIDER_TERM}} tokens resolve
+    for _ in range(2):
+        for k, v in sorted(ctx.items(), key=lambda kv: -len(kv[0])):
+            html = html.replace('{{' + k + '}}', str(v))
 
     open(a.out, 'w', encoding='utf-8').write(html)
 

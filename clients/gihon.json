@@ -6,5 +6,6 @@
   "phone": "(470) 918-0516",
   "slug": "gihon-family-care-home",
   "preview_domain": "gihonfamilycare.com",
-  "first_name": "{{contact.first_name}}"
+  "first_name": "{{contact.first_name}}",
+  "demo_url": "https://demo.solidbookedpro.com/gihon-family-care-home/"
 }

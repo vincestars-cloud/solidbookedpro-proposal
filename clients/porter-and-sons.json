@@ -1,0 +1,8 @@
+{
+  "industry_key": "mobile mechanic",
+  "company_name": "Porter & Son's Automotive Repair Mobile Service",
+  "city": "Tampa",
+  "state": "FL",
+  "phone": "(813) 555-0199",
+  "first_name": "{{contact.first_name}}"
+}
