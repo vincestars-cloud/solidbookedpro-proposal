@@ -437,7 +437,7 @@ a{color:inherit;text-decoration:none}
 .feature-card-title .fc-emoji{display:inline-block;font-size:1.5em;line-height:1;margin-right:6px;vertical-align:-2px;font-style:normal;font-weight:400}
 .feature-card-title{font-family:'Montserrat',sans-serif;font-size:15.5px;font-weight:800;color:#030303;letter-spacing:-0.005em;line-height:1.25;margin:0;flex:1;min-width:0}
 .feature-card-tag{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;padding:4px 9px;border-radius:14px;flex-shrink:0;border:1px solid currentColor}
-.feature-card-tag-traffic{color:#2563EB;background:rgba(174,49,45,0.08)}
+.feature-card-tag-traffic{color:#2563EB;background:rgba(37,99,235,0.08)}
 .feature-card-tag-trust{color:#1B6BD6;background:rgba(27,107,214,0.08)}
 .feature-card-tag-conversion{color:#1F8E5A;background:rgba(31,142,90,0.08)}
 .feature-card-meta{font-size:12.5px;color:rgba(3,3,3,0.55);margin-top:2px;margin-bottom:10px;font-style:italic}
@@ -1928,7 +1928,23 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
 @media(prefers-reduced-motion:reduce){.rv-armed{opacity:1!important;transform:none!important}
   html{scroll-behavior:auto}.slides{transition:none}.lfill{transition:none}}
 </style>
-<style id="fhow-shots-css">.fhow-h{font-family:'Montserrat',sans-serif;font-weight:800;font-size:19px;color:#0F172A;margin:0 0 18px;line-height:1.3}.fhow-h em{font-style:italic;color:#2563EB}.fhow-card-img{margin:14px 0 2px}.fhow-card-img img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid #e5e7eb;box-shadow:0 8px 20px rgba(15,23,42,.10)}</style>
+<style id="fhow-shots-css">
+.fhow-h{font-family:'Montserrat',sans-serif;font-weight:800;font-size:19px;color:#0F172A;margin:0 0 18px;line-height:1.3}
+.fhow-h em{font-style:italic;color:#2563EB}
+.fhow-card-img{margin:16px 0 2px;background:linear-gradient(160deg,#f7faff 0%,#eef3fc 100%);border:1px solid #e6edf8;border-radius:18px;padding:24px 24px 26px}
+.shot-win{max-width:700px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid #d7e0ee;box-shadow:0 24px 54px rgba(15,23,42,.20);background:#fff}
+.shot-win .sw-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:linear-gradient(#f8fafd,#edf1f9);border-bottom:1px solid #e6ecf5}
+.shot-win .sw-dot{width:11px;height:11px;border-radius:50%;flex:0 0 auto}
+.sw-dot.r{background:#ff5f57}.sw-dot.y{background:#febc2e}.sw-dot.g{background:#28c840}
+.shot-win .sw-url{margin-left:9px;flex:1 1 auto;min-width:0;display:flex;align-items:center;gap:6px;background:#fff;border:1px solid #e6ecf5;border-radius:8px;padding:5px 12px;font:600 12.5px/1.5 'Inter',system-ui,sans-serif;color:#8090a6}
+.shot-win .sw-url.blank{justify-content:center}
+.shot-win .sw-url span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.shot-win img{display:block;width:100%;height:auto}
+.shot-phone{width:290px;max-width:80%;margin:0 auto;background:#0f172a;border-radius:38px;padding:10px;box-shadow:0 30px 66px rgba(15,23,42,.32)}
+.shot-phone .sp-screen{position:relative;border-radius:28px;overflow:hidden;background:#fff}
+.shot-phone img{display:block;width:100%;height:auto}
+@media(max-width:560px){.fhow-card-img{padding:14px 12px 16px}.shot-phone{width:236px}}
+</style>
 </head>
 <body>
 
@@ -2054,7 +2070,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
             <span class="feature-card-tag feature-card-tag-traffic">TRAFFIC</span>
           </div>
           <p class="feature-card-meta">Visitors get answers in seconds &mdash; no waiting on a callback.</p>
-          <figure class="fhow-card-img"><img src="getprices.webp" alt="Instant price quotes on your site"></figure>
+          <figure class="fhow-card-img"><div class="shot-win"><div class="sw-bar"><span class="sw-dot r"></span><span class="sw-dot y"></span><span class="sw-dot g"></span><div class="sw-url"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9aa7ba" stroke-width="2.4"><rect x="4" y="10.5" width="16" height="10.5" rx="2"></rect><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"></path></svg><span>google.com</span></div></div><img src="getprices.webp" alt="Instant price quotes on your site"></div></figure>
         </article>
 
         <article class="feature-card">
@@ -2064,7 +2080,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
             <span class="feature-card-tag feature-card-tag-traffic">TRAFFIC</span>
           </div>
           <p class="feature-card-meta">When people search for care near them, your name is the one that comes up.</p>
-          <figure class="fhow-card-img"><img src="recommend.png" alt="Recommended by name in local search"></figure>
+          <figure class="fhow-card-img"><div class="shot-win"><div class="sw-bar"><span class="sw-dot r"></span><span class="sw-dot y"></span><span class="sw-dot g"></span><div class="sw-url"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9aa7ba" stroke-width="2.4"><rect x="4" y="10.5" width="16" height="10.5" rx="2"></rect><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"></path></svg><span>chatgpt.com</span></div></div><img src="recommend.png" alt="Recommended by name in local search"></div></figure>
         </article>
 
         <article class="feature-card">
@@ -2074,7 +2090,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
             <span class="feature-card-tag feature-card-tag-traffic">TRAFFIC</span>
           </div>
           <p class="feature-card-meta">AI search recommends barely 1% of local businesses &mdash; we make sure you&rsquo;re one of them.</p>
-          <figure class="fhow-card-img"><img src="article-highlighted.png" alt="National Law Review: AI search recommends only 1.2% of local businesses"></figure>
+          <figure class="fhow-card-img"><div class="shot-win"><div class="sw-bar"><span class="sw-dot r"></span><span class="sw-dot y"></span><span class="sw-dot g"></span><div class="sw-url"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9aa7ba" stroke-width="2.4"><rect x="4" y="10.5" width="16" height="10.5" rx="2"></rect><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"></path></svg><span>natlawreview.com</span></div></div><img src="article-highlighted.png" alt="National Law Review: AI search recommends only 1.2% of local businesses"></div></figure>
         </article>
       </div>
 
@@ -2167,7 +2183,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
             <span class="feature-card-tag feature-card-tag-conversion">CONVERT</span>
           </div>
           <p class="feature-card-meta">One question at a time, so far more people actually finish it.</p>
-          <figure class="fhow-card-img"><img src="https://prep.solidbookedpro.com/assets/img/multi-form.gif" alt="Multi-page form"></figure>
+          <figure class="fhow-card-img"><div class="shot-win"><div class="sw-bar"><span class="sw-dot r"></span><span class="sw-dot y"></span><span class="sw-dot g"></span><div class="sw-url blank"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9aa7ba" stroke-width="2.4"><rect x="4" y="10.5" width="16" height="10.5" rx="2"></rect><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"></path></svg><span>Your smart website</span></div></div><img src="https://prep.solidbookedpro.com/assets/img/multi-form.gif" alt="Multi-page form"></div></figure>
         </article>
 
         <article class="feature-card">
@@ -2177,7 +2193,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
             <span class="feature-card-tag feature-card-tag-conversion">CONVERT</span>
           </div>
           <p class="feature-card-meta">Most people find you on their phone while doing something else &mdash; it&rsquo;s built to convert on a 5-inch screen first.</p>
-          <figure class="fhow-card-img"><img src="site-gihon-mobile.png" alt="Gihon Family Care Home mobile-first site"></figure>
+          <figure class="fhow-card-img"><div class="shot-phone"><div class="sp-screen"><img src="site-gihon-mobile.png" alt="Gihon Family Care Home mobile-first site"></div></div></figure>
         </article>
       </div>
 
