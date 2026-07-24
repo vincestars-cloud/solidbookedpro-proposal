@@ -1,0 +1,379 @@
+{
+  "_comment": "Industry presets for the SolidBooked Pro proposal template. Only 'terms' are required; any missing content block is generated from the terms by render_proposal.py. Bespoke copy always beats the generated default - add it per vertical over time.",
+  "_defaults": {
+    "jargon_volume": "~40",
+    "customer_volume": "~2,900",
+    "services": [
+      "Emergency Service",
+      "Repairs",
+      "Installation",
+      "Maintenance",
+      "Inspections",
+      "Free Estimates"
+    ],
+    "assets": {
+      "multipage": "home-care-multipage.png",
+      "proof": "home-care-proof-layered.png",
+      "blueprint": "kca-assets/ultimate-website-blueprint.pdf"
+    }
+  },
+  "industries": {
+    "home care": {
+      "industry": "Home Care",
+      "customer_noun": "seniors",
+      "customer_noun_s": "senior",
+      "provider_term": "care provider",
+      "service_term": "consultation",
+      "outcome": "serve more seniors",
+      "outcome_result": "More Seniors Served",
+      "services": [
+        "Personal Care",
+        "Companionship",
+        "Respite Care",
+        "24-Hour &amp; Live-In Care",
+        "Dementia &amp; Alzheimer&rsquo;s Care",
+        "Post-Operative Care"
+      ],
+      "jargon": {
+        "headline": "In-Home Non-Medical ADL Assistance &amp; Care Coordination",
+        "bullets": [
+          "Activities of daily living (ADL) support",
+          "Care-plan management &amp; coordination",
+          "HIPAA-compliant caregiver matching"
+        ],
+        "cta": "Request Consultation",
+        "query": "non-medical ADL assistance",
+        "volume": "~40"
+      },
+      "customer": {
+        "headline": "Worried About Mom Living Alone? Trusted Caregivers, a Few Hours a Day.",
+        "bullets": [
+          "Help with bathing, meals &amp; medication reminders",
+          "Background-checked caregivers you can trust",
+          "Start with a free in-home visit"
+        ],
+        "cta": "Get a Free Consultation",
+        "query": "home care for elderly parent",
+        "volume": "~2,900"
+      },
+      "assets": {
+        "multipage": "home-care-multipage.png",
+        "proof": "home-care-proof-layered.png",
+        "blueprint": "kca-assets/ultimate-home care-website-blueprint.pdf"
+      },
+      "buyer_noun": "families",
+      "specialist_body": "We build for home care and nothing else, so we know what makes seniors and their families in Palm Coast pick one provider and skip the rest. Every page is written to earn that call. Generic agencies just guess.",
+      "worker_term": "caregiver"
+    },
+    "roofing": {
+      "industry": "Roofing",
+      "customer_noun": "homeowners",
+      "customer_noun_s": "homeowner",
+      "provider_term": "contractor",
+      "service_term": "inspection",
+      "outcome": "sell more roofs",
+      "outcome_result": "More Roofs Sold",
+      "services": [
+        "Roof Replacement",
+        "Roof Repair",
+        "Storm &amp; Hail Damage",
+        "Gutter Installation",
+        "Siding",
+        "Free Roof Inspections"
+      ],
+      "jargon": {
+        "headline": "Comprehensive Residential &amp; Commercial Roofing Systems Installation",
+        "bullets": [
+          "Architectural asphaltic shingle systems",
+          "TPO / EPDM low-slope membrane assemblies",
+          "Manufacturer-certified underlayment installs"
+        ],
+        "cta": "Request Estimate",
+        "query": "roofing systems installation",
+        "volume": "~30"
+      },
+      "customer": {
+        "headline": "Roof Leaking or Storm Damaged? Free Inspection, Honest Answer, Same Week.",
+        "bullets": [
+          "We handle the insurance claim with you",
+          "Licensed, insured, local crews",
+          "Free inspection with photos of what we find"
+        ],
+        "cta": "Get a Free Inspection",
+        "query": "roof repair near me",
+        "volume": "~4,400"
+      },
+      "worker_term": "roofer"
+    },
+    "plumbing": {
+      "industry": "Plumbing",
+      "customer_noun": "homeowners",
+      "customer_noun_s": "homeowner",
+      "provider_term": "plumber",
+      "service_term": "estimate",
+      "outcome": "book more jobs",
+      "outcome_result": "More Jobs Booked",
+      "services": [
+        "Emergency Plumbing",
+        "Drain Cleaning",
+        "Water Heaters",
+        "Leak Detection",
+        "Repiping",
+        "Sewer Line Repair"
+      ],
+      "jargon": {
+        "headline": "Full-Service Potable Water &amp; DWV System Installation",
+        "bullets": [
+          "PEX / copper repipe specification",
+          "DWV rough-in &amp; hydrostatic testing",
+          "Backflow certification &amp; compliance"
+        ],
+        "cta": "Request Service",
+        "query": "DWV system installation",
+        "volume": "~20"
+      },
+      "customer": {
+        "headline": "Burst Pipe or No Hot Water? A Real Plumber at Your Door Today.",
+        "bullets": [
+          "Upfront price before we start the work",
+          "Same-day emergency call-outs",
+          "Licensed, insured, and we clean up after"
+        ],
+        "cta": "Get a Free Estimate",
+        "query": "emergency plumber near me",
+        "volume": "~6,600"
+      },
+      "worker_term": "plumber"
+    },
+    "hvac": {
+      "industry": "HVAC",
+      "customer_noun": "homeowners",
+      "customer_noun_s": "homeowner",
+      "provider_term": "HVAC company",
+      "service_term": "estimate",
+      "outcome": "book more jobs",
+      "outcome_result": "More Jobs Booked",
+      "worker_term": "technician"
+    },
+    "electrical": {
+      "industry": "Electrical",
+      "customer_noun": "homeowners",
+      "customer_noun_s": "homeowner",
+      "provider_term": "electrician",
+      "service_term": "estimate",
+      "outcome": "book more jobs",
+      "outcome_result": "More Jobs Booked",
+      "worker_term": "electrician"
+    },
+    "cleaning": {
+      "industry": "Cleaning",
+      "customer_noun": "homeowners",
+      "customer_noun_s": "homeowner",
+      "provider_term": "cleaning company",
+      "service_term": "quote",
+      "outcome": "book more cleanings",
+      "outcome_result": "More Cleanings Booked",
+      "worker_term": "cleaner"
+    },
+    "landscaping": {
+      "industry": "Landscaping",
+      "customer_noun": "homeowners",
+      "customer_noun_s": "homeowner",
+      "provider_term": "landscaper",
+      "service_term": "quote",
+      "outcome": "book more projects",
+      "outcome_result": "More Projects Booked",
+      "worker_term": "crew lead"
+    },
+    "fencing": {
+      "industry": "Fencing",
+      "customer_noun": "homeowners",
+      "customer_noun_s": "homeowner",
+      "provider_term": "fence company",
+      "service_term": "quote",
+      "outcome": "build more fences",
+      "outcome_result": "More Fences Built",
+      "worker_term": "installer"
+    },
+    "flooring": {
+      "industry": "Flooring",
+      "customer_noun": "homeowners",
+      "customer_noun_s": "homeowner",
+      "provider_term": "flooring company",
+      "service_term": "quote",
+      "outcome": "install more floors",
+      "outcome_result": "More Floors Installed",
+      "worker_term": "installer"
+    },
+    "painting": {
+      "industry": "Painting",
+      "customer_noun": "homeowners",
+      "customer_noun_s": "homeowner",
+      "provider_term": "painting company",
+      "service_term": "quote",
+      "outcome": "book more jobs",
+      "outcome_result": "More Jobs Booked",
+      "worker_term": "painter"
+    },
+    "pest control": {
+      "industry": "Pest Control",
+      "customer_noun": "homeowners",
+      "customer_noun_s": "homeowner",
+      "provider_term": "pest control company",
+      "service_term": "inspection",
+      "outcome": "book more treatments",
+      "outcome_result": "More Treatments Booked",
+      "worker_term": "technician"
+    },
+    "mold remediation": {
+      "industry": "Mold Remediation",
+      "customer_noun": "homeowners",
+      "customer_noun_s": "homeowner",
+      "provider_term": "remediation company",
+      "service_term": "inspection",
+      "outcome": "book more jobs",
+      "outcome_result": "More Jobs Booked",
+      "worker_term": "technician"
+    },
+    "moving": {
+      "industry": "Moving",
+      "customer_noun": "homeowners",
+      "customer_noun_s": "homeowner",
+      "provider_term": "moving company",
+      "service_term": "quote",
+      "outcome": "book more moves",
+      "outcome_result": "More Moves Booked",
+      "worker_term": "crew"
+    },
+    "remodeling": {
+      "industry": "Remodeling",
+      "customer_noun": "homeowners",
+      "customer_noun_s": "homeowner",
+      "provider_term": "remodeler",
+      "service_term": "consultation",
+      "outcome": "book more projects",
+      "outcome_result": "More Projects Booked",
+      "worker_term": "project lead"
+    },
+    "septic tank": {
+      "industry": "Septic",
+      "customer_noun": "homeowners",
+      "customer_noun_s": "homeowner",
+      "provider_term": "septic company",
+      "service_term": "quote",
+      "outcome": "book more jobs",
+      "outcome_result": "More Jobs Booked",
+      "worker_term": "technician"
+    },
+    "solar": {
+      "industry": "Solar",
+      "customer_noun": "homeowners",
+      "customer_noun_s": "homeowner",
+      "provider_term": "solar company",
+      "service_term": "consultation",
+      "outcome": "close more installs",
+      "outcome_result": "More Installs Closed",
+      "worker_term": "installer"
+    },
+    "tree service": {
+      "industry": "Tree Service",
+      "customer_noun": "homeowners",
+      "customer_noun_s": "homeowner",
+      "provider_term": "tree service",
+      "service_term": "quote",
+      "outcome": "book more jobs",
+      "outcome_result": "More Jobs Booked",
+      "worker_term": "arborist"
+    },
+    "diesel mechanic": {
+      "industry": "Diesel Repair",
+      "customer_noun": "fleet owners",
+      "customer_noun_s": "fleet owner",
+      "provider_term": "shop",
+      "service_term": "estimate",
+      "outcome": "fix more trucks",
+      "outcome_result": "More Trucks Fixed",
+      "worker_term": "mechanic"
+    },
+    "mobile mechanic": {
+      "industry": "Mobile Mechanic",
+      "customer_noun": "drivers",
+      "customer_noun_s": "driver",
+      "provider_term": "mobile mechanic",
+      "service_term": "quote",
+      "outcome": "fix more cars",
+      "outcome_result": "More Cars Fixed",
+      "worker_term": "mechanic"
+    },
+    "mobile truck repair": {
+      "industry": "Mobile Truck Repair",
+      "customer_noun": "fleet owners",
+      "customer_noun_s": "fleet owner",
+      "provider_term": "repair shop",
+      "service_term": "estimate",
+      "outcome": "fix more trucks",
+      "outcome_result": "More Trucks Fixed",
+      "worker_term": "mechanic"
+    },
+    "body shop": {
+      "industry": "Collision Repair",
+      "customer_noun": "drivers",
+      "customer_noun_s": "driver",
+      "provider_term": "body shop",
+      "service_term": "estimate",
+      "outcome": "repair more vehicles",
+      "outcome_result": "More Vehicles Repaired",
+      "worker_term": "estimator"
+    },
+    "funeral home": {
+      "industry": "Funeral Services",
+      "customer_noun": "families",
+      "customer_noun_s": "family",
+      "provider_term": "funeral home",
+      "service_term": "consultation",
+      "outcome": "serve more families",
+      "outcome_result": "More Families Served",
+      "worker_term": "director"
+    },
+    "therapy": {
+      "industry": "Therapy",
+      "customer_noun": "clients",
+      "customer_noun_s": "client",
+      "provider_term": "practice",
+      "service_term": "consultation",
+      "outcome": "book more clients",
+      "outcome_result": "More Clients Booked",
+      "worker_term": "therapist"
+    },
+    "dental": {
+      "industry": "Dental",
+      "customer_noun": "patients",
+      "customer_noun_s": "patient",
+      "provider_term": "practice",
+      "service_term": "appointment",
+      "outcome": "book more patients",
+      "outcome_result": "More Patients Booked",
+      "worker_term": "dentist"
+    },
+    "med spa": {
+      "industry": "Med Spa",
+      "customer_noun": "clients",
+      "customer_noun_s": "client",
+      "provider_term": "med spa",
+      "service_term": "consultation",
+      "outcome": "book more clients",
+      "outcome_result": "More Clients Booked",
+      "worker_term": "provider"
+    },
+    "law": {
+      "industry": "Legal",
+      "customer_noun": "clients",
+      "customer_noun_s": "client",
+      "provider_term": "firm",
+      "service_term": "consultation",
+      "outcome": "sign more clients",
+      "outcome_result": "More Clients Signed",
+      "worker_term": "attorney"
+    }
+  }
+}
