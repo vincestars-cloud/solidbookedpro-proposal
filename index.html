@@ -3394,8 +3394,8 @@ window.__KCA_ROI_UPDATERS = window.__KCA_ROI_UPDATERS || [];
 // Acceptance · date pickers + signature pad (per-side localStorage persisted)
 (function(){
   var SLUG='gihon-family-care-home';
-  var dkey=function(side){return 'kca-proposal-date-'+side+'-'+SLUG};
-  var skey=function(side){return 'kca-proposal-sig-'+side+'-'+SLUG};
+  var dkey=function(side){return 'sbp-proposal-date-'+side+'-'+SLUG};
+  var skey=function(side){return 'sbp-proposal-sig-'+side+'-'+SLUG};
 
   // Date inputs · default to today, persist on change
   var todayISO=new Date().toISOString().split('T')[0];
@@ -3485,7 +3485,7 @@ window.__KCA_ROI_UPDATERS = window.__KCA_ROI_UPDATERS || [];
       var ctx=canvas.getContext('2d');
       ctx.clearRect(0,0,canvas.width,canvas.height);
       canvas.classList.remove('is-signed');
-      try{localStorage.removeItem('kca-proposal-sig-'+side+'-'+SLUG)}catch(e){}
+      try{localStorage.removeItem('sbp-proposal-sig-'+side+'-'+SLUG)}catch(e){}
     });
   });
 })();
@@ -4198,11 +4198,11 @@ document.addEventListener('DOMContentLoaded', function(){
 // hand it to a senior with the same package they configured.
 (function(){
   var CLIENT_KEY = 'gihon-family-care-home';
-  var SETUP_KEY = 'kca-' + CLIENT_KEY + '-setup-fee';
-  var MONTHLY_KEY = 'kca-' + CLIENT_KEY + '-monthly-base';
-  var ADDON_KEY = 'kca-' + CLIENT_KEY + '-addons';
-  var FREEBIE_KEY = 'kca-' + CLIENT_KEY + '-freebies';
-  var CHECKLIST_KEY = 'kca-' + CLIENT_KEY + '-success-checklist';
+  var SETUP_KEY = 'sbp-' + CLIENT_KEY + '-setup-fee';
+  var MONTHLY_KEY = 'sbp-' + CLIENT_KEY + '-monthly-base';
+  var ADDON_KEY = 'sbp-' + CLIENT_KEY + '-addons';
+  var FREEBIE_KEY = 'sbp-' + CLIENT_KEY + '-freebies';
+  var CHECKLIST_KEY = 'sbp-' + CLIENT_KEY + '-success-checklist';
 
   // Default success-checklist items · proposed during the discovery call by default.
   // Juan can tick/untick / edit / add / remove items inline once Edit mode is on.
@@ -4478,8 +4478,8 @@ document.addEventListener('DOMContentLoaded', function(){
   };
 
   // ---- One-Time Offer (revealed on the price card) ----
-  var OFFER_KEY = 'kca-one-time-offer-gihon-family-care-home';
-  var OFFERON_KEY = 'kca-' + CLIENT_KEY + '-offer-revealed';
+  var OFFER_KEY = 'sbp-one-time-offer-gihon-family-care-home';
+  var OFFERON_KEY = 'sbp-' + CLIENT_KEY + '-offer-revealed';
   function getOffer(){
     var v = localStorage.getItem(OFFER_KEY);
     if(v){ var n = parseInt(String(v).replace(/[^0-9]/g,''),10); if(!isNaN(n) && n>0) return n; }
