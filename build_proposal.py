@@ -76,8 +76,14 @@ doc, n_live = re.subn(r'<a\b[^>]*cover-open-live[^>]*>.*?</a>', '', doc, flags=r
 doc, n_roi = re.subn(r'<section\b[^>]*section-roi[^>]*>.*?</section>', '', doc, flags=re.S)
 doc, n_car = re.subn(r'<section\b[^>]*section-client-builds[^>]*>.*?</section>', '', doc, flags=re.S)
 doc, n_ftag = re.subn(r'<p\b[^>]*footer-tag[^>]*>.*?</p>', '', doc, flags=re.S)
-# 1e. Traffic & Conversion "How?" panels -> text-only like Trust (strip screenshot figures) [2026-07-24]
+# 1e. Traffic & Conversion "How?" panels -> strip screenshot figures [2026-07-24]
+# NOTE (2026-07-25): those cards are now HAND-ENRICHED to Trust's full anatomy (emoji + bullets +
+# "Why this works" callout + CTA) directly in index.html. This strip only yields sparse cards; if
+# this generator is revived, templatize the 5 traffic/conversion cards with INDUSTRY_TERMS to match.
 doc, n_fig = re.subn(r'<figure class="fhow-card-img">.*?</figure>', '', doc, flags=re.S)
+# 1g. Before/After heading -> osaat "Setting industry standards" treatment (accent word + bold sub)
+doc = doc.replace('<h2 class="rv">Before and After</h2>', '<h2 class="rv ba-title">Before and <span class="ba-accent">After</span></h2>')
+doc = doc.replace('<p class="lede rv">Same business, same services, same owner. Only the first impression changed.</p>', '<p class="lede rv ba-sub">Same business, same services, same owner. <strong>Only the first impression changed.</strong></p>')
 # 1f. real branded reel thumbnails (remote poster jpgs -> local pngs shipped in repo)
 doc = doc.replace('poster="https://prep.solidbookedpro.com/assets/img/poster-reel-deonco.jpg"', 'poster="poster-reel-deonco.png"')
 doc = doc.replace('poster="https://prep.solidbookedpro.com/assets/img/poster-reel-ijeoma.jpg"', 'poster="poster-reel-ijeoma.png"')
@@ -268,6 +274,14 @@ FIXES_CSS = '''<style id="sbp-fixes">
 .prep-ported-block .slide .big{font-family:'Montserrat',sans-serif!important;letter-spacing:-0.01em}
 .prep-ported-block .slide .pop,.prep-ported-block .gold,.prep-ported-block .eyebrow{color:#2563EB!important}
 .prep-ported-block .eyebrow:before,.prep-ported-block .eyebrow:after{background:#2563EB!important}
+/* Before/After: full-image landscape-width cards (no portrait crop) + osaat "Setting industry standards" type scale */
+.bagrid .bacard{flex:0 0 clamp(280px,38vw,360px)!important;height:auto!important}
+.bagrid .bacard img{height:auto!important;object-fit:contain!important}
+.bagrid{align-items:flex-start}
+.prep-ported-block .ba-title{font-weight:900!important;font-size:clamp(26px,3.4vw,34px)!important;letter-spacing:-0.012em!important}
+.prep-ported-block .ba-title .ba-accent{color:#2563EB}
+.prep-ported-block .ba-sub{font-family:'Open Sans',sans-serif;font-size:clamp(15px,1.9vw,19px)}
+.prep-ported-block .ba-sub strong{color:#0F172A;font-weight:700}
 </style>
 '''
 doc = doc.replace('</head>', BRAND_CSS + MOBILE_CSS + '</head>')

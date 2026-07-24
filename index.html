@@ -2003,8 +2003,8 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
 .bagrid::-webkit-scrollbar{height:8px}
 .bagrid::-webkit-scrollbar-track{background:transparent}
 .bagrid::-webkit-scrollbar-thumb{background:#c7d2e6;border-radius:5px}
-.bagrid .bacard{flex:0 0 clamp(240px,32vw,320px);height:clamp(360px,40vw,450px);scroll-snap-align:center}
-.bagrid .bacard img{width:100%;height:100%;object-fit:cover;object-position:top}
+.bagrid .bacard{flex:0 0 clamp(280px,38vw,360px);height:auto;scroll-snap-align:center}
+.bagrid .bacard img{width:100%;height:auto;display:block}
 /* pillar term (CONVERSION) must never clip */
 .formula-pillar-term{font-size:clamp(18px,1.7vw,26px);letter-spacing:-0.03em;white-space:nowrap;max-width:100%}
 .ba-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:46px;height:46px;border-radius:50%;border:none;background:#2563EB;color:#fff;font-size:26px;font-weight:700;line-height:1;cursor:pointer;box-shadow:0 10px 24px rgba(37,99,235,.38);display:flex;align-items:center;justify-content:center;transition:background .2s,transform .12s}
@@ -2055,6 +2055,12 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
 .prep-ported-block .slide .big{font-family:'Montserrat',sans-serif!important;letter-spacing:-0.01em}
 .prep-ported-block .slide .pop,.prep-ported-block .gold,.prep-ported-block .eyebrow{color:#2563EB!important}
 .prep-ported-block .eyebrow:before,.prep-ported-block .eyebrow:after{background:#2563EB!important}
+/* Before/After: osaat "Setting industry standards" type scale + full-image landscape-width cards */
+.prep-ported-block .ba-title{font-weight:900!important;font-size:clamp(26px,3.4vw,34px)!important;letter-spacing:-0.012em!important}
+.prep-ported-block .ba-title .ba-accent{color:#2563EB}
+.prep-ported-block .ba-sub{font-family:'Open Sans',sans-serif;font-size:clamp(15px,1.9vw,19px)}
+.prep-ported-block .ba-sub strong{color:#0F172A;font-weight:700}
+.bagrid{align-items:flex-start}
 </style>
 <style id="cmp-css">
 .cmp-section{background:linear-gradient(180deg,#FFFFFF 0%,#F1F6FF 100%);padding:64px 24px 72px;font-family:'Open Sans',sans-serif}
@@ -2212,31 +2218,58 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
         <article class="feature-card">
           <div class="feature-card-head">
             <span class="feature-card-num">01</span>
-            <h4 class="feature-card-title">Instant quotes on your site</h4>
+            <h4 class="feature-card-title"><span class="fc-emoji">&#128269;</span> Instant quotes on your site</h4>
             <span class="feature-card-tag feature-card-tag-traffic">TRAFFIC</span>
           </div>
           <p class="feature-card-meta">Visitors get answers in seconds &mdash; no waiting on a callback.</p>
-          
+          <ul class="feature-card-bullets">
+            <li><strong>Answers on the spot</strong> &mdash; families see pricing and availability the moment they land, not a day later.</li>
+            <li><strong>No phone tag</strong> &mdash; the site captures the lead and books the consultation while they&rsquo;re still interested.</li>
+            <li><strong>Every visit worked</strong> &mdash; the receptionist follows up anyone who doesn&rsquo;t book right away.</li>
+          </ul>
+          <div class="feature-card-stat-callout">
+            <div class="feature-card-stat-num">&lt;60s</div>
+            <div class="feature-card-stat-text"><strong>Why this works:</strong> families comparing 2&ndash;3 providers usually go with whoever answers first. Instant on-site answers put you first &mdash; every time.</div>
+          </div>
+          <a class="feature-card-cta" href="https://demo.solidbookedpro.com/gihon-family-care-home/" target="_blank" rel="noopener">See it on your site &rarr;</a>
         </article>
 
         <article class="feature-card">
           <div class="feature-card-head">
             <span class="feature-card-num">02</span>
-            <h4 class="feature-card-title">Recommended by name</h4>
+            <h4 class="feature-card-title"><span class="fc-emoji">&#128227;</span> Recommended by name</h4>
             <span class="feature-card-tag feature-card-tag-traffic">TRAFFIC</span>
           </div>
           <p class="feature-card-meta">When people search for care near them, your name is the one that comes up.</p>
-          
+          <ul class="feature-card-bullets">
+            <li><strong>Top of local search</strong> &mdash; you show up first for &ldquo;home care near me,&rdquo; not buried on page two.</li>
+            <li><strong>Named by AI assistants</strong> &mdash; when someone asks ChatGPT or Google for a care provider, your name is the answer.</li>
+            <li><strong>Pre-selected</strong> &mdash; being the recommendation means you&rsquo;re chosen before a competitor is even considered.</li>
+          </ul>
+          <div class="feature-card-stat-callout">
+            <div class="feature-card-stat-num">3&times;</div>
+            <div class="feature-card-stat-text"><strong>Why this works:</strong> when your name is what Google and AI surface for &ldquo;care near me,&rdquo; you&rsquo;re the default choice &mdash; and the default choice wins the call.</div>
+          </div>
+          <a class="feature-card-cta" href="https://demo.solidbookedpro.com/gihon-family-care-home/" target="_blank" rel="noopener">See it on your site &rarr;</a>
         </article>
 
         <article class="feature-card">
           <div class="feature-card-head">
             <span class="feature-card-num">03</span>
-            <h4 class="feature-card-title">Only 1.2% of local businesses show up in modern search</h4>
+            <h4 class="feature-card-title"><span class="fc-emoji">&#129302;</span> Only 1.2% of local businesses show up in modern search</h4>
             <span class="feature-card-tag feature-card-tag-traffic">TRAFFIC</span>
           </div>
           <p class="feature-card-meta">AI search recommends barely 1% of local businesses &mdash; we make sure you&rsquo;re one of them.</p>
-          
+          <ul class="feature-card-bullets">
+            <li><strong>Built for AI search</strong> &mdash; structured so ChatGPT, Gemini and Google&rsquo;s AI can read and recommend you.</li>
+            <li><strong>Answer-engine ready</strong> &mdash; the questions families actually ask are answered on-page, in plain language.</li>
+            <li><strong>Ahead of the shift</strong> &mdash; most competitors still rely on 2015-era SEO. You won&rsquo;t.</li>
+          </ul>
+          <div class="feature-card-stat-callout">
+            <div class="feature-card-stat-num">1.2%</div>
+            <div class="feature-card-stat-text"><strong>Why this works:</strong> only about 1.2% of local businesses surface in modern AI search. Being one of them means the next wave of searches finds you &mdash; not the competitor down the road.</div>
+          </div>
+          <a class="feature-card-cta" href="https://demo.solidbookedpro.com/gihon-family-care-home/" target="_blank" rel="noopener">See it on your site &rarr;</a>
         </article>
       </div>
 
@@ -2325,21 +2358,39 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
         <article class="feature-card">
           <div class="feature-card-head">
             <span class="feature-card-num">01</span>
-            <h4 class="feature-card-title">Multi-page form</h4>
+            <h4 class="feature-card-title"><span class="fc-emoji">&#128221;</span> Multi-page form</h4>
             <span class="feature-card-tag feature-card-tag-conversion">CONVERT</span>
           </div>
           <p class="feature-card-meta">One question at a time, so far more people actually finish it.</p>
-          
+          <ul class="feature-card-bullets">
+            <li><strong>One question at a time</strong> &mdash; low-commitment steps feel easy, so more families reach the end.</li>
+            <li><strong>Every field earns its place</strong> &mdash; only what you need to book the consultation, nothing that stalls them.</li>
+            <li><strong>Progress that pulls</strong> &mdash; a visible step bar nudges them to finish what they started.</li>
+          </ul>
+          <div class="feature-card-stat-callout">
+            <div class="feature-card-stat-num">2&times;</div>
+            <div class="feature-card-stat-text"><strong>Why this works:</strong> step-by-step forms consistently finish at roughly twice the rate of one long form. More completed forms means more booked consultations from the same traffic.</div>
+          </div>
+          <a class="feature-card-cta" href="https://demo.solidbookedpro.com/gihon-family-care-home/" target="_blank" rel="noopener">See it on your site &rarr;</a>
         </article>
 
         <article class="feature-card">
           <div class="feature-card-head">
             <span class="feature-card-num">02</span>
-            <h4 class="feature-card-title">Mobile-first</h4>
+            <h4 class="feature-card-title"><span class="fc-emoji">&#128241;</span> Mobile-first</h4>
             <span class="feature-card-tag feature-card-tag-conversion">CONVERT</span>
           </div>
           <p class="feature-card-meta">Most people find you on their phone while doing something else &mdash; it&rsquo;s built to convert on a 5-inch screen first.</p>
-          
+          <ul class="feature-card-bullets">
+            <li><strong>Designed phone-first</strong> &mdash; thumb-friendly buttons, fast load, and a form that&rsquo;s easy to fill one-handed.</li>
+            <li><strong>Nothing to pinch or zoom</strong> &mdash; the offer and the call-to-action are clear on the first tap.</li>
+            <li><strong>Speed that keeps them</strong> &mdash; a fast mobile page means fewer bounces before they ever see your offer.</li>
+          </ul>
+          <div class="feature-card-stat-callout">
+            <div class="feature-card-stat-num">60%+</div>
+            <div class="feature-card-stat-text"><strong>Why this works:</strong> the majority of &ldquo;near me&rdquo; searches happen on a phone. A site built to convert on a small screen first turns those glances into booked consultations instead of bounces.</div>
+          </div>
+          <a class="feature-card-cta" href="https://demo.solidbookedpro.com/gihon-family-care-home/" target="_blank" rel="noopener">See it on your site &rarr;</a>
         </article>
       </div>
 
@@ -3059,8 +3110,8 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
   <div class="wrap stack g3">
     <div class="narrow center stack g2">
       <p class="eyebrow rv">The work</p>
-      <h2 class="rv">Before and After</h2>
-      <p class="lede rv">Same business, same services, same owner. Only the first impression changed.</p>
+      <h2 class="rv ba-title">Before and <span class="ba-accent">After</span></h2>
+      <p class="lede rv ba-sub">Same business, same services, same owner. <strong>Only the first impression changed.</strong></p>
     </div>
     <div class="ba-scroller rv">
       <button type="button" class="ba-nav ba-prev" aria-label="Scroll left">&#8249;</button>
