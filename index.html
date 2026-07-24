@@ -2195,6 +2195,40 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
 .mp-lp li:before{content:'';width:7px;height:7px;border-radius:50%;background:#9aa7ba;flex:0 0 auto}
 .mp-shot{width:100%;display:block}
 @media(max-width:760px){.mp-cols{flex-direction:column;align-items:center}.mp-col.bad,.mp-col.good{flex:none;max-width:100%;width:100%}.mp-mid{padding:14px 0}.mp-head{font-size:29px}}
+</style>
+<style id="sbp-faq-nav">
+/* ---------- Answers: plain text accordion ---------- */
+.faq-acc{max-width:840px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
+.faq-item{background:#fff;border:1px solid rgba(15,23,42,.10);border-radius:12px;overflow:hidden;box-shadow:0 6px 16px rgba(15,23,42,.05);transition:border-color .2s,box-shadow .2s}
+.faq-item.is-open{border-color:rgba(37,99,235,.38);box-shadow:0 12px 26px rgba(37,99,235,.12)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;background:none;border:0;cursor:pointer;text-align:left;padding:18px 20px;font-family:'Montserrat',sans-serif;font-size:16.5px;font-weight:800;color:#0F172A;line-height:1.35}
+.faq-q:hover{background:#F6F9FF}
+.faq-chev{flex:0 0 auto;width:11px;height:11px;border-right:2.5px solid #2563EB;border-bottom:2.5px solid #2563EB;transform:rotate(45deg) translate(-2px,-2px);transition:transform .24s}
+.faq-item.is-open .faq-chev{transform:rotate(-135deg) translate(-2px,-2px)}
+.faq-a{padding:0 20px 20px;font-family:'Open Sans',sans-serif;font-size:15px;line-height:1.68;color:#334155}
+.faq-a[hidden]{display:none}
+.faq-a p{margin:0 0 12px}
+.faq-a p:last-child{margin-bottom:0}
+.faq-a strong{color:#0F172A;font-weight:700}
+.faq-lead{color:#64748B;font-style:italic}
+.faq-a ul{margin:0 0 12px;padding-left:20px}
+.faq-a li{margin:0 0 6px}
+@media(max-width:600px){.faq-q{font-size:15px;padding:15px 16px}.faq-a{padding:0 16px 16px;font-size:14.5px}}
+/* ---------- sticky section nav (revealed once hero is gone) ---------- */
+html{scroll-behavior:smooth}
+#formula,#receptionist,#work,#answers,#offer{scroll-margin-top:88px}
+.nav-burger{display:flex;flex-direction:column;justify-content:center;gap:5px;flex:0 0 auto;width:44px;height:34px;margin-left:14px;padding:0 10px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.20);border-radius:9px;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(-5px);transition:opacity .28s,transform .28s,visibility .28s,background .2s}
+.topbar.nav-ready .nav-burger{opacity:1;visibility:visible;transform:none}
+.nav-burger:hover{background:rgba(255,255,255,.20)}
+.nav-burger span{display:block;height:2px;background:#fff;border-radius:2px;transition:transform .25s,opacity .2s}
+.nav-burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.nav-menu{position:absolute;top:100%;right:clamp(12px,3vw,32px);min-width:252px;padding:8px;background:#0B1120;border:1px solid rgba(255,255,255,.12);border-top:3px solid #2563EB;border-radius:0 0 14px 14px;box-shadow:0 26px 54px rgba(0,0,0,.48);display:flex;flex-direction:column;z-index:1200}
+.nav-menu[hidden]{display:none}
+.nav-menu a{display:block;padding:12px 14px;border-radius:9px;color:#E8EDF7;text-decoration:none;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;transition:background .18s,color .18s}
+.nav-menu a:hover{background:rgba(37,99,235,.25);color:#fff}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style></head>
 <body>
 
@@ -2208,7 +2242,15 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
       <span class="topbar-prep-label">Prepared Exclusively For:</span>
       <span class="topbar-client-text">Gihon Family Care Home</span>
     </div>
+    <button type="button" class="nav-burger" aria-label="Open section menu" aria-expanded="false" aria-controls="sbpNavMenu"><span></span><span></span><span></span></button>
   </div>
+  <nav class="nav-menu" id="sbpNavMenu" aria-label="Section navigation" hidden>
+    <a href="#formula">The Winning Formula</a>
+    <a href="#receptionist">24/7 Receptionist</a>
+    <a href="#work">Before &amp; After</a>
+    <a href="#answers">Answers</a>
+    <a href="#offer">The Offer &amp; Pricing</a>
+  </nav>
 </div>
 
 
@@ -2245,7 +2287,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
 </section>
 
 
-<section class="section section-trust section-formula section-formula-light section-formula-horizontal">
+<section id="formula" class="section section-trust section-formula section-formula-light section-formula-horizontal">
   <div class="section-inner">
     <h2 class="section-title">The <em>Winning Formula.</em></h2>
     <p class="section-sub">Three levers decide whether a home care site actually books work. We pull all three.</p>
@@ -2640,7 +2682,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
 </style>
 
 
-<section class="section section-ai-infra">
+<section id="receptionist" class="section section-ai-infra">
   <div class="section-inner">
     <div class="ai-infra-head">
       <span class="ai-infra-eyebrow"><span class="ai-infra-eyebrow-dot" aria-hidden="true"></span>receptionist Infrastructure</span>
@@ -3084,127 +3126,65 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
 </section>
 
 
-<div class="prep-ported-block"><section>
+<div class="prep-ported-block"><section id="answers">
   <div class="wrap stack g3">
     <div class="narrow center stack g2">
       <p class="eyebrow rv">Answers</p>
       <h2 class="rv">Get answers to our most common questions</h2>
     </div>
-    <div class="qgrid rv">
-
-      <div class="deck" data-deck><div class="slides">
-        <div class="slide q"><div class="big">What's the price?</div><p>And is there anything else waiting for us later?</p></div>
-        <div class="slide"><div class="big">One payment.<br><span class="pop">$297 to $997.</span></div><p>Where it lands depends on how much there is to build. That is the whole cost.</p></div>
-        <div class="slide"><div class="big">Nothing renews.</div><p>No contract. No setup fee. Nothing to cancel.</p></div>
-        <div class="slide"><div class="big">Then we watch it for a year.</div><p>Not bill you for the year. Watch it. If something is not pulling its weight, that is our problem to fix, and you have already paid whatever you are going to pay.</p></div>
-      </div></div>
-
-      <div class="deck" data-deck><div class="slides">
-        <div class="slide q"><div class="big">What happens the day we're done working together?</div><p>The short version: you keep everything.</p></div>
-        <div class="slide"><div class="big">Yours. In your name.</div><p>Built on your domain, registered to you. Not licensed, not rented, not sitting in our account.</p></div>
-        <div class="slide"><div class="big">You keep the reviews and the customers.</div><p>The reviews live on your Google page, they were always yours. Anybody who found you through the site is your customer.</p></div>
-        <div class="slide"><div class="big">Ask the next person who calls you the same question.</div><p>Who owns the domain, and will you put that in writing. You will learn a lot from how long it takes them to answer.</p></div>
-        <div class="slide"><div class="big">These are the stories we hear every day.</div><p>Don't let another business charge you $2,000 for your own domain.</p></div>
-      </div></div>
-
-      <div class="deck" data-deck><div class="slides">
-        <div class="slide q"><div class="big">What don't you promise?</div><p>Straight about what we are not going to say.</p></div>
-        <div class="slide"><div class="big">Get you to top spot on Google tomorrow.</div><p>Nobody can promise that. Google decides it, it moves constantly, and anyone telling you different is either guessing or counting on you not knowing.</p></div>
-        <div class="slide"><div class="big">Not that you'll close them.</div><p>That is your end, and you are better at it than we are. We can get somebody to raise their hand. We cannot make them sign.</p></div>
-        <div class="slide"><div class="big">One thing we will promise.<br><span class="pop">5 qualified prospects a month.</span></div><p>An average across the first year. If it comes up short, you get your money back, and you keep the site and the reviews.</p></div>
-        <div class="slide"><div class="big">Qualified means all three.</div><ul class="slist"><li>They came looking for you, not a lead sold to four other businesses</li><li>They need what you actually do</li><li>They are inside your service area</li></ul></div>
-      </div></div>
-
-      <div class="deck" data-deck><div class="slides">
-        <div class="slide q"><div class="big">Why should I get a website now?</div><p>Two things changed. Both worth thirty seconds.</p></div>
-        <div class="slide"><div class="big">Google no longer lets you scroll past page 1.</div>
-          <video class="sv" autoplay muted loop playsinline preload="metadata" poster="https://prep.solidbookedpro.com/assets/img/poster-google-scroll.jpg"><source src="https://prep.solidbookedpro.com/assets/video/google-scroll.mp4" type="video/mp4"></video></div>
-        <div class="slide"><div class="big">Google has a button that can find compatible sites to get prices.</div>
-          <img src="https://prep.solidbookedpro.com/assets/img/ai-get-prices.webp" alt="A Google result with a Have receptionist get prices button" loading="lazy"></div>
-        <div class="slide"><div class="big">Everybody is bidding for those top spots.</div><p>And the price of standing there goes up every year. That is a crowded room, and it costs more to be in it every time you look.</p></div>
-        <div class="slide"><div class="big">1 in 4 people are asking ChatGPT for recommendations.</div>
-          <img src="https://prep.solidbookedpro.com/assets/img/google-vs-chatgpt.png" alt="The same search asked on Google and on ChatGPT" loading="lazy"></div>
-        <div class="slide"><div class="big">Only 1.2% of business sites come up there.</div><p>That is a room with nobody in it. It will not stay that way. The same thing happened with Google fifteen years ago, and now it costs what it costs.</p></div>
-      </div></div>
-
-      <div class="deck" data-deck><div class="slides">
-        <div class="slide q"><div class="big">After a potential customer answers the online booking questions</div><p>Here is exactly where it goes.</p></div>
-        <div class="slide"><div class="big">Once they answer your qualifying questions</div>
-          <img src="https://prep.solidbookedpro.com/assets/img/multi-form.gif" alt="A short multi step form" loading="lazy"></div>
-        <div class="slide"><div class="big">Your phone buzzes.</div><p>A text with their name, their number, and what they said they need. Same as if they had texted you directly.</p></div>
-        <div class="slide"><div class="big">On a job? They still get an answer.</div>
-          <img src="https://prep.solidbookedpro.com/assets/img/review-followup.png" alt="An automated follow up message" loading="lazy"></div>
-        <div class="slide"><div class="big">Or to a CRM if you prefer.</div>
-          <img src="https://prep.solidbookedpro.com/assets/img/plate-contacts.png" alt="A contact list showing every enquiry and its status" loading="lazy"></div>
-      </div></div>
-
-      <div class="deck" data-deck><div class="slides">
-        <div class="slide q"><div class="big">How long before we see anything?</div><p>Straight answer, including the part you will not love.</p></div>
-        <div class="slide"><div class="big">Reviews move first.</div><p>That is usually the first thing you notice, inside the first few weeks.</p></div>
-        <div class="slide"><div class="big">More reviews means more customers see you.</div>
-          <video class="sv lg" autoplay muted loop playsinline preload="metadata" poster="https://prep.solidbookedpro.com/assets/img/poster-rank-climb.jpg"><source src="https://prep.solidbookedpro.com/assets/video/rank-climb.mp4" type="video/mp4"></video></div>
-        <div class="slide"><div class="big">The slow part is coming up on your own in a search.</div><p>That takes time. Anybody who tells you different is guessing or lying to you.</p></div>
-        <div class="slide"><div class="big">At no extra cost to you, we run ads.</div><p>While the slow part builds, we run ads so you can get qualified prospects calling you and get an ROI on your site.</p></div>
-        <div class="slide"><div class="big"><span class="pop">45 days.</span></div><p>More reviews than you had. New enquiries you can trace back to it.</p><p>If nothing has moved by then, ask us hard questions.</p></div>
-      </div></div>
-
-      <div class="deck" data-deck><div class="slides">
-        <div class="slide q"><div class="big">Business is good. Why bother?</div><p>Word of mouth is the best way there is to get work.</p></div>
-        <div class="slide"><div class="big">We're not going to talk you out of it.</div><p>The people who come that way already trust you. They do not haggle much. They are good customers.</p></div>
-        <div class="slide"><div class="big">The only thing is you can't turn it up when you want to.</div><p>Most weeks that is fine. You are busy enough. Then every so often it goes quiet, and that is the part nobody plans for.</p></div>
-        <div class="slide"><div class="big">That's when the wrong calls start sounding reasonable.</div><p>The lead company. The SEO guy. The agency with the three month contract. Nobody shops carefully when they are thinking about next month.</p></div>
-        <div class="slide"><div class="big">Busy is the only time you can build this.</div><p>Nothing here shows up tomorrow. Whatever you want working in a slow month has to be started in a good one.</p></div>
-      </div></div>
-
-      <div class="deck" data-deck><div class="slides">
-        <div class="slide q"><div class="big">We tried this before and it didn't work</div><p>An owner spent $12,000 over three months with an SEO company.</p></div>
-        <div class="slide"><div class="big">What he got was <span class="pop">tire kickers.</span></div><p>He was not scammed, though. He bought a real thing. It just solved a problem he did not have.</p></div>
-        <div class="slide"><div class="big">Lead companies</div><p>You pay less than a lead is worth, so they sell that same one to four or five others. By the time you call, the person has talked to three people and is irritated the phone rang again.</p></div>
-        <div class="slide"><div class="big">Only two kinds of business win there.</div><p>The ones with somebody paid to sit and dial the second a lead lands, and the ones who keep calling long after everyone else quit.</p></div>
-        <div class="slide"><div class="big">SEO brings the best person there is. The catch is the clock.</div><p>You pay every month for something you might see in six. And a report does not cover payroll.</p></div>
-        <div class="slide"><div class="big">None of those are bad businesses.</div><p>They are answers to a question you were not asking.</p></div>
-        <div class="slide"><div class="big">So we built the part they all skipped.</div><p>A site that gets found, reviews that lift it, and follow-up that catches everyone who enquires. Those three work as one. Miss any of them and you are paying to fill something that is not ready yet.</p></div>
-      </div></div>
-
-      <div class="deck" data-deck><div class="slides">
-        <div class="slide q"><div class="big">We're not technical. How much lands on us?</div><p>Short answer: none of it.</p></div>
-        <div class="slide"><div class="big">You don't have to understand any of this.</div><p>Not the domain, not the hosting, not why one page comes up in a search and another does not. That is the job you are paying for.</p></div>
-        <div class="slide"><div class="big">Nothing to log into.</div><p>No dashboard. No password to keep somewhere. No tool to learn.</p></div>
-        <div class="slide"><div class="big">Want something changed? You tell us.</div>
-          <img class="lg" src="https://prep.solidbookedpro.com/assets/img/site-roofing.png" alt="A finished site built for a roofing company" loading="lazy"></div>
-        <div class="slide"><div class="big">One owner put it best.</div><p>"I don't know nothing, that's why I'm calling you." That is the right answer. It is the whole reason the job exists.</p></div>
-      </div></div>
-
-      <div class="deck" data-deck><div class="slides">
-        <div class="slide q"><div class="big">Why did you build it before asking us for anything?</div><p>You probably noticed this is backwards.</p></div>
-        <div class="slide"><div class="big">Not because we're generous.</div><p>If we describe a website to you, you have to take our word for it. You have probably taken somebody's word for it before and it cost you.</p></div>
-        <div class="slide"><div class="big">Looking at the real thing, there's nothing to take our word for.</div>
-          <img src="https://prep.solidbookedpro.com/assets/img/site-roofing-mobile.png" alt="A finished site on a phone" loading="lazy"></div>
-        <div class="slide"><div class="big">You can tell us it's wrong.</div><p>That we got your services wrong, or the colours are ugly, or that is not even what you do anymore. That is a better use of time than us talking at you.</p></div>
-      </div></div>
-
-      <div class="deck" data-deck><div class="slides">
-        <div class="slide q"><div class="big">Who does this not work for?</div><p>It will save us both an hour if one of these is you.</p></div>
-        <div class="slide"><div class="big">It works best if three things are true.</div><p>You do good work. You have helped enough people recently. And you have room to take more on.</p></div>
-        <div class="slide"><div class="big">Too new to have that history?</div><p>Nothing wrong with being new. There is just nothing for us to pull on yet.</p></div>
-        <div class="slide"><div class="big">Need this to save the business?</div><p>If it is the last thing you are trying, the timing is wrong. This works as something you build while you are steady, not as a rescue.</p></div>
-        <div class="slide"><div class="big">Only question is who's cheapest?</div><p>We are not, and we are not trying to be.</p></div>
-      </div></div>
-
-      <div class="deck" data-deck><div class="slides">
-        <div class="slide q"><div class="big">What happens after we say yes?</div><p>Day one, day two, and the first week.</p></div>
-        <div class="slide"><div class="big">Day one.<br>You look at it.</div><p>You get a link to the site and mark anything you want changed.</p>
-          <img src="https://prep.solidbookedpro.com/assets/img/site-roofing.png" alt="A finished site built for a roofing company" loading="lazy"></div>
-        <div class="slide"><div class="big">Day two.<br>Reviews start.</div>
-          <img src="https://prep.solidbookedpro.com/assets/img/review-request.png" alt="A review request message" loading="lazy"></div>
-        <div class="slide"><div class="big">Inside the first week.</div><p>We get you set up to show up when people search, including the receptionist ones, and the traffic starts coming your way.</p></div>
-        <div class="slide"><div class="big">What we need from you is one thing.</div><p>The customers you have already worked with, so we can ask them how it went.</p></div>
-      </div></div>
-
+    <div class="faq-acc rv">
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-0"><span class="faq-qt">What's the price?</span><span class="faq-chev" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a-0" hidden><p class="faq-lead">And is there anything else waiting for us later?</p><p><strong>One payment. $297 to $997.</strong> Where it lands depends on how much there is to build. That is the whole cost.</p><p><strong>Nothing renews.</strong> No contract. No setup fee. Nothing to cancel.</p><p><strong>Then we watch it for a year.</strong> Not bill you for the year. Watch it. If something is not pulling its weight, that is our problem to fix, and you have already paid whatever you are going to pay.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-1"><span class="faq-qt">What happens the day we're done working together?</span><span class="faq-chev" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a-1" hidden><p class="faq-lead">The short version: you keep everything.</p><p><strong>Yours. In your name.</strong> Built on your domain, registered to you. Not licensed, not rented, not sitting in our account.</p><p><strong>You keep the reviews and the customers.</strong> The reviews live on your Google page, they were always yours. Anybody who found you through the site is your customer.</p><p><strong>Ask the next person who calls you the same question.</strong> Who owns the domain, and will you put that in writing. You will learn a lot from how long it takes them to answer.</p><p><strong>These are the stories we hear every day.</strong> Don't let another business charge you $2,000 for your own domain.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-2"><span class="faq-qt">What don't you promise?</span><span class="faq-chev" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a-2" hidden><p class="faq-lead">Straight about what we are not going to say.</p><p><strong>Get you to top spot on Google tomorrow.</strong> Nobody can promise that. Google decides it, it moves constantly, and anyone telling you different is either guessing or counting on you not knowing.</p><p><strong>Not that you'll close them.</strong> That is your end, and you are better at it than we are. We can get somebody to raise their hand. We cannot make them sign.</p><p><strong>One thing we will promise. 5 qualified prospects a month.</strong> An average across the first year. If it comes up short, you get your money back, and you keep the site and the reviews.</p><p><strong>Qualified means all three.</strong></p><ul><li>They came looking for you, not a lead sold to four other businesses</li><li>They need what you actually do</li><li>They are inside your service area</li></ul></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-3"><span class="faq-qt">Why should I get a website now?</span><span class="faq-chev" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a-3" hidden><p class="faq-lead">Two things changed. Both worth thirty seconds.</p><p><strong>Google no longer lets you scroll past page 1.</strong></p><p><strong>Google has a button that can find compatible sites to get prices.</strong></p><p><strong>Everybody is bidding for those top spots.</strong> And the price of standing there goes up every year. That is a crowded room, and it costs more to be in it every time you look.</p><p><strong>1 in 4 people are asking ChatGPT for recommendations.</strong></p><p><strong>Only 1.2% of business sites come up there.</strong> That is a room with nobody in it. It will not stay that way. The same thing happened with Google fifteen years ago, and now it costs what it costs.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-4"><span class="faq-qt">After a potential customer answers the online booking questions</span><span class="faq-chev" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a-4" hidden><p class="faq-lead">Here is exactly where it goes.</p><p><strong>Once they answer your qualifying questions.</strong></p><p><strong>Your phone buzzes.</strong> A text with their name, their number, and what they said they need. Same as if they had texted you directly.</p><p><strong>On a job? They still get an answer.</strong></p><p><strong>Or to a CRM if you prefer.</strong></p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-5"><span class="faq-qt">How long before we see anything?</span><span class="faq-chev" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a-5" hidden><p class="faq-lead">Straight answer, including the part you will not love.</p><p><strong>Reviews move first.</strong> That is usually the first thing you notice, inside the first few weeks.</p><p><strong>More reviews means more customers see you.</strong></p><p><strong>The slow part is coming up on your own in a search.</strong> That takes time. Anybody who tells you different is guessing or lying to you.</p><p><strong>At no extra cost to you, we run ads.</strong> While the slow part builds, we run ads so you can get qualified prospects calling you and get an ROI on your site.</p><p><strong>45 days.</strong> More reviews than you had. New enquiries you can trace back to it. If nothing has moved by then, ask us hard questions.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-6"><span class="faq-qt">Business is good. Why bother?</span><span class="faq-chev" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a-6" hidden><p class="faq-lead">Word of mouth is the best way there is to get work.</p><p><strong>We're not going to talk you out of it.</strong> The people who come that way already trust you. They do not haggle much. They are good customers.</p><p><strong>The only thing is you can't turn it up when you want to.</strong> Most weeks that is fine. You are busy enough. Then every so often it goes quiet, and that is the part nobody plans for.</p><p><strong>That's when the wrong calls start sounding reasonable.</strong> The lead company. The SEO guy. The agency with the three month contract. Nobody shops carefully when they are thinking about next month.</p><p><strong>Busy is the only time you can build this.</strong> Nothing here shows up tomorrow. Whatever you want working in a slow month has to be started in a good one.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-7"><span class="faq-qt">We tried this before and it didn't work</span><span class="faq-chev" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a-7" hidden><p class="faq-lead">An owner spent $12,000 over three months with an SEO company.</p><p><strong>What he got was tire kickers.</strong> He was not scammed, though. He bought a real thing. It just solved a problem he did not have.</p><p><strong>Lead companies.</strong> You pay less than a lead is worth, so they sell that same one to four or five others. By the time you call, the person has talked to three people and is irritated the phone rang again.</p><p><strong>Only two kinds of business win there.</strong> The ones with somebody paid to sit and dial the second a lead lands, and the ones who keep calling long after everyone else quit.</p><p><strong>SEO brings the best person there is. The catch is the clock.</strong> You pay every month for something you might see in six. And a report does not cover payroll.</p><p><strong>None of those are bad businesses.</strong> They are answers to a question you were not asking.</p><p><strong>So we built the part they all skipped.</strong> A site that gets found, reviews that lift it, and follow-up that catches everyone who enquires. Those three work as one. Miss any of them and you are paying to fill something that is not ready yet.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-8"><span class="faq-qt">We're not technical. How much lands on us?</span><span class="faq-chev" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a-8" hidden><p class="faq-lead">Short answer: none of it.</p><p><strong>You don't have to understand any of this.</strong> Not the domain, not the hosting, not why one page comes up in a search and another does not. That is the job you are paying for.</p><p><strong>Nothing to log into.</strong> No dashboard. No password to keep somewhere. No tool to learn.</p><p><strong>Want something changed? You tell us.</strong></p><p><strong>One owner put it best.</strong> "I don't know nothing, that's why I'm calling you." That is the right answer. It is the whole reason the job exists.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-9"><span class="faq-qt">Why did you build it before asking us for anything?</span><span class="faq-chev" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a-9" hidden><p class="faq-lead">You probably noticed this is backwards.</p><p><strong>Not because we're generous.</strong> If we describe a website to you, you have to take our word for it. You have probably taken somebody's word for it before and it cost you.</p><p><strong>Looking at the real thing, there's nothing to take our word for.</strong></p><p><strong>You can tell us it's wrong.</strong> That we got your services wrong, or the colours are ugly, or that is not even what you do anymore. That is a better use of time than us talking at you.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-10"><span class="faq-qt">Who does this not work for?</span><span class="faq-chev" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a-10" hidden><p class="faq-lead">It will save us both an hour if one of these is you.</p><p><strong>It works best if three things are true.</strong> You do good work. You have helped enough people recently. And you have room to take more on.</p><p><strong>Too new to have that history?</strong> Nothing wrong with being new. There is just nothing for us to pull on yet.</p><p><strong>Need this to save the business?</strong> If it is the last thing you are trying, the timing is wrong. This works as something you build while you are steady, not as a rescue.</p><p><strong>Only question is who's cheapest?</strong> We are not, and we are not trying to be.</p></div>
+      </div>
+      <div class="faq-item">
+        <button type="button" class="faq-q" aria-expanded="false" aria-controls="faq-a-11"><span class="faq-qt">What happens after we say yes?</span><span class="faq-chev" aria-hidden="true"></span></button>
+        <div class="faq-a" id="faq-a-11" hidden><p class="faq-lead">Day one, day two, and the first week.</p><p><strong>Day one. You look at it.</strong> You get a link to the site and mark anything you want changed.</p><p><strong>Day two. Reviews start.</strong></p><p><strong>Inside the first week.</strong> We get you set up to show up when people search, including the receptionist ones, and the traffic starts coming your way.</p><p><strong>What we need from you is one thing.</strong> The customers you have already worked with, so we can ask them how it went.</p></div>
+      </div>
     </div>
   </div>
 </section>
-<section>
+<section id="work">
   <div class="wrap stack g3">
     <div class="narrow center stack g2">
       <p class="eyebrow rv">The work</p>
@@ -3265,7 +3245,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
     </div>
   </div>
 </section></div>
-<section class="plan-picker"><div class="pp-inner"><div class="pp-eyebrow">The Offer</div><h2 class="pp-h2">The Site That Only Costs You Something If It Works</h2><div class="pp-diagram"><div class="pp-side pp-left" data-tier="2"><span class="pp-side-label">5-Star Outreach System</span><span class="pp-arrow">&#8594;</span></div><div class="pp-center"><div class="pp-laptop"><div class="laptop-screen"><div class="laptop-chrome"><div class="laptop-dots"><span></span><span></span><span></span></div><div class="laptop-url">&#128274;  gihonfamilycare.com</div></div><div class="laptop-viewport"><iframe class="laptop-iframe" src="https://demo.solidbookedpro.com/gihon-family-care-home/" style="pointer-events:none" tabindex="-1" loading="lazy" title="Gihon Family Care Home live preview"></iframe></div></div><div class="laptop-tray"></div></div><div class="pp-laptop-cap">Your live demo</div><div class="pp-down" data-tier="3"><span class="pp-arrow pp-arrow-down">&#8595;</span><span class="pp-side-label">24/7 Receptionist Follow&#8209;Up</span></div></div><div class="pp-side pp-right" data-tier="3"><span class="pp-arrow">&#8592;</span><span class="pp-side-label">Monthly Qualified Prospect Guarantee</span></div></div><div class="pp-included"><h3>What&rsquo;s included:</h3><ul class="pp-list"><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Full custom Home Care website built in 3 days</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">SEO + AEO foundation indexed</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Hosting + SSL</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Google Business Profile, optimized, syncing reviews</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Mobile-first design that converts on a 5-inch screen</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Same-day consultation booking via live form</span></li><li class="pp-item" data-tier="2"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">5-Star Outreach System to increase reviews &amp; ranking</span></li><li class="pp-item" data-tier="3"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">24/7 Missed Call &amp; Follow-Up Receptionist</span></li></ul></div><h3 class="pp-q">Which option will be right for you?</h3><div class="pp-plans"><button class="pp-plan" data-plan="1"><span>One Time</span><b>$297</b></button><button class="pp-plan" data-plan="2"><span>One Time</span><b>$497</b></button><button class="pp-plan" data-plan="3"><span>One Time</span><b>$997</b></button></div></div></section>
+<section id="offer" class="plan-picker"><div class="pp-inner"><div class="pp-eyebrow">The Offer</div><h2 class="pp-h2">The Site That Only Costs You Something If It Works</h2><div class="pp-diagram"><div class="pp-side pp-left" data-tier="2"><span class="pp-side-label">5-Star Outreach System</span><span class="pp-arrow">&#8594;</span></div><div class="pp-center"><div class="pp-laptop"><div class="laptop-screen"><div class="laptop-chrome"><div class="laptop-dots"><span></span><span></span><span></span></div><div class="laptop-url">&#128274;  gihonfamilycare.com</div></div><div class="laptop-viewport"><iframe class="laptop-iframe" src="https://demo.solidbookedpro.com/gihon-family-care-home/" style="pointer-events:none" tabindex="-1" loading="lazy" title="Gihon Family Care Home live preview"></iframe></div></div><div class="laptop-tray"></div></div><div class="pp-laptop-cap">Your live demo</div><div class="pp-down" data-tier="3"><span class="pp-arrow pp-arrow-down">&#8595;</span><span class="pp-side-label">24/7 Receptionist Follow&#8209;Up</span></div></div><div class="pp-side pp-right" data-tier="3"><span class="pp-arrow">&#8592;</span><span class="pp-side-label">Monthly Qualified Prospect Guarantee</span></div></div><div class="pp-included"><h3>What&rsquo;s included:</h3><ul class="pp-list"><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Full custom Home Care website built in 3 days</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">SEO + AEO foundation indexed</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Hosting + SSL</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Google Business Profile, optimized, syncing reviews</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Mobile-first design that converts on a 5-inch screen</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Same-day consultation booking via live form</span></li><li class="pp-item" data-tier="2"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">5-Star Outreach System to increase reviews &amp; ranking</span></li><li class="pp-item" data-tier="3"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">24/7 Missed Call &amp; Follow-Up Receptionist</span></li></ul></div><h3 class="pp-q">Which option will be right for you?</h3><div class="pp-plans"><button class="pp-plan" data-plan="1"><span>One Time</span><b>$297</b></button><button class="pp-plan" data-plan="2"><span>One Time</span><b>$497</b></button><button class="pp-plan" data-plan="3"><span>One Time</span><b>$997</b></button></div></div></section>
 
 
 
@@ -4899,6 +4879,21 @@ window.SBP_TRACK='https://n8n.americanlifeteam.com/webhook/sbp-funnel-track';
   function tick(){go(cur+1);}function start(){if(!timer)timer=setInterval(tick,DELAY);}function stop(){if(timer){clearInterval(timer);timer=null;}}function reset(){stop();start();}
   sc.addEventListener("mouseenter",stop);sc.addEventListener("mouseleave",start);
   if(!(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches))start();
+})();</script>
+<script id="sbp-faq-nav-js">(function(){
+/* Answers accordion */
+document.querySelectorAll(".faq-q").forEach(function(b){b.addEventListener("click",function(){var it=b.closest(".faq-item");if(!it)return;var p=it.querySelector(".faq-a");var open=!it.classList.contains("is-open");it.classList.toggle("is-open",open);b.setAttribute("aria-expanded",open?"true":"false");if(p)p.hidden=!open;});});
+/* sticky section nav */
+var bar=document.querySelector(".topbar"),burger=document.querySelector(".nav-burger"),menu=document.getElementById("sbpNavMenu"),hero=document.querySelector(".cover");
+if(!bar||!burger||!menu)return;
+function close(){menu.hidden=true;burger.setAttribute("aria-expanded","false");}
+burger.addEventListener("click",function(e){e.stopPropagation();var open=menu.hidden;menu.hidden=!open;burger.setAttribute("aria-expanded",open?"true":"false");});
+menu.addEventListener("click",function(e){if(e.target.closest("a"))close();});
+document.addEventListener("click",function(e){if(!menu.hidden&&!menu.contains(e.target)&&!burger.contains(e.target))close();});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")close();});
+function ready(on){bar.classList.toggle("nav-ready",on);if(!on)close();}
+if(window.IntersectionObserver&&hero){new IntersectionObserver(function(en){ready(!en[0].isIntersecting);},{threshold:0}).observe(hero);}
+else{window.addEventListener("scroll",function(){ready(window.scrollY>(hero?hero.offsetHeight:600)-80);},{passive:true});}
 })();</script>
 </body>
 </html>
