@@ -2009,6 +2009,18 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
 .ba-nav:active{transform:translateY(-50%) scale(.94)}
 .ba-prev{left:-6px}.ba-next{right:-6px}
 @media(max-width:600px){.ba-nav{width:38px;height:38px;font-size:22px}.ba-prev{left:2px}.ba-next{right:2px}}
+/* mobile-first card: live scrollable phone preview (like the hero laptop) */
+.shot-phone .sp-screen{aspect-ratio:9 / 19.3;height:auto}
+.shot-phone .phone-live{width:100%;height:100%;border:0;display:block;background:#fff}
+/* receptionist journey: keep website -> chat -> phone on ONE line, scaling with the page */
+@media(min-width:921px){
+  .ai-journey{flex-wrap:nowrap;gap:clamp(6px,1.3vw,18px)}
+  .ai-journey-arrow{transform:none;font-size:clamp(18px,1.9vw,28px);padding:0}
+  .ai-laptop{width:clamp(260px,28vw,370px);max-width:none}
+  .ai-laptop .laptop-viewport{height:auto;aspect-ratio:16/10}
+  .ai-chatwin{width:clamp(210px,24vw,310px);max-width:none}
+  .ai-phone{width:clamp(185px,20vw,260px);max-width:none}
+}
 </style>
 </head>
 <body>
@@ -2258,7 +2270,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
             <span class="feature-card-tag feature-card-tag-conversion">CONVERT</span>
           </div>
           <p class="feature-card-meta">Most people find you on their phone while doing something else &mdash; it&rsquo;s built to convert on a 5-inch screen first.</p>
-          <figure class="fhow-card-img"><div class="shot-phone"><div class="sp-screen"><img src="site-gihon-mobile.png" alt="Gihon Family Care Home mobile-first site"></div></div></figure>
+          <figure class="fhow-card-img"><div class="shot-phone"><div class="sp-screen"><iframe class="phone-live" src="https://demo.solidbookedpro.com/gihon-family-care-home/" title="Gihon Family Care Home mobile site" loading="lazy"></iframe></div></div></figure>
         </article>
       </div>
 
