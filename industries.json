@@ -65,7 +65,8 @@
       "specialist_body": "We build for home care and nothing else, so we know what makes seniors and their families in Palm Coast pick one provider and skip the rest. Every page is written to earn that call. Generic agencies just guess.",
       "worker_term": "caregiver",
       "review_text": "Grace and the team have been wonderful with my mother &mdash; patient, dependable, and genuinely kind. For the first time in months, I sleep at night. <strong>Best care experience we&rsquo;ve had in {{CITY}}.</strong>",
-      "review_reply": "Thank you so much, that truly means the world to us. I&rsquo;ll pass it along to Grace and the whole team. Welcome to the {{COMPANY_NAME}} family."
+      "review_reply": "Thank you so much, that truly means the world to us. I&rsquo;ll pass it along to Grace and the whole team. Welcome to the {{COMPANY_NAME}} family.",
+      "buyer_noun_s": "family"
     },
     "roofing": {
       "industry": "Roofing",

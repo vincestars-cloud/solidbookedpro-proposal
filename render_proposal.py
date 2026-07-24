@@ -41,6 +41,17 @@ def tc(s):
     return ' '.join(out)
 
 
+def load_block(name, block_dir):
+    """Load a content-block fragment: blocks/<industry>/<name>.html, else blocks/_default/<name>.html."""
+    for d in (block_dir, '_default'):
+        if not d:
+            continue
+        path = os.path.join(HERE, 'blocks', d, name + '.html')
+        if os.path.exists(path):
+            return open(path, encoding='utf-8').read()
+    return ''
+
+
 def build_ctx(cfg, ind):
     industry = ind.get('industry') or tc(cfg['industry_key'])
     cn   = ind['customer_noun']            # plural, lowercase  e.g. "seniors"
@@ -75,6 +86,7 @@ def build_ctx(cfg, ind):
         'CUSTOMER_NOUN_UC': cn.upper(),
         'CUSTOMER_NOUN_TC_MORE': 'More ' + tc(cn),
         'BUYER_NOUN': ind.get('buyer_noun') or cn,
+        'BUYER_NOUN_S': ind.get('buyer_noun_s') or cn_s,
         'WORKER_TERM': ind.get('worker_term') or prov,
         'PROVIDER_TERM': prov,
         'PROVIDER_TERM_PL': plural(prov),
@@ -125,6 +137,10 @@ def build_ctx(cfg, ind):
         'REVIEW_REPLY': ind.get('review_reply') or (
             'Thank you so much, that truly means a lot to us. I&rsquo;ll pass it along to the whole team. '
             'Welcome to the {{COMPANY_NAME}} family.'),
+        # ---- the 3 "How?" deep-dive panels (bespoke per industry, else generic) ----
+        'HOW_TRAFFIC': load_block('how_traffic', ind.get('_block_dir', '')),
+        'HOW_TRUST': load_block('how_trust', ind.get('_block_dir', '')),
+        'HOW_CONVERSION': load_block('how_conversion', ind.get('_block_dir', '')),
     }
     # contact merge-fields stay literal unless overridden
     ctx['contact.first_name'] = cfg.get('first_name', '{{contact.first_name}}')
@@ -160,6 +176,7 @@ def main():
         key = matches[0]
         print(f'note: industry "{cfg["industry_key"]}" -> "{key}"')
     ind = dict(inds[key]); ind['_defaults'] = data.get('_defaults', {})
+    ind['_block_dir'] = slugify(key)
 
     ctx = build_ctx(cfg, ind)
     html = open(a.template, encoding='utf-8').read()

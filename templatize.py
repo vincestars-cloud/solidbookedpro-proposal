@@ -26,6 +26,36 @@ def sub(old, new, label=None, required=True):
     h = h.replace(old, new)
     report.append(('ok', label or (old[:52] + ('…' if len(old) > 52 else '')), n))
 
+# ---------------------------------------------------------------- 00. the 3 "How?" deep-dive panels -> content-block tokens
+# These 9 feature cards are too vertical-specific for a word-swap, so each panel
+# becomes a {{HOW_*}} block. Home-care's blocks are saved (with DEMO_URL/CITY/
+# COMPANY tokenised) so the render stays lossless; other verticals use blocks/_default/.
+import os as _os
+def _match_div(s, i):
+    depth = 0
+    for m in re.finditer(r'<div\b|</div>', s[i:]):
+        if m.group() == '</div>':
+            depth -= 1
+            if depth == 0:
+                return i + m.end()
+        else:
+            depth += 1
+    return -1
+_os.makedirs('blocks/home-care', exist_ok=True)
+for _k in ('traffic', 'trust', 'conversion'):
+    _open = f'<div class="formula-how-content" data-content="{_k}" hidden>'
+    _si = h.find(_open)
+    if _si < 0:
+        report.append(('MISS', f'how panel {_k}', 0)); continue
+    _ei = _match_div(h, _si)
+    _raw = h[_si:_ei]
+    _block = (_raw.replace('https://demo.solidbookedpro.com/gihon-family-care-home/', '{{DEMO_URL}}')
+                  .replace('Palm Coast', '{{CITY}}')
+                  .replace('Gihon Family Care Home', '{{COMPANY_NAME}}'))
+    open(f'blocks/home-care/how_{_k}.html', 'w', encoding='utf-8').write(_block)
+    h = h[:_si] + '{{HOW_' + _k.upper() + '}}' + h[_ei:]
+    report.append(('ok', f'how panel {_k} -> block', 1))
+
 # ---------------------------------------------------------------- 0a. demo-site URL -> GHL-filled token (runs before city/slug subs)
 sub('https://demo.solidbookedpro.com/gihon-family-care-home/', '{{DEMO_URL}}', 'demo url (iframe + CTAs)')
 sub('"https://demo.solidbookedpro.com/gihon-family-care-home"', '"{{DEMO_URL}}"', 'demo url (LIVE_PREVIEW_URL)', required=False)
@@ -35,6 +65,15 @@ sub('Grace and the team have been wonderful with my mother &mdash; patient, depe
     '{{REVIEW_TEXT}}', 'review text', required=False)
 sub('Thank you so much, that truly means the world to us. I&rsquo;ll pass it along to Grace and the whole team. Welcome to the Gihon Family Care Home family.',
     '{{REVIEW_REPLY}}', 'review reply', required=False)
+
+# ---------------------------------------------------------------- 0c. singular "family" (the plural is handled later as BUYER_NOUN)
+sub('ai-feature-body">A family fills out the form on your site.',
+    'ai-feature-body">A {{BUYER_NOUN_S}} fills out the form on your site.', 'receptionist body family', required=False)
+sub('alt="A family taps through the multi-step form on your website"',
+    'alt="A {{BUYER_NOUN_S}} taps through the multi-step form on your website"', 'form gif alt', required=False)
+sub('alt="The receptionist texts the family back within seconds of the form"',
+    'alt="The receptionist texts the {{BUYER_NOUN_S}} back within seconds of the form"', 'lead-text alt', required=False)
+sub('Never miss a family&rsquo;s call', 'Never miss a {{BUYER_NOUN_S}}&rsquo;s call', 'receptionist checklist note', required=False)
 
 # ---------------------------------------------------------------- 0. structured content blocks
 # The jargon-vs-customer comparison: every piece is industry-specific copy.

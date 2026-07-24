@@ -119,3 +119,22 @@ python3 templatize.py index.html proposal.template.html
 
 It prints every substitution, then audits for residual client/industry words —
 that residual list must be empty.
+
+## 2026-07-24 additions
+
+- **`{{DEMO_URL}}`** — the demo-site iframe + the 9 "See it on your site" CTAs.
+  Renders to `{{contact.demo_url}}` (GHL merge field) unless a client file sets
+  `demo_url`. This is what makes the laptop load the right per-contact demo.
+- **`{{REVIEW_TEXT}}` / `{{REVIEW_REPLY}}`** — the Google-review card. Bespoke in
+  `industries.json` (`review_text` / `review_reply`) for home care + mobile
+  mechanic; sensible generated default otherwise.
+- **`{{HOW_TRAFFIC}}` / `{{HOW_TRUST}}` / `{{HOW_CONVERSION}}`** — the 3 "How?"
+  deep-dive panels (9 feature cards). Loaded from `blocks/<industry>/how_*.html`
+  (home care is bespoke) or `blocks/_default/how_*.html` (token-based generic,
+  used by every other vertical). Add a `blocks/<slug>/` dir to override per vertical.
+- **`{{BUYER_NOUN_S}}`** — singular of the buyer noun (home care = "family").
+- render is now **2-pass** so a content block's own `{{CITY}}`/`{{COMPANY_NAME}}`
+  tokens resolve. `blocks/` holds the large HTML fragments (cleaner than JSON).
+
+Still per-vertical **image** assets (not copy): `ASSET_PROOF` (research strip),
+`ASSET_MULTIPAGE` (services-page screenshot), and the demo site itself.
