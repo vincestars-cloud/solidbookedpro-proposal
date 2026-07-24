@@ -291,6 +291,13 @@ FIXES_CSS = '''<style id="sbp-fixes">
 @media(min-width:560px){.reels{grid-template-columns:1fr 1fr!important}}
 /* In their words: center the testimonial quote + caption */
 .reel .meta{text-align:center}
+/* Before/After carousel: hide native scrollbar; constrain scroller; keep both arrows on-screen */
+.bagrid{scrollbar-width:none!important;-ms-overflow-style:none!important}
+.bagrid::-webkit-scrollbar{height:0!important;width:0!important;display:none!important}
+.ba-scroller{max-width:100%!important;box-sizing:border-box}
+.ba-prev{left:8px!important;right:auto!important}
+.ba-next{right:8px!important;left:auto!important}
+@media(max-width:600px){.ba-prev{left:6px!important}.ba-next{right:6px!important}}
 </style>
 '''
 doc = doc.replace('</head>', BRAND_CSS + MOBILE_CSS + '</head>')
