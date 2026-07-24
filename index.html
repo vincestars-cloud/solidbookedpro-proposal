@@ -1616,7 +1616,7 @@ details.proposal-collapsible[open] > .ps-summary{
 </style>
 
 <style id="sbp-mobile">
-html,body{max-width:100%;overflow-x:hidden}
+html,body{max-width:100%;overflow-x:clip}
 img,video,iframe,svg{max-width:100%}
 @media(max-width:768px){
   .topbar-inner{padding:0 16px;gap:10px}
@@ -1699,7 +1699,7 @@ img,video,iframe,svg{max-width:100%}
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{background:var(--white);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;
-  line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
 img,video{max-width:100%;display:block}
 h1,h2,h3{font-family:var(--serif);font-weight:800;letter-spacing:-.02em;line-height:1.1;text-wrap:balance}
 h1{font-size:clamp(1.95rem,6vw,3.3rem)}
@@ -2653,7 +2653,7 @@ html{scroll-behavior:smooth}
     <h2 class="pgrid-head">The Goldmine of Qualified Prospects</h2>
     <p class="pgrid-sub">Where your next clients are actually looking &mdash; and why most home care sites never show up there.</p>
     <div class="pgrid pgrid-3">
-        <figure class="pcell"><h3 class="pcell-title">For the last 2 years Google has been transitioning out the ability to scroll beyond the first page</h3><div class="pcell-media"><video class="pcell-vid" autoplay muted loop playsinline preload="metadata" poster="traffic-google-scroll-poster.jpg" aria-label="Google removing the ability to scroll past page one"><source src="traffic-google-scroll.mp4" type="video/mp4"></video></div></figure>
+        <figure class="pcell"><h3 class="pcell-title">For the last 2 years Google has been transitioning out the ability to scroll beyond the first page</h3><div class="pcell-media"><video class="pcell-vid" autoplay muted loop playsinline preload="auto" poster="traffic-google-scroll-poster.jpg" aria-label="Google removing the ability to scroll past page one"><source src="traffic-google-scroll.mp4" type="video/mp4"></video></div></figure>
         <figure class="pcell"><h3 class="pcell-title">Their new &ldquo;Have AI get prices&rdquo; button rewards websites that were built for it</h3><div class="pcell-media"><img src="getprices.webp" alt="Google&rsquo;s Have AI get prices button" loading="lazy" decoding="async"></div></figure>
         <figure class="pcell"><h3 class="pcell-title">Tools like ChatGPT are recommending local businesses, but only 1.2% of sites are set up to show up</h3><div class="pcell-media"><img src="article-highlighted.png" alt="Only 1.2% of local businesses are recommended by AI search" loading="lazy" decoding="async"></div></figure>
     </div>
@@ -2665,8 +2665,8 @@ html{scroll-behavior:smooth}
     <h2 class="pgrid-head">Your Customers Don&rsquo;t Search Like Care Providers</h2>
     <p class="pgrid-sub">We read what families actually type before we write a word &mdash; then build your site in their words, not the trade&rsquo;s.</p>
     <div class="pgrid pgrid-2">
-        <figure class="pcell"><h3 class="pcell-title">The Research</h3><div class="pcell-media"><img src="home-care-proof-layered.png" alt="Real customer language pulled from Google, Reddit and Facebook" loading="lazy" decoding="async"></div></figure>
-        <figure class="pcell"><h3 class="pcell-title">The Results</h3><div class="pcell-media"><img src="trust-results.png" alt="The results of writing the site in customer language" loading="lazy" decoding="async"></div></figure>
+        <figure class="pcell pcell-research"><h3 class="pcell-title">The Research</h3><div class="pcell-media"><div class="proof-split"><img src="proof-reddit.png" alt="A daughter on Reddit asking how to find in-home care for her mom without a fight" loading="lazy" decoding="async"><img src="proof-facebook.png" alt="A son on Facebook asking for a reliable in-home caregiver for his dad" loading="lazy" decoding="async"></div></div></figure>
+        <figure class="pcell pcell-results"><h3 class="pcell-title">The Results</h3><div class="pcell-media"><div class="cmp-cols"><div class="cmp-col bad"><div class="cmp-lab"><span class="b">&times;</span> Written like a care provider</div><div class="cmp-brow"><div class="cmp-bar"><i></i><i></i><i></i><span class="u">gihonfamilycare.com</span></div><div class="cmp-hero"><div class="cmp-h">In-Home Non-Medical ADL Assistance &amp; Care Coordination</div><ul class="cmp-bl"><li>Activities of daily living (ADL) support</li><li>Care-plan management &amp; coordination</li><li>HIPAA-compliant caregiver matching</li></ul><span class="cmp-cta">Request Consultation</span></div></div><div class="cmp-dem"><span class="ic">&times;</span><div><div class="n">~40</div><div class="l">searches/mo for &ldquo;non-medical ADL assistance&rdquo;</div></div></div></div><div class="cmp-col mid"><div class="cmp-vs">VS</div></div><div class="cmp-col good"><div class="cmp-lab"><span class="b">&#10003;</span> Written for your customers</div><div class="cmp-brow"><div class="cmp-bar"><i></i><i></i><i></i><span class="u">gihonfamilycare.com</span></div><div class="cmp-hero"><div class="cmp-h">Worried About Mom Living Alone? Trusted Caregivers, a Few Hours a Day.</div><ul class="cmp-bl"><li>Help with bathing, meals &amp; medication reminders</li><li>Background-checked caregivers you can trust</li><li>Start with a free in-home visit</li></ul><span class="cmp-cta">Get a Free Consultation</span></div></div><div class="cmp-dem"><span class="ic">&#10003;</span><div><div class="n">~2,900</div><div class="l">searches/mo for &ldquo;home care for elderly parent&rdquo;</div></div></div></div></div></div></figure>
     </div>
   </div>
 </section>
@@ -2690,7 +2690,7 @@ html{scroll-behavior:smooth}
     <div class="pgrid pgrid-3">
         <figure class="pcell"><h3 class="pcell-title">11 out of 100 businesses consistently get reviews</h3><div class="pcell-media"><img src="repeat-11of100.png" alt="11 out of 100 businesses consistently get reviews" loading="lazy" decoding="async"></div></figure>
         <figure class="pcell"><h3 class="pcell-title">Personalized Reviews: 50&ndash;70% respond</h3><div class="pcell-media"><img src="repeat-personalized.png" alt="Personalized review requests get a 50 to 70 percent response rate" loading="lazy" decoding="async"></div></figure>
-        <figure class="pcell"><h3 class="pcell-title">More Reviews Means More Seniors</h3><div class="pcell-media"><video class="pcell-vid" autoplay muted loop playsinline preload="metadata" poster="repeat-more-reviews-poster.jpg" aria-label="More reviews means more seniors served"><source src="repeat-more-reviews.mp4" type="video/mp4"></video></div></figure>
+        <figure class="pcell"><h3 class="pcell-title">More Reviews Means More Seniors</h3><div class="pcell-media"><video class="pcell-vid" autoplay muted loop playsinline preload="auto" poster="repeat-more-reviews-poster.jpg" aria-label="More reviews means more seniors served"><source src="repeat-more-reviews.mp4" type="video/mp4"></video></div></figure>
     </div>
   </div>
 </section>
@@ -5027,6 +5027,106 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")close();});
 function ready(on){bar.classList.toggle("nav-ready",on);if(!on)close();}
 if(window.IntersectionObserver&&hero){new IntersectionObserver(function(en){ready(!en[0].isIntersecting);},{threshold:0}).observe(hero);}
 else{window.addEventListener("scroll",function(){ready(window.scrollY>(hero?hero.offsetHeight:600)-80);},{passive:true});}
+})();</script>
+<style id="sbp-resp-2026-07-24">
+/* =============================================================
+   Mobile / resize fixes — 2026-07-24 (Vince review)
+   ============================================================= */
+
+/* #4 — sticky nav + always-available hamburger on mobile
+   (overflow-x:clip on html,body — set in #sbp-mobile — restores position:sticky) */
+@media(max-width:768px){
+  .nav-burger{opacity:1!important;visibility:visible!important;transform:none!important;margin-left:auto;}
+}
+
+/* #2 / #3 / #5 / #6 — strip the light-blue card box off the proof cells */
+#search-language .pcell-media,
+#outreach-system .pcell-media{
+  background:none!important;border:0!important;box-shadow:none!important;
+  border-radius:0!important;overflow:visible!important;
+}
+
+/* #2 — Trust section: single column so the proof reads big; split reddit/fb */
+#search-language .pgrid-2{grid-template-columns:1fr;max-width:820px;margin-inline:auto;gap:34px;}
+.proof-split{display:flex;gap:16px;align-items:flex-start;}
+.proof-split img{flex:1 1 0;min-width:0;width:100%;height:auto;border-radius:12px;
+  box-shadow:0 14px 30px rgba(15,23,42,.14);border:1px solid rgba(15,23,42,.08);}
+@media(max-width:640px){.proof-split{flex-direction:column;gap:18px;}}
+
+/* #3 — live "Results" comparison sits flush in the bare cell */
+.pcell-results .cmp-cols{margin-top:2px;}
+.pcell-results .cmp-col{max-width:none;}
+
+/* #5 — personalized-review phone: keep it centered, sensible size */
+#outreach-system .pcell figure,#outreach-system .pcell img{margin-inline:auto;}
+#outreach-system .pcell img[src*="repeat-personalized"]{max-width:320px;display:block;margin:0 auto;}
+
+/* #6 — more-reviews video: bare, centered, capped */
+#outreach-system .pcell-vid{max-width:340px;display:block;margin:0 auto;border-radius:14px;}
+
+/* #7 — receptionist chat journey: stop the zoom-squish, stack full size on mobile */
+@media(max-width:900px){
+  #receptionist .ai-journey{zoom:1!important;flex-direction:column!important;flex-wrap:nowrap!important;
+    gap:6px!important;align-items:center!important;}
+  #receptionist .ai-journey-arrow{transform:rotate(90deg)!important;font-size:26px!important;margin:2px 0!important;}
+  #receptionist .ai-journey .ai-laptop{width:100%!important;max-width:min(420px,92vw)!important;}
+  #receptionist .ai-journey .ai-chatwin{width:100%!important;max-width:min(360px,92vw)!important;}
+  #receptionist .ai-journey .ai-phone{width:100%!important;max-width:min(300px,80vw)!important;}
+  #receptionist .ai-journey-beat{width:100%;align-items:center;}
+}
+
+/* #8 — investment badges: one horizontal row on mobile */
+@media(max-width:560px){
+  #offer .so-invest .so-trust{flex-wrap:nowrap!important;gap:7px;}
+  #offer .so-invest .so-chip{flex:1 1 0;min-width:0;flex-direction:column;text-align:center;
+    gap:6px;padding:11px 6px;font-size:11.5px;line-height:1.2;border-radius:12px;}
+  #offer .so-invest .so-chip .so-c{width:17px;height:17px;}
+  #offer .so-invest .so-chip .so-c svg{width:10px;height:10px;}
+}
+
+/* #9 — offer diagram: fit + center, no clipping on phones */
+@media(max-width:820px){
+  #offer .so-diagram{margin-top:30px;}
+  #offer .so-hub{gap:16px;width:100%;}
+  #offer .so-sys,#offer .so-site,#offer .so-sys.so-bottom,#offer .so-downcol{width:100%;max-width:420px;margin-inline:auto;}
+  #offer .so-downcol{align-items:center;}
+  #offer .so-conn.so-down{margin:14px 0;}
+  #offer .so-sys .so-t{padding-right:40px;}
+}
+</style>
+<script id="sbp-resp-js-2026-07-24">(function(){
+  /* #1 / #9 — scale each laptop iframe so the full desktop site fits its frame (no horizontal clipping) */
+  var LAPS=[
+    {sel:'.cover-laptop .laptop-viewport',slice:905},
+    {sel:'#receptionist .ai-laptop .laptop-viewport',slice:890},
+    {sel:'#offer .so-vp',slice:760}
+  ];
+  function scaleLaptops(){
+    LAPS.forEach(function(L){
+      document.querySelectorAll(L.sel).forEach(function(vp){
+        var f=vp.querySelector('.laptop-iframe'); if(!f) return;
+        var w=vp.clientWidth; if(!w) return;
+        var s=w/1440;
+        f.style.width='1440px'; f.style.transformOrigin='top left';
+        f.style.transform='scale('+s+')';
+        vp.style.height=Math.round(s*L.slice)+'px';
+      });
+    });
+  }
+  if(document.readyState!=='loading')scaleLaptops();
+  else document.addEventListener('DOMContentLoaded',scaleLaptops);
+  window.addEventListener('load',scaleLaptops);
+  var rt; window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(scaleLaptops,120);},{passive:true});
+
+  /* #6 — force muted looping proof videos to actually play once on screen (mobile autoplay guard) */
+  var vids=document.querySelectorAll('.pcell-vid');
+  function play(v){try{v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){});}catch(e){}}
+  if(vids.length){
+    if(window.IntersectionObserver){
+      var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){play(e.target);}});},{threshold:.2});
+      vids.forEach(function(v){io.observe(v);});
+    } else {vids.forEach(play);}
+  }
 })();</script>
 </body>
 </html>
