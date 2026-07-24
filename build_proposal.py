@@ -374,9 +374,10 @@ doc = doc.replace('</head>', FIXES_CSS + '</head>')   # append LAST so responsiv
 # the same key n8n passes). Mirror into the n8n wrapper when built, like INDUSTRY_TERMS.
 from cmp_section import CMP_CSS, build_cmp
 from forms_section import FORMS_CSS, build_forms   # form comparison + book-online proof, sits under cmp
-doc = doc.replace('</head>', CMP_CSS + FORMS_CSS + '</head>')
+from pages_section import PAGES_CSS, build_pages   # single-page vs multi-page, sits under forms
+doc = doc.replace('</head>', CMP_CSS + FORMS_CSS + PAGES_CSS + '</head>')
 doc, n_cmp = re.subn(r'(<section\b[^>]*section-three-reasons[^>]*>.*?</section>)',
-                     lambda m: m.group(1) + build_cmp(CFG) + build_forms(CFG), doc, count=1, flags=re.S)
+                     lambda m: m.group(1) + build_cmp(CFG) + build_forms(CFG) + build_pages(CFG), doc, count=1, flags=re.S)
 
 # strip dev/pipeline HTML comments (non-visible, keeps template clean)
 doc = re.sub(r'<!--.*?-->', '', doc, flags=re.S)
