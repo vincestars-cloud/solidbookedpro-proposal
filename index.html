@@ -2025,6 +2025,37 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
   .ai-phone{width:clamp(185px,20vw,260px);max-width:none}
 }
 </style>
+<style id="sbp-fixes">
+/* ===== SBP responsive + polish fixes (2026-07-24) ===== */
+/* Formula: below 3-across, stack to a centered single column; operators centered (not floating right) */
+@media(max-width:1024px){
+  .formula-horizontal{flex-direction:column!important;align-items:stretch!important;gap:16px!important}
+  .formula-pillar,.formula-result-pill{width:100%!important;flex:1 1 auto!important;min-width:0!important}
+  .formula-op{align-self:center!important;margin:2px auto!important;transform:none!important}
+}
+/* AI journey: keep website + chat + call on ONE line (1x3); scale as a unit; phone keeps aspect (no stretch) */
+.ai-journey{flex-wrap:nowrap!important}
+.ai-journey-arrow{transform:none!important;flex:0 0 auto}
+.ai-journey .ai-phone{width:300px!important;max-width:300px!important;flex:0 0 auto}
+@media(max-width:1080px){.ai-journey{zoom:.86}}
+@media(max-width:940px){.ai-journey{zoom:.72}}
+@media(max-width:760px){.ai-journey{zoom:.60}}
+@media(max-width:600px){.ai-journey{zoom:.48}}
+@media(max-width:470px){.ai-journey{zoom:.38}}
+@media(max-width:400px){.ai-journey{zoom:.30}}
+/* Founder: portrait stays on the RIGHT on resize; stack only on true mobile */
+@media(min-width:561px){.dean-intro-grid{grid-template-columns:1.05fr .95fr!important;gap:clamp(28px,4vw,56px)!important;align-items:center!important}}
+@media(max-width:560px){.dean-intro-grid{grid-template-columns:1fr!important}}
+.dean-portrait-wrap{min-width:0}
+/* Timeline: keep Day 1/2/3 as 1x3; stack only on true mobile */
+.timeline{grid-template-columns:repeat(3,minmax(0,1fr))!important;max-width:920px;margin-left:auto;margin-right:auto}
+@media(max-width:640px){.timeline{grid-template-columns:1fr!important}}
+/* Answers deck (prep-ported): kill leftover Playfair serif + gold; use page Montserrat + SBP blue */
+.prep-ported-block{--serif:'Montserrat',sans-serif;--sans:'Open Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--gold:#2563EB;--gold-l:#60A5FA;--navy:#0F172A}
+.prep-ported-block .slide .big{font-family:'Montserrat',sans-serif!important;letter-spacing:-0.01em}
+.prep-ported-block .slide .pop,.prep-ported-block .gold,.prep-ported-block .eyebrow{color:#2563EB!important}
+.prep-ported-block .eyebrow:before,.prep-ported-block .eyebrow:after{background:#2563EB!important}
+</style>
 </head>
 <body>
 
@@ -2150,7 +2181,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
             <span class="feature-card-tag feature-card-tag-traffic">TRAFFIC</span>
           </div>
           <p class="feature-card-meta">Visitors get answers in seconds &mdash; no waiting on a callback.</p>
-          <figure class="fhow-card-img"><div class="shot-win"><div class="sw-bar"><span class="sw-dot r"></span><span class="sw-dot y"></span><span class="sw-dot g"></span><div class="sw-url"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9aa7ba" stroke-width="2.4"><rect x="4" y="10.5" width="16" height="10.5" rx="2"></rect><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"></path></svg><span>google.com</span></div></div><img src="getprices.webp" alt="Instant price quotes on your site"></div></figure>
+          
         </article>
 
         <article class="feature-card">
@@ -2160,7 +2191,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
             <span class="feature-card-tag feature-card-tag-traffic">TRAFFIC</span>
           </div>
           <p class="feature-card-meta">When people search for care near them, your name is the one that comes up.</p>
-          <figure class="fhow-card-img"><div class="shot-win"><div class="sw-bar"><span class="sw-dot r"></span><span class="sw-dot y"></span><span class="sw-dot g"></span><div class="sw-url"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9aa7ba" stroke-width="2.4"><rect x="4" y="10.5" width="16" height="10.5" rx="2"></rect><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"></path></svg><span>chatgpt.com</span></div></div><img src="recommend.png" alt="Recommended by name in local search"></div></figure>
+          
         </article>
 
         <article class="feature-card">
@@ -2170,7 +2201,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
             <span class="feature-card-tag feature-card-tag-traffic">TRAFFIC</span>
           </div>
           <p class="feature-card-meta">AI search recommends barely 1% of local businesses &mdash; we make sure you&rsquo;re one of them.</p>
-          <figure class="fhow-card-img"><div class="shot-win"><div class="sw-bar"><span class="sw-dot r"></span><span class="sw-dot y"></span><span class="sw-dot g"></span><div class="sw-url"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9aa7ba" stroke-width="2.4"><rect x="4" y="10.5" width="16" height="10.5" rx="2"></rect><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"></path></svg><span>natlawreview.com</span></div></div><img src="article-highlighted.png" alt="National Law Review: AI search recommends only 1.2% of local businesses"></div></figure>
+          
         </article>
       </div>
 
@@ -2263,7 +2294,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
             <span class="feature-card-tag feature-card-tag-conversion">CONVERT</span>
           </div>
           <p class="feature-card-meta">One question at a time, so far more people actually finish it.</p>
-          <figure class="fhow-card-img"><div class="shot-win"><div class="sw-bar"><span class="sw-dot r"></span><span class="sw-dot y"></span><span class="sw-dot g"></span><div class="sw-url blank"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#9aa7ba" stroke-width="2.4"><rect x="4" y="10.5" width="16" height="10.5" rx="2"></rect><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"></path></svg><span>Your smart website</span></div></div><img src="https://prep.solidbookedpro.com/assets/img/multi-form.gif" alt="Multi-page form"></div></figure>
+          
         </article>
 
         <article class="feature-card">
@@ -2273,7 +2304,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
             <span class="feature-card-tag feature-card-tag-conversion">CONVERT</span>
           </div>
           <p class="feature-card-meta">Most people find you on their phone while doing something else &mdash; it&rsquo;s built to convert on a 5-inch screen first.</p>
-          <figure class="fhow-card-img"><div class="shot-phone"><div class="sp-screen"><iframe class="phone-live" src="https://demo.solidbookedpro.com/gihon-family-care-home/" title="Gihon Family Care Home mobile site" loading="lazy"></iframe></div></div></figure>
+          
         </article>
       </div>
 
@@ -2621,7 +2652,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
       <div class="dean-portrait-wrap">
         <div class="dean-portrait" role="img" aria-label="Vince Stars at RoofCon"><img src="vince.jpg" alt="Vince Stars" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:relative;z-index:1;display:block">
           <img src="placeholder.svg" alt="Vince Stars, KCA Founder" loading="lazy">
-          <div class="dean-portrait-caption">Vince Stars &middot; Founder of KCA</div>
+          <div class="dean-portrait-caption">Vince Stars &middot; Founder of SolidBooked Pro</div>
         </div>
       </div>
     </div>
@@ -3042,9 +3073,9 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
       <h2 class="rv">Owners talking it through</h2>
           </div>
     <div class="reels rv">
-      <article class="reel"><video controls preload="metadata" playsinline poster="https://prep.solidbookedpro.com/assets/img/poster-reel-deonco.jpg" data-vid="reel-deonco"><source src="https://prep.solidbookedpro.com/assets/video/reel-deonco.mp4" type="video/mp4"></video>
+      <article class="reel"><video controls preload="metadata" playsinline poster="poster-reel-deonco.png" data-vid="reel-deonco"><source src="https://prep.solidbookedpro.com/assets/video/reel-deonco.mp4" type="video/mp4"></video>
         <div class="meta"><b>"You walked me through it. I seen what I've been doing wrong. I've been needed you"</b>Deonco, Black Mold Guys. $12,000 on SEO over three months got him tire kickers. A rebrand plus filters that screen out tire kickers took his win rate from 20% to 52%.</div></article>
-      <article class="reel"><video controls preload="metadata" playsinline poster="https://prep.solidbookedpro.com/assets/img/poster-reel-ijeoma.jpg" data-vid="reel-ijeoma"><source src="https://prep.solidbookedpro.com/assets/video/reel-ijeoma.mp4" type="video/mp4"></video>
+      <article class="reel"><video controls preload="metadata" playsinline poster="poster-reel-ijeoma.png" data-vid="reel-ijeoma"><source src="https://prep.solidbookedpro.com/assets/video/reel-ijeoma.mp4" type="video/mp4"></video>
         <div class="meta"><b>"By year 5 I expected to be in a better position"</b>Ijeoma, Oma Organics. Five years of loyal customers, but she wanted growth. A premium rebrand, a website upsell to lift average order value, and traffic to her site.</div></article>
     </div>
   </div>

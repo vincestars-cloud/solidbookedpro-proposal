@@ -76,6 +76,11 @@ doc, n_live = re.subn(r'<a\b[^>]*cover-open-live[^>]*>.*?</a>', '', doc, flags=r
 doc, n_roi = re.subn(r'<section\b[^>]*section-roi[^>]*>.*?</section>', '', doc, flags=re.S)
 doc, n_car = re.subn(r'<section\b[^>]*section-client-builds[^>]*>.*?</section>', '', doc, flags=re.S)
 doc, n_ftag = re.subn(r'<p\b[^>]*footer-tag[^>]*>.*?</p>', '', doc, flags=re.S)
+# 1e. Traffic & Conversion "How?" panels -> text-only like Trust (strip screenshot figures) [2026-07-24]
+doc, n_fig = re.subn(r'<figure class="fhow-card-img">.*?</figure>', '', doc, flags=re.S)
+# 1f. real branded reel thumbnails (remote poster jpgs -> local pngs shipped in repo)
+doc = doc.replace('poster="https://prep.solidbookedpro.com/assets/img/poster-reel-deonco.jpg"', 'poster="poster-reel-deonco.png"')
+doc = doc.replace('poster="https://prep.solidbookedpro.com/assets/img/poster-reel-ijeoma.jpg"', 'poster="poster-reel-ijeoma.png"')
 
 # ============ 2. LAPTOP PREVIEW: non-interactive home-care mock (no live URL) ============
 MOCK = ('<div style=\'font-family:Open Sans,sans-serif;color:#0F172A;background:#fff\'>'
@@ -160,6 +165,7 @@ reps = [
     ('8376 Davis Blvd, Suite 249, Spring, TX', CFG['address']),
     ('Licensed (TX #03-0235)', ''),
     ('Chris', CFG['first_name']),
+    ('Founder of KCA', 'Founder of SolidBooked Pro'),
     # ---- POST-SWAP fixes: MUST run after the industry swaps above ----
     # founder bio stays Vince's real roofing track record (restore after roofing->home care)
     ('home care companies','roofing companies'), ('in seniors sold','in roofs sold'),
@@ -230,6 +236,38 @@ img,video,iframe,svg{max-width:100%}
 @media(max-width:1024px){ .ai-row{gap:12px} .ai-row > *{min-width:0;flex-shrink:1} }
 @media(max-width:860px){ .ai-row-mock{transform:scale(.82);transform-origin:top center} }
 @media(max-width:620px){ .ai-row-mock{transform:scale(.66)} }
+</style>
+'''
+# Consolidated responsive + polish fixes (2026-07-24 per Vince) — appended LAST so it wins the cascade.
+FIXES_CSS = '''<style id="sbp-fixes">
+/* Formula: below 3-across, stack to a centered single column; operators centered (not floating right) */
+@media(max-width:1024px){
+  .formula-horizontal{flex-direction:column!important;align-items:stretch!important;gap:16px!important}
+  .formula-pillar,.formula-result-pill{width:100%!important;flex:1 1 auto!important;min-width:0!important}
+  .formula-op{align-self:center!important;margin:2px auto!important;transform:none!important}
+}
+/* AI journey: keep website + chat + call on ONE line (1x3); scale as a unit; phone keeps aspect (no stretch) */
+.ai-journey{flex-wrap:nowrap!important}
+.ai-journey-arrow{transform:none!important;flex:0 0 auto}
+.ai-journey .ai-phone{width:300px!important;max-width:300px!important;flex:0 0 auto}
+@media(max-width:1080px){.ai-journey{zoom:.86}}
+@media(max-width:940px){.ai-journey{zoom:.72}}
+@media(max-width:760px){.ai-journey{zoom:.60}}
+@media(max-width:600px){.ai-journey{zoom:.48}}
+@media(max-width:470px){.ai-journey{zoom:.38}}
+@media(max-width:400px){.ai-journey{zoom:.30}}
+/* Founder: portrait stays on the RIGHT on resize; stack only on true mobile */
+@media(min-width:561px){.dean-intro-grid{grid-template-columns:1.05fr .95fr!important;gap:clamp(28px,4vw,56px)!important;align-items:center!important}}
+@media(max-width:560px){.dean-intro-grid{grid-template-columns:1fr!important}}
+.dean-portrait-wrap{min-width:0}
+/* Timeline: keep Day 1/2/3 as 1x3; stack only on true mobile */
+.timeline{grid-template-columns:repeat(3,minmax(0,1fr))!important;max-width:920px;margin-left:auto;margin-right:auto}
+@media(max-width:640px){.timeline{grid-template-columns:1fr!important}}
+/* Answers deck (prep-ported): kill leftover Playfair serif + gold; use page Montserrat + SBP blue */
+.prep-ported-block{--serif:'Montserrat',sans-serif;--sans:'Open Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--gold:#2563EB;--gold-l:#60A5FA;--navy:#0F172A}
+.prep-ported-block .slide .big{font-family:'Montserrat',sans-serif!important;letter-spacing:-0.01em}
+.prep-ported-block .slide .pop,.prep-ported-block .gold,.prep-ported-block .eyebrow{color:#2563EB!important}
+.prep-ported-block .eyebrow:before,.prep-ported-block .eyebrow:after{background:#2563EB!important}
 </style>
 '''
 doc = doc.replace('</head>', BRAND_CSS + MOBILE_CSS + '</head>')
@@ -306,6 +344,7 @@ PP_JS = "<script>(function(){var p=document.querySelector('.plan-picker');if(!p)
 doc, n_pp = re.subn(r'<section\b[^>]*section-grey[^>]*>.*?</section>', lambda m: PP_HTML, doc, count=1, flags=re.S)
 doc = doc.replace('</head>', PP_CSS + '</head>')
 doc = doc.replace('</body>', PP_JS + '</body>')
+doc = doc.replace('</head>', FIXES_CSS + '</head>')   # append LAST so responsive fixes win the cascade
 
 # strip dev/pipeline HTML comments (non-visible, keeps template clean)
 doc = re.sub(r'<!--.*?-->', '', doc, flags=re.S)
