@@ -455,7 +455,7 @@ a{color:inherit;text-decoration:none}
 /* Sitemap pyramid · used inside Traffic accordion (lifted from §10 - reuses existing .page-box / .pyramid-* classes already defined in DELIVERABLES block below) */
 .formula-how-content .sitemap-pyramid{margin-top:24px}
 
-/* === AI INFRASTRUCTURE · dedicated GHL-style showcase (added 2026-05-10 per Vince transcript) === */
+/* === receptionist INFRASTRUCTURE · dedicated GHL-style showcase (added 2026-05-10 per Vince transcript) === */
 .section-ai-infra{background:#F6F9FF;color:#030303;padding:96px 0;border-top:1px solid rgba(0,0,0,0.06);border-bottom:1px solid rgba(0,0,0,0.06)}
 .ai-infra-head{text-align:center;max-width:680px;margin:0 auto 56px}
 .ai-infra-eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#2563EB;margin-bottom:18px;padding:6px 14px;background:rgba(174,49,45,0.08);border:1px solid rgba(174,49,45,0.32);border-radius:99px}
@@ -528,7 +528,7 @@ a{color:inherit;text-decoration:none}
 .ai-phone-btn-decline{background:#FF453A;box-shadow:0 6px 14px rgba(255,69,58,0.42)}
 .ai-phone-btn-accept{background:#34C759;box-shadow:0 6px 14px rgba(52,199,89,0.42)}
 
-/* AI card highlight · Smart Chatbot + Reputation Management get a richer treatment (per Vince transcript 2026-05-10) */
+/* receptionist card highlight · Receptionist + Reputation Management get a richer treatment (per Vince transcript 2026-05-10) */
 .feature-card-ai-highlight{background:linear-gradient(180deg,#fff 0%,#FFFCF3 100%);border:1.5px solid rgba(238,182,68,0.42);box-shadow:0 12px 26px rgba(238,182,68,0.16),0 2px 6px rgba(0,0,0,0.06);position:relative;overflow:hidden}
 .feature-card-ai-highlight::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(180deg,#2563EB 0%,#2563EB 100%)}
 .feature-card-ai-highlight .feature-card-num{background:linear-gradient(135deg,#2563EB 0%,#1D4ED8 100%);color:#030303;box-shadow:0 4px 10px rgba(238,182,68,0.35)}
@@ -839,7 +839,7 @@ details.proposal-collapsible[open] > .ps-summary{
 .included-text strong{font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:#030303;display:block;margin-bottom:3px}
 .included-text p{font-size:13px;color:#54595F;line-height:1.55}
 
-/* ============================ AI INFRASTRUCTURE (mobile-bullets) ============================ */
+/* ============================ receptionist INFRASTRUCTURE (mobile-bullets) ============================ */
 .ai-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 @media (max-width:768px){.ai-grid{grid-template-columns:1fr}}
 .ai-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:22px;position:relative;transition:border-color 0.2s,background 0.2s}
@@ -1637,7 +1637,7 @@ img,video,iframe,svg{max-width:100%}
   .formula-pillar,.formula-result-pill{padding:16px 14px!important}
   .formula-pillar-term,.formula-result-text{font-size:19px!important}
 }
-/* AI section: keep website + chat + call on one line and shrink together (no phone drop) */
+/* receptionist section: keep website + chat + call on one line and shrink together (no phone drop) */
 .ai-row,.ai-row-mock{min-width:0}
 .ai-row-mock{flex-wrap:nowrap!important}
 .ai-row-mock > *{min-width:0;flex:0 1 auto}
@@ -1682,7 +1682,253 @@ img,video,iframe,svg{max-width:100%}
 .pp-plan:hover{transform:translateY(-2px)}
 .pp-plan.pp-selected{background:#16A34A;border-color:#15803D;color:#fff;box-shadow:0 14px 28px rgba(22,163,74,.35)}
 @media(max-width:640px){.pp-diagram{grid-template-columns:1fr;gap:18px}.pp-left,.pp-right{justify-content:center;text-align:center}.pp-side .pp-arrow{transform:rotate(90deg)}.pp-plan{min-width:104px;padding:15px 18px}.pp-plan b{font-size:23px}}
-</style></head>
+</style><style id="prep-ported">
+:root{
+  --navy:#0A1525; --navy-2:#0F1E35; --cream:#FAF7F0; --white:#FFFFFF;
+  --ink:#0F1E35; --ink2:#4A5568; --muted:#7C8697;
+  --gold:#C8A84B; --gold-l:#DCC079; --red:#D2402E; --green:#1F8F55;
+  --line:#E7E0D0; --line-d:rgba(255,255,255,.16);
+  --r:10px;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --cond:'Barlow Condensed',var(--sans);
+  --stat:'Oswald',var(--sans);
+  --hand:'Kalam',cursive;
+  --pad:clamp(1.1rem,4.5vw,2rem); --gap:clamp(3rem,7vw,5.2rem);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--white);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;
+  line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--serif);font-weight:800;letter-spacing:-.02em;line-height:1.1;text-wrap:balance}
+h1{font-size:clamp(1.95rem,6vw,3.3rem)}
+h2{font-size:clamp(1.6rem,4.4vw,2.5rem)}
+h3{font-size:clamp(1.05rem,2.6vw,1.28rem);line-height:1.28}
+p{max-width:64ch}
+.wrap{max-width:1080px;margin:0 auto;padding-inline:var(--pad)}
+.narrow{max-width:720px;margin-inline:auto}
+section{padding-block:var(--gap)}
+.center{text-align:center}.center p{margin-inline:auto}
+.stack{display:flex;flex-direction:column}
+.g1{gap:.5rem}.g2{gap:1rem}.g3{gap:1.7rem}.g4{gap:2.5rem}
+.lede{font-size:clamp(1rem,2.1vw,1.14rem);color:var(--ink2)}
+.eyebrow{font-family:var(--cond);font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:700;color:var(--gold);display:flex;align-items:center;gap:.6rem;justify-content:center}
+.eyebrow:before,.eyebrow:after{content:"";height:1px;width:26px;background:var(--gold);opacity:.55}
+.dark{background:var(--navy);color:#fff}
+.dark h1,.dark h2,.dark h3{color:#fff}
+.dark p{color:#B9C2D0}
+.dark .eyebrow{color:var(--gold)}
+.band{background:var(--cream);border-block:1px solid var(--line)}
+.gold{color:var(--gold)}
+.nb{white-space:normal}
+@media(min-width:560px){.nb{white-space:nowrap}}
+.ul{position:relative;white-space:nowrap}
+.ul svg{position:absolute;left:-2%;bottom:-.3em;width:104%;height:.38em;overflow:visible}
+.ul path{stroke:var(--red);stroke-width:5;fill:none;stroke-linecap:round}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ---- bar ---- */
+.bar{background:var(--navy);border-bottom:1px solid var(--line-d)}
+.bar-in{max-width:1080px;margin:0 auto;padding:.7rem var(--pad);display:flex;align-items:center;
+  justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.wordmark{font-family:var(--serif);font-weight:800;font-size:1.15rem;letter-spacing:-.02em;color:#fff}
+.wordmark i{font-style:normal;color:var(--gold)}
+.wordmark.foot{font-size:1.1rem;opacity:.95}
+.trust{display:none;gap:1.15rem;font-family:var(--cond);font-size:.78rem;letter-spacing:.16em;
+  text-transform:uppercase;color:#93A0B4;font-weight:600}
+@media(min-width:780px){.trust{display:flex}}
+
+/* ---- video player (demo.scalingsos.com pattern) ---- */
+.player{position:relative;border:3px solid var(--gold);border-radius:var(--r);overflow:hidden;
+  background:#000;cursor:pointer;line-height:0}
+.player video{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.loadbar{position:absolute;left:0;right:0;bottom:0;height:5px;background:rgba(255,255,255,.22);z-index:3}
+.lfill{height:100%;width:0;background:var(--gold);transition:width .3s linear;box-shadow:0 0 8px rgba(200,168,75,.7)}
+.tap-sound{position:absolute;top:.7rem;right:.7rem;display:flex;align-items:center;gap:.4rem;
+  background:rgba(10,21,37,.82);color:#fff;font-family:var(--sans);font-size:.8rem;font-weight:600;
+  padding:.42rem .7rem;border-radius:999px;line-height:1;backdrop-filter:blur(6px);
+  border:1px solid rgba(255,255,255,.22)}
+.tap-sound svg{width:15px;height:15px;flex:none}
+.tap-sound.gone{display:none}
+.bigplay{position:absolute;inset:0;display:grid;place-items:center;background:rgba(10,21,37,.26)}
+@keyframes sbpBreath{0%,100%{transform:scale(1);box-shadow:0 8px 26px rgba(0,0,0,.35),0 0 0 0 rgba(200,168,75,.55)}
+  50%{transform:scale(1.07);box-shadow:0 8px 26px rgba(0,0,0,.35),0 0 0 16px rgba(200,168,75,0)}}
+.bigplay i{width:64px;height:64px;border-radius:50%;background:var(--gold);display:grid;place-items:center;
+  box-shadow:0 8px 26px rgba(0,0,0,.35);animation:sbpBreath 2.2s ease-in-out infinite}
+@media(prefers-reduced-motion:reduce){.bigplay i{animation:none}}
+.bigplay i:after{content:"";border-left:18px solid #0A1525;border-top:11px solid transparent;
+  border-bottom:11px solid transparent;margin-left:5px}
+.player.playing .bigplay{display:none}
+
+/* ---- steps ---- */
+.steps{display:grid;gap:.9rem;counter-reset:st}
+@media(min-width:780px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:1.25rem;
+  display:grid;gap:.45rem;align-content:start}
+.step .n{counter-increment:st;font-family:var(--stat);font-weight:700;font-size:1.45rem;color:var(--gold);line-height:1}
+.step .n:before{content:counter(st)}
+.step p{font-size:.94rem;color:var(--ink2)}
+
+/* ---- question decks: 2 columns ---- */
+.qgrid{display:grid;gap:1rem}
+@media(min-width:840px){.qgrid{grid-template-columns:1fr 1fr}}
+.deck{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  overflow:hidden;display:flex;flex-direction:column;box-shadow:0 10px 26px -20px rgba(15,30,53,.45)}
+.slides{display:flex;transition:transform .42s cubic-bezier(.16,1,.3,1);flex:1}
+.slide{flex:0 0 100%;min-width:100%;padding:clamp(1.25rem,3.6vw,1.8rem);display:grid;gap:.75rem;
+  align-content:center;justify-items:center;text-align:center;min-height:296px}
+.slide.q{background:var(--navy)}
+.slide.q .big{color:#fff}
+.slide.q p{color:#B9C2D0}
+.slide .big{font-family:var(--serif);font-weight:800;font-size:clamp(1.2rem,3vw,1.6rem);
+  line-height:1.16;letter-spacing:-.02em;max-width:20ch;margin-inline:auto}
+.slide p{font-size:.96rem;color:var(--ink2);max-width:42ch;margin-inline:auto}
+.slide .pop{color:var(--gold)}
+.slide img,.slide .sv{border-radius:6px;border:1px solid var(--line);background:#fff;
+  width:100%;max-height:186px;object-fit:contain}
+.deck-bar{display:flex;align-items:center;justify-content:space-between;gap:.6rem;padding:.55rem .7rem;
+  border-top:1px solid var(--line);background:var(--cream)}
+.deck-ctr{display:flex;flex-direction:column;align-items:center;gap:.35rem;min-width:0}
+.dots{display:flex;gap:.34rem;flex-wrap:wrap;justify-content:center}
+.dot{width:6px;height:6px;border-radius:50%;background:#CFC7B6;border:0;cursor:pointer;transition:.2s}
+.dot[aria-current="true"]{background:var(--gold);width:17px;border-radius:999px}
+.arw{width:2.7rem;height:2.7rem;flex:none;border-radius:50%;border:1px solid var(--line);background:#fff;
+  cursor:pointer;display:grid;place-items:center;font-size:1.25rem;color:var(--ink);font-family:inherit;
+  box-shadow:0 2px 6px -3px rgba(15,30,53,.3);transition:.16s}
+@media(min-width:840px){.arw{width:2.3rem;height:2.3rem;font-size:1.05rem}}
+.arw:hover:not(:disabled){border-color:var(--gold);color:var(--gold)}
+.arw:disabled{opacity:.3;cursor:default}
+.ct{font-size:.78rem;color:var(--muted);font-variant-numeric:tabular-nums}
+
+.slide img.lg,.slide .sv.lg{max-height:250px}
+.slist{list-style:none;display:grid;gap:.5rem;margin:0;padding:0;text-align:left;max-width:36ch;font-size:.95rem;color:var(--ink2)}
+.slist li{display:grid;grid-template-columns:auto 1fr;gap:.55rem;align-items:start;line-height:1.45}
+.slist li:before{content:"";width:.4rem;height:.4rem;border-radius:50%;background:var(--gold);margin-top:.5rem}
+/* ---- how it works (matches Contractor Independence) ---- */
+.hiw-head{max-width:900px}
+.eyebrow.lead{justify-content:flex-start}
+.eyebrow.lead:before{width:34px}.eyebrow.lead:after{display:none}
+.hiw-title{font-size:clamp(2rem,6vw,3.2rem);line-height:1.02;margin:.7rem 0 0}
+.hiw-title .sysname{font-family:var(--stat);font-weight:700;text-transform:uppercase;
+  letter-spacing:.005em;color:var(--gold)}
+.hiw-title sup{font-family:var(--sans);font-size:.34em;font-weight:600;color:var(--gold);top:-1.1em}
+.hiw-q{border-left:3px solid var(--gold);padding:.15rem 0 .15rem 1.05rem;margin-top:1.15rem;
+  font-family:var(--hand);font-size:clamp(1.05rem,2.6vw,1.35rem);line-height:1.5;color:var(--ink2);max-width:60ch}
+.math{display:grid;gap:1.4rem 0;align-items:start}
+@media(min-width:820px){.math{grid-template-columns:1fr auto 1fr auto 1fr;gap:0 clamp(1rem,2.5vw,2.2rem)}}
+.mcell{display:grid;gap:.5rem;align-content:start}
+.mcell .fig{font-family:var(--stat);font-weight:700;font-size:clamp(2.9rem,9vw,4.1rem);line-height:1;
+  color:var(--navy);letter-spacing:-.01em}
+.mcell .fig span{font-size:.62em}
+.mcell .lbl{font-family:var(--cond);font-size:.86rem;letter-spacing:.15em;text-transform:uppercase;
+  font-weight:700;color:var(--gold)}
+.mcell p{font-size:.98rem;color:var(--ink2);line-height:1.62}
+.op{display:grid;align-items:start;padding-top:.15rem;font-family:var(--stat);font-size:clamp(1.9rem,4.2vw,2.7rem);
+  color:var(--gold);font-weight:700}
+@media(max-width:819px){.op{justify-items:start;padding:0}}
+.mcell.out .fig{color:var(--green);font-size:clamp(3.5rem,11vw,5.2rem);letter-spacing:-.02em}
+.mcell.out .lbl{color:var(--green)}
+
+/* ---- the work ---- */
+.bagrid{display:grid;gap:.7rem;grid-template-columns:repeat(2,1fr)}
+@media(min-width:1000px){.bagrid{grid-template-columns:repeat(3,1fr)}}
+.bacard{background:var(--white);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
+  box-shadow:0 10px 24px -18px rgba(15,30,53,.4)}
+
+/* ---- in their words ---- */
+.reels{display:grid;gap:1rem}
+@media(min-width:820px){.reels{grid-template-columns:1fr 1fr}}
+.reel{background:var(--navy-2);border:2px solid var(--gold);border-radius:var(--r);overflow:hidden}
+.reel video{width:100%;aspect-ratio:16/9;object-fit:cover;background:#000}
+.reel .meta{padding:.85rem 1rem;color:#B9C2D0;font-size:.88rem}
+.reel .meta b{display:block;font-family:var(--serif);color:#fff;font-weight:800;font-size:1.02rem;margin-bottom:.1rem}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:64%;gap:.8rem;overflow-x:auto;
+  scroll-snap-type:x mandatory;margin-inline:calc(var(--pad)*-1);padding:0 var(--pad) .4rem;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+@media(min-width:760px){.rail{grid-auto-columns:minmax(0,1fr);overflow:visible;margin-inline:0;padding-inline:0}}
+.rail>*{scroll-snap-align:start}
+.vtall{background:var(--navy-2);border:2px solid var(--gold);border-radius:var(--r);overflow:hidden}
+.vtall video{width:100%;aspect-ratio:9/16;object-fit:cover;background:#000}
+.vtall .meta{padding:.7rem .85rem;color:#B9C2D0;font-size:.83rem}
+.vtall .meta b{display:block;font-family:var(--serif);color:#fff;font-weight:800;font-size:.95rem}
+
+/* ---- what to expect ---- */
+.agenda{display:grid;gap:.6rem}
+.ag{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:1.05rem 1.25rem;
+  display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:baseline}
+.ag .n{font-family:var(--stat);font-weight:700;color:var(--gold);font-size:1.15rem}
+.ag b{display:block;margin-bottom:.12rem;font-weight:700}
+.ag .d{color:var(--ink2);font-size:.95rem}
+
+/* ---- pricing + note ---- */
+.pricebox{background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  padding:clamp(1.6rem,5vw,2.6rem) clamp(1.4rem,4vw,2.2rem) clamp(2.6rem,6vw,3.4rem);
+  text-align:center;max-width:430px;margin-inline:auto;box-shadow:0 14px 34px -24px rgba(15,30,53,.5)}
+.pricebox .lbl{font-family:var(--cond);font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--gold);font-weight:700}
+.pricebox .fig{font-family:var(--serif);font-weight:900;font-size:clamp(2.3rem,7.6vw,3.3rem);
+  line-height:1;letter-spacing:-.03em;margin:.5rem 0 .8rem;white-space:nowrap}
+.pricebox .terms{font-family:var(--cond);font-size:1.02rem;letter-spacing:.08em;text-transform:uppercase;
+  font-weight:600;color:var(--ink2);line-height:1.85}
+.note{
+  color:#3A2E08;padding:clamp(1.9rem,5vw,2.5rem) clamp(1.5rem,4vw,2.1rem) clamp(1.6rem,4vw,2rem);
+  max-width:396px;margin:-1.6rem auto 0;display:grid;gap:.7rem;position:relative;z-index:2;
+  text-align:center;justify-items:center;transform:rotate(-1.8deg);
+  background:
+    radial-gradient(120% 90% at 30% 0%, #FBE58A 0%, #F6D96B 55%, #EFCB4E 100%);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.5) inset,
+    0 -22px 26px -22px rgba(120,86,0,.35) inset,
+    0 18px 34px -14px rgba(30,22,0,.4),
+    0 2px 6px rgba(30,22,0,.18);
+  clip-path:polygon(0.5% 1.5%, 99% 0%, 99.5% 98%, 1% 99.5%);
+}
+.note:before{content:"";position:absolute;top:-14px;left:50%;transform:translateX(-50%) rotate(-2.5deg);
+  width:118px;height:30px;background:rgba(222,206,150,.72);
+  box-shadow:0 2px 5px rgba(0,0,0,.14);border-left:1px dashed rgba(255,255,255,.4);border-right:1px dashed rgba(255,255,255,.4)}
+.note:after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent 0 27px,rgba(120,86,0,.05) 27px 28px);
+  mix-blend-mode:multiply;opacity:.5}
+.note p{font-family:var(--hand);font-size:clamp(1.08rem,2.8vw,1.24rem);line-height:1.5;color:#3A2E08;max-width:none;margin-inline:auto;position:relative}
+.note .sig{font-family:var(--hand);font-size:1.34rem;font-weight:700;color:#6B531A;position:relative}
+.note-h{font-family:var(--hand);font-weight:700;color:var(--red);position:relative;
+  font-size:clamp(1.5rem,5vw,1.9rem);line-height:1.1;margin-bottom:.15rem}
+
+/* ---- faq ---- */
+.faq details{background:var(--white);border:1px solid var(--line);border-radius:var(--r);margin-bottom:.55rem;overflow:hidden}
+.faq summary{cursor:pointer;list-style:none;padding:1rem clamp(.95rem,3vw,1.25rem);padding-right:2.6rem;
+  position:relative;font-weight:700;font-size:1rem;letter-spacing:-.01em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:after{content:"";position:absolute;right:1.1rem;top:1.25rem;width:9px;height:9px;
+  border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);transition:transform .25s}
+.faq details[open] summary:after{transform:rotate(-135deg)}
+.faq details[open] summary{background:var(--cream)}
+.faq .a{padding:0 clamp(.95rem,3vw,1.25rem) 1.15rem;color:var(--ink2)}
+.faq .a p{font-size:.97rem;max-width:64ch}
+.faq summary:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+/* ---- lightbox ---- */
+.lbx{position:fixed;inset:0;z-index:200;background:rgba(10,21,37,.92);display:none;
+  align-items:center;justify-content:center;padding:clamp(.8rem,4vw,2rem);cursor:zoom-out;
+  opacity:0;transition:opacity .2s}
+.lbx.on{display:flex;opacity:1}
+.lbx img{max-width:96vw;max-height:90vh;width:auto;height:auto;border-radius:8px;
+  box-shadow:0 24px 60px -12px rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.12);cursor:default}
+.lbx-x{position:absolute;top:.9rem;right:1rem;width:2.6rem;height:2.6rem;border-radius:50%;
+  border:0;background:rgba(255,255,255,.14);color:#fff;font-size:1.4rem;line-height:1;cursor:pointer;
+  display:grid;place-items:center;backdrop-filter:blur(6px)}
+.lbx-x:hover{background:rgba(255,255,255,.24)}
+.bacard{cursor:zoom-in}
+.bacard img{transition:transform .18s}
+@media(hover:hover){.bacard:hover img{transform:scale(1.02)}}
+footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:center;font-size:.86rem}
+
+.rv-armed{opacity:0;transform:translateY(16px)}
+@media(prefers-reduced-motion:reduce){.rv-armed{opacity:1!important;transform:none!important}
+  html{scroll-behavior:auto}.slides{transition:none}.lfill{transition:none}}
+</style>
+</head>
 <body>
 
 
@@ -1757,7 +2003,7 @@ img,video,iframe,svg{max-width:100%}
           <span class="formula-pillar-icon" aria-hidden="true">&#128200;</span>
         </div>
         <span class="formula-pillar-term">Traffic</span>
-        <span class="formula-pillar-tag">Get found first on Google + AI</span>
+        <span class="formula-pillar-tag">Get found first on Google + receptionist</span>
         <button type="button" class="formula-how-btn" aria-expanded="false" aria-controls="formula-how-panel">How?<span class="formula-how-chevron" aria-hidden="true"></span></button>
       </div>
 
@@ -1812,10 +2058,10 @@ img,video,iframe,svg{max-width:100%}
         <article class="feature-card">
           <div class="feature-card-head">
             <span class="feature-card-num">01</span>
-            <h4 class="feature-card-title"><span class="fc-emoji">&#127760;</span> SEO + AEO architecture &middot; location, schema, AI-ready</h4>
+            <h4 class="feature-card-title"><span class="fc-emoji">&#127760;</span> SEO + AEO architecture &middot; location, schema, receptionist-ready</h4>
             <span class="feature-card-tag feature-card-tag-traffic">SEO</span>
           </div>
-          <p class="feature-card-meta">Local pages plus clean structured data, so AI assistants name you as the answer.</p>
+          <p class="feature-card-meta">Local pages plus clean structured data, so receptionist assistants name you as the answer.</p>
           <ul class="feature-card-bullets">
             <li><strong>5 location landing pages</strong> , one per city you serve. Indexed for "care provider near me" intent.</li>
             <li><strong>Schema + FAQ markup</strong> , entity-pair structure ChatGPT and Gemini can cite directly.</li>
@@ -1823,9 +2069,9 @@ img,video,iframe,svg{max-width:100%}
           </ul>
           <div class="feature-card-stat-callout">
             <div class="feature-card-stat-num">50%</div>
-            <div class="feature-card-stat-text"><strong>Why this works:</strong> 50% of seniors now ask AI before Google. Your new site shows up in both , your competitor's old site doesn't.</div>
+            <div class="feature-card-stat-text"><strong>Why this works:</strong> 50% of seniors now ask receptionist before Google. Your new site shows up in both , your competitor's old site doesn't.</div>
           </div>
-          <a class="feature-card-cta" href="https://osaat-home care-construction.vercel.app#service-area" target="_blank" rel="noopener">See it in your service-area grid &rarr;</a>
+          
         </article>
 
         <div class="sitemap-pyramid">
@@ -1893,7 +2139,7 @@ img,video,iframe,svg{max-width:100%}
                 <li><strong>Speed-optimized</strong> , Lighthouse 90+ on every page.</li>
                 <li><strong>Mobile-first metadata</strong> + canonical hygiene + sitemap auto-ping.</li>
                 <li><strong>Per-page meta + OG tags</strong> written for the keyword + intent.</li>
-                <li><strong>60-second AI callback</strong> so leads don't bounce while traffic ramps.</li>
+                <li><strong>60-second receptionist callback</strong> so leads don't bounce while traffic ramps.</li>
               </ul>
             </div>
 
@@ -1986,8 +2232,8 @@ img,video,iframe,svg{max-width:100%}
             </article>
             <article class="traffic-funnel-card">
               <div class="tfc-step">03</div>
-              <div class="tfc-name">The AI Lead Connector</div>
-              <div class="tfc-detail">The instant a lead submits, an SMS + AI auto-dial hits within 60 seconds. Care-curious turns into "What's your address?" before they tab away.</div>
+              <div class="tfc-name">The receptionist Lead Connector</div>
+              <div class="tfc-detail">The instant a lead submits, an SMS + receptionist auto-dial hits within 60 seconds. Care-curious turns into "What's your address?" before they tab away.</div>
             </article>
             <article class="traffic-funnel-card tfc-win">
               <div class="tfc-step">04</div>
@@ -2030,8 +2276,8 @@ img,video,iframe,svg{max-width:100%}
             </article>
             <article class="traffic-funnel-card">
               <div class="tfc-step">03</div>
-              <div class="tfc-name">AI call qualified</div>
-              <div class="tfc-detail">If your team can't pick up, AI receptionist answers within 2 rings, qualifies the lead the same way you would, and books the consultation.</div>
+              <div class="tfc-name">receptionist call qualified</div>
+              <div class="tfc-detail">If your team can't pick up, receptionist answers within 2 rings, qualifies the lead the same way you would, and books the consultation.</div>
             </article>
             <article class="traffic-funnel-card tfc-win">
               <div class="tfc-step">04</div>
@@ -2041,7 +2287,7 @@ img,video,iframe,svg{max-width:100%}
           </div>
           <div class="traffic-channel-stat">
             <span class="tcs-num">5&ndash;8&times;</span>
-            <span class="tcs-text"><strong>Typical LSA ROAS</strong> for care providers because every paid lead is search-intent + geo-matched. The $1,000/mo budget covers Google spend + management + the AI receptionist routing.</span>
+            <span class="tcs-text"><strong>Typical LSA ROAS</strong> for care providers because every paid lead is search-intent + geo-matched. The $1,000/mo budget covers Google spend + management + the receptionist routing.</span>
           </div>
         </div>
 
@@ -2132,18 +2378,18 @@ img,video,iframe,svg{max-width:100%}
         <article class="feature-card">
           <div class="feature-card-head">
             <span class="feature-card-num">01</span>
-            <h4 class="feature-card-title"><span class="fc-emoji">&#9889;</span> Frictionless 5-field form + sub-60s AI callback</h4>
+            <h4 class="feature-card-title"><span class="fc-emoji">&#9889;</span> Frictionless 5-field form + sub-60s receptionist callback</h4>
             <span class="feature-card-tag feature-card-tag-conversion">CONVERT</span>
           </div>
           <p class="feature-card-meta">First-call wins 78% of jobs &middot; we never lose that race</p>
           <ul class="feature-card-bullets">
             <li><strong>5 fields max</strong> , name, phone, address, service, message. 30%+ higher conversion than 8-field forms.</li>
             <li><strong>Owner mini-card inside the form</strong> , "Talk to [First Name] &middot; 5-min callback" with your real photo.</li>
-            <li><strong>Sub-60-second AI agent</strong> calls back, qualifies, books the consultation , while you sleep.</li>
+            <li><strong>Sub-60-second receptionist</strong> calls back, qualifies, books the consultation , while you sleep.</li>
           </ul>
           <div class="feature-card-stat-callout">
             <div class="feature-card-stat-num">78%</div>
-            <div class="feature-card-stat-text"><strong>Why this works:</strong> the first care provider to call back wins the job <strong>78% of the time</strong>. Your AI agent never loses that race , while competitors check voicemail.</div>
+            <div class="feature-card-stat-text"><strong>Why this works:</strong> the first care provider to call back wins the job <strong>78% of the time</strong>. Your receptionist never loses that race , while competitors check voicemail.</div>
           </div>
           <a class="feature-card-cta" href="https://osaat-home care-construction.vercel.app#hero" target="_blank" rel="noopener">See it in your hero form &rarr;</a>
         </article>
@@ -2157,7 +2403,7 @@ img,video,iframe,svg{max-width:100%}
           <p class="feature-card-meta">65% of leads are mobile &middot; sticky CTA toggles by time of day</p>
           <ul class="feature-card-bullets">
             <li><strong>Catch every after-hours lead.</strong> Sticky CTA dynamically swaps Call &harr; Quote based on time of day.</li>
-            <li><strong>Time-to-lead under 60 seconds.</strong> AI callback fires the moment a senior submits , you're on the phone before competitors check voicemail.</li>
+            <li><strong>Time-to-lead under 60 seconds.</strong> receptionist callback fires the moment a senior submits , you're on the phone before competitors check voicemail.</li>
             <li><strong>Tap-to-call</strong> on every number , header, hero, footer, sticky bar. Zero friction.</li>
             <li><strong>44px touch targets</strong> + swipe galleries &middot; Apple + Google mobile guidelines.</li>
           </ul>
@@ -2192,8 +2438,8 @@ img,video,iframe,svg{max-width:100%}
         <article class="feature-card feature-card-ai-highlight">
           <div class="feature-card-head">
             <span class="feature-card-num">03</span>
-            <h4 class="feature-card-title"><span class="fc-emoji">&#128172;</span> Smart Chatbot &middot; 24/7 trained on Gihon Family Care Home</h4>
-            <span class="feature-card-tag feature-card-tag-conversion">AI</span>
+            <h4 class="feature-card-title"><span class="fc-emoji">&#128172;</span> Receptionist &middot; 24/7 trained on Gihon Family Care Home</h4>
+            <span class="feature-card-tag feature-card-tag-conversion">receptionist</span>
           </div>
           <p class="feature-card-meta">After-hours leads booked into [First Name]'s calendar , while you sleep</p>
           <ul class="feature-card-bullets">
@@ -2211,10 +2457,10 @@ img,video,iframe,svg{max-width:100%}
         <article class="feature-card feature-card-ai-highlight">
           <div class="feature-card-head">
             <span class="feature-card-num">04</span>
-            <h4 class="feature-card-title"><span class="fc-emoji">&#128241;&#8205;&#9742;&#65039;</span> Instant Callback &middot; 60-second AI</h4>
-            <span class="feature-card-tag feature-card-tag-conversion">AI</span>
+            <h4 class="feature-card-title"><span class="fc-emoji">&#128241;&#8205;&#9742;&#65039;</span> Instant Callback &middot; 60-second receptionist</h4>
+            <span class="feature-card-tag feature-card-tag-conversion">receptionist</span>
           </div>
-          <p class="feature-card-meta">Lead submits the form , AI is on their phone in 60 seconds</p>
+          <p class="feature-card-meta">Lead submits the form , receptionist is on their phone in 60 seconds</p>
           <ul class="feature-card-bullets">
             <li>60-second callback the moment a senior submits the form.</li>
             <li>Automated voice intro qualifies the lead, then handoff to your team's mobile.</li>
@@ -2223,7 +2469,7 @@ img,video,iframe,svg{max-width:100%}
           </ul>
           <div class="feature-card-stat-callout">
             <div class="feature-card-stat-num">78%</div>
-            <div class="feature-card-stat-text"><strong>Why this works:</strong> the first care provider to call back wins the job <strong>78% of the time</strong>. Your AI agent never loses that race , while competitors are still checking voicemail.</div>
+            <div class="feature-card-stat-text"><strong>Why this works:</strong> the first care provider to call back wins the job <strong>78% of the time</strong>. Your receptionist never loses that race , while competitors are still checking voicemail.</div>
           </div>
         </article>
 
@@ -2247,7 +2493,7 @@ img,video,iframe,svg{max-width:100%}
       <div class="reason">
         <div class="reason-num">02</div>
         <div class="reason-title">More Value Than Any Competitor</div>
-        <p class="reason-body">One flat setup fee covers the whole system: a custom home care site, local SEO, a 24/7 AI receptionist, and an automatic review engine. Piece that together anywhere else and you'd pay far more, every single month.</p>
+        <p class="reason-body">One flat setup fee covers the whole system: a custom home care site, local SEO, a 24/7 receptionist, and an automatic review engine. Piece that together anywhere else and you'd pay far more, every single month.</p>
       </div>
       <div class="reason">
         <div class="reason-num">03</div>
@@ -2262,7 +2508,7 @@ img,video,iframe,svg{max-width:100%}
 
 
 <style>
-/* ============================ AI INFRASTRUCTURE v2 · chat-widget journey + instant-callback flow + collapsible reputation (2026-06 per Juan) ============================ */
+/* ============================ receptionist INFRASTRUCTURE v2 · chat-widget journey + instant-callback flow + collapsible reputation (2026-06 per Juan) ============================ */
 .ai-feature{max-width:1180px;margin:0 auto;padding:46px 0;border-bottom:1px solid rgba(0,0,0,0.06)}
 .ai-feature:last-of-type{border-bottom:none}
 .ai-feature-head{display:flex;flex-direction:column;gap:12px;max-width:780px;margin:0 auto 38px;text-align:center;align-items:center}
@@ -2380,9 +2626,9 @@ img,video,iframe,svg{max-width:100%}
 <section class="section section-ai-infra">
   <div class="section-inner">
     <div class="ai-infra-head">
-      <span class="ai-infra-eyebrow"><span class="ai-infra-eyebrow-dot" aria-hidden="true"></span>AI Infrastructure</span>
-      <h2 class="section-title">Your website doesn't sleep. <em>Neither does your AI.</em></h2>
-      <p class="section-sub">Three AI agents that work every lead, day and night.</p>
+      <span class="ai-infra-eyebrow"><span class="ai-infra-eyebrow-dot" aria-hidden="true"></span>receptionist Infrastructure</span>
+      <h2 class="section-title">Your website doesn't sleep. <em>Neither does your receptionist.</em></h2>
+      <p class="section-sub">Three receptionist agents that work every lead, day and night.</p>
     </div>
 
     
@@ -2390,7 +2636,7 @@ img,video,iframe,svg{max-width:100%}
       <div class="ai-feature-head">
         <span class="ai-row-tag"><span class="ai-row-tag-ic" aria-hidden="true">&#128172;</span>Chat Widget</span>
         <h3 class="ai-feature-headline">An always-on agent that <em>answers while they sleep.</em></h3>
-        <p class="ai-feature-body">A family opens the chat on your site. The AI answers their questions, books the consultation, and hands you a warm, ready lead. Nothing sits unanswered.</p>
+        <p class="ai-feature-body">A family opens the chat on your site. The receptionist answers their questions, books the consultation, and hands you a warm, ready lead. Nothing sits unanswered.</p>
       </div>
       <div class="ai-journey">
         <div class="ai-journey-beat">
@@ -2531,7 +2777,7 @@ img,video,iframe,svg{max-width:100%}
                 <p class="ai-review-text">[First Name] and the team have been wonderful with my mother, patient, dependable, and genuinely kind. For the first time in months, I sleep at night.<strong>Best care provider experience we've had in Palm Coast.</strong></p>
               </div>
               <div class="ai-mock-msg ai-mock-msg-ai ai-mock-msg-reply">
-                <div class="ai-mock-msg-tag"><span class="ai-mock-msg-tag-dot"></span>AI Agent &middot; auto-reply</div>
+                <div class="ai-mock-msg-tag"><span class="ai-mock-msg-tag-dot"></span>Receptionist &middot; auto-reply</div>
                 <div class="ai-mock-msg-bubble">Thank you so much, that truly means the world to us. I will pass it along to [First Name] and the whole team. Welcome to the Gihon Family Care Home family.</div>
               </div>
             </div>
@@ -2571,7 +2817,7 @@ img,video,iframe,svg{max-width:100%}
       </div>
 
       <div class="dean-portrait-wrap">
-        <div class="dean-portrait" role="img" aria-label="Vince Stars at RoofCon">
+        <div class="dean-portrait" role="img" aria-label="Vince Stars at RoofCon"><img src="vince.jpg" alt="Vince Stars" style="width:100%;height:100%;object-fit:cover;object-position:center top;position:relative;z-index:1;display:block">
           <img src="placeholder.svg" alt="Vince Stars, KCA Founder" loading="lazy">
           <div class="dean-portrait-caption">Vince Stars &middot; Founder of KCA</div>
         </div>
@@ -2821,6 +3067,182 @@ img,video,iframe,svg{max-width:100%}
 </section>
 
 
+<div class="prep-ported-block"><section>
+  <div class="wrap stack g3">
+    <div class="narrow center stack g2">
+      <p class="eyebrow rv">Answers</p>
+      <h2 class="rv">Get answers to our most common questions</h2>
+    </div>
+    <div class="qgrid rv">
+
+      <div class="deck" data-deck><div class="slides">
+        <div class="slide q"><div class="big">What's the price?</div><p>And is there anything else waiting for us later?</p></div>
+        <div class="slide"><div class="big">One payment.<br><span class="pop">$297 to $997.</span></div><p>Where it lands depends on how much there is to build. That is the whole cost.</p></div>
+        <div class="slide"><div class="big">Nothing renews.</div><p>No contract. No setup fee. Nothing to cancel.</p></div>
+        <div class="slide"><div class="big">Then we watch it for a year.</div><p>Not bill you for the year. Watch it. If something is not pulling its weight, that is our problem to fix, and you have already paid whatever you are going to pay.</p></div>
+      </div></div>
+
+      <div class="deck" data-deck><div class="slides">
+        <div class="slide q"><div class="big">What happens the day we're done working together?</div><p>The short version: you keep everything.</p></div>
+        <div class="slide"><div class="big">Yours. In your name.</div><p>Built on your domain, registered to you. Not licensed, not rented, not sitting in our account.</p></div>
+        <div class="slide"><div class="big">You keep the reviews and the customers.</div><p>The reviews live on your Google page, they were always yours. Anybody who found you through the site is your customer.</p></div>
+        <div class="slide"><div class="big">Ask the next person who calls you the same question.</div><p>Who owns the domain, and will you put that in writing. You will learn a lot from how long it takes them to answer.</p></div>
+        <div class="slide"><div class="big">These are the stories we hear every day.</div><p>Don't let another business charge you $2,000 for your own domain.</p></div>
+      </div></div>
+
+      <div class="deck" data-deck><div class="slides">
+        <div class="slide q"><div class="big">What don't you promise?</div><p>Straight about what we are not going to say.</p></div>
+        <div class="slide"><div class="big">Get you to top spot on Google tomorrow.</div><p>Nobody can promise that. Google decides it, it moves constantly, and anyone telling you different is either guessing or counting on you not knowing.</p></div>
+        <div class="slide"><div class="big">Not that you'll close them.</div><p>That is your end, and you are better at it than we are. We can get somebody to raise their hand. We cannot make them sign.</p></div>
+        <div class="slide"><div class="big">One thing we will promise.<br><span class="pop">5 qualified prospects a month.</span></div><p>An average across the first year. If it comes up short, you get your money back, and you keep the site and the reviews.</p></div>
+        <div class="slide"><div class="big">Qualified means all three.</div><ul class="slist"><li>They came looking for you, not a lead sold to four other businesses</li><li>They need what you actually do</li><li>They are inside your service area</li></ul></div>
+      </div></div>
+
+      <div class="deck" data-deck><div class="slides">
+        <div class="slide q"><div class="big">Why should I get a website now?</div><p>Two things changed. Both worth thirty seconds.</p></div>
+        <div class="slide"><div class="big">Google no longer lets you scroll past page 1.</div>
+          <video class="sv" autoplay muted loop playsinline preload="metadata" poster="https://prep.solidbookedpro.com/assets/img/poster-google-scroll.jpg"><source src="https://prep.solidbookedpro.com/assets/video/google-scroll.mp4" type="video/mp4"></video></div>
+        <div class="slide"><div class="big">Google has a button that can find compatible sites to get prices.</div>
+          <img src="https://prep.solidbookedpro.com/assets/img/ai-get-prices.webp" alt="A Google result with a Have receptionist get prices button" loading="lazy"></div>
+        <div class="slide"><div class="big">Everybody is bidding for those top spots.</div><p>And the price of standing there goes up every year. That is a crowded room, and it costs more to be in it every time you look.</p></div>
+        <div class="slide"><div class="big">1 in 4 people are asking ChatGPT for recommendations.</div>
+          <img src="https://prep.solidbookedpro.com/assets/img/google-vs-chatgpt.png" alt="The same search asked on Google and on ChatGPT" loading="lazy"></div>
+        <div class="slide"><div class="big">Only 1.2% of business sites come up there.</div><p>That is a room with nobody in it. It will not stay that way. The same thing happened with Google fifteen years ago, and now it costs what it costs.</p></div>
+      </div></div>
+
+      <div class="deck" data-deck><div class="slides">
+        <div class="slide q"><div class="big">After a potential customer answers the online booking questions</div><p>Here is exactly where it goes.</p></div>
+        <div class="slide"><div class="big">Once they answer your qualifying questions</div>
+          <img src="https://prep.solidbookedpro.com/assets/img/multi-form.gif" alt="A short multi step form" loading="lazy"></div>
+        <div class="slide"><div class="big">Your phone buzzes.</div><p>A text with their name, their number, and what they said they need. Same as if they had texted you directly.</p></div>
+        <div class="slide"><div class="big">On a job? They still get an answer.</div>
+          <img src="https://prep.solidbookedpro.com/assets/img/review-followup.png" alt="An automated follow up message" loading="lazy"></div>
+        <div class="slide"><div class="big">Or to a CRM if you prefer.</div>
+          <img src="https://prep.solidbookedpro.com/assets/img/plate-contacts.png" alt="A contact list showing every enquiry and its status" loading="lazy"></div>
+      </div></div>
+
+      <div class="deck" data-deck><div class="slides">
+        <div class="slide q"><div class="big">How long before we see anything?</div><p>Straight answer, including the part you will not love.</p></div>
+        <div class="slide"><div class="big">Reviews move first.</div><p>That is usually the first thing you notice, inside the first few weeks.</p></div>
+        <div class="slide"><div class="big">More reviews means more customers see you.</div>
+          <video class="sv lg" autoplay muted loop playsinline preload="metadata" poster="https://prep.solidbookedpro.com/assets/img/poster-rank-climb.jpg"><source src="https://prep.solidbookedpro.com/assets/video/rank-climb.mp4" type="video/mp4"></video></div>
+        <div class="slide"><div class="big">The slow part is coming up on your own in a search.</div><p>That takes time. Anybody who tells you different is guessing or lying to you.</p></div>
+        <div class="slide"><div class="big">At no extra cost to you, we run ads.</div><p>While the slow part builds, we run ads so you can get qualified prospects calling you and get an ROI on your site.</p></div>
+        <div class="slide"><div class="big"><span class="pop">45 days.</span></div><p>More reviews than you had. New enquiries you can trace back to it.</p><p>If nothing has moved by then, ask us hard questions.</p></div>
+      </div></div>
+
+      <div class="deck" data-deck><div class="slides">
+        <div class="slide q"><div class="big">Business is good. Why bother?</div><p>Word of mouth is the best way there is to get work.</p></div>
+        <div class="slide"><div class="big">We're not going to talk you out of it.</div><p>The people who come that way already trust you. They do not haggle much. They are good customers.</p></div>
+        <div class="slide"><div class="big">The only thing is you can't turn it up when you want to.</div><p>Most weeks that is fine. You are busy enough. Then every so often it goes quiet, and that is the part nobody plans for.</p></div>
+        <div class="slide"><div class="big">That's when the wrong calls start sounding reasonable.</div><p>The lead company. The SEO guy. The agency with the three month contract. Nobody shops carefully when they are thinking about next month.</p></div>
+        <div class="slide"><div class="big">Busy is the only time you can build this.</div><p>Nothing here shows up tomorrow. Whatever you want working in a slow month has to be started in a good one.</p></div>
+      </div></div>
+
+      <div class="deck" data-deck><div class="slides">
+        <div class="slide q"><div class="big">We tried this before and it didn't work</div><p>An owner spent $12,000 over three months with an SEO company.</p></div>
+        <div class="slide"><div class="big">What he got was <span class="pop">tire kickers.</span></div><p>He was not scammed, though. He bought a real thing. It just solved a problem he did not have.</p></div>
+        <div class="slide"><div class="big">Lead companies</div><p>You pay less than a lead is worth, so they sell that same one to four or five others. By the time you call, the person has talked to three people and is irritated the phone rang again.</p></div>
+        <div class="slide"><div class="big">Only two kinds of business win there.</div><p>The ones with somebody paid to sit and dial the second a lead lands, and the ones who keep calling long after everyone else quit.</p></div>
+        <div class="slide"><div class="big">SEO brings the best person there is. The catch is the clock.</div><p>You pay every month for something you might see in six. And a report does not cover payroll.</p></div>
+        <div class="slide"><div class="big">None of those are bad businesses.</div><p>They are answers to a question you were not asking.</p></div>
+        <div class="slide"><div class="big">So we built the part they all skipped.</div><p>A site that gets found, reviews that lift it, and follow-up that catches everyone who enquires. Those three work as one. Miss any of them and you are paying to fill something that is not ready yet.</p></div>
+      </div></div>
+
+      <div class="deck" data-deck><div class="slides">
+        <div class="slide q"><div class="big">We're not technical. How much lands on us?</div><p>Short answer: none of it.</p></div>
+        <div class="slide"><div class="big">You don't have to understand any of this.</div><p>Not the domain, not the hosting, not why one page comes up in a search and another does not. That is the job you are paying for.</p></div>
+        <div class="slide"><div class="big">Nothing to log into.</div><p>No dashboard. No password to keep somewhere. No tool to learn.</p></div>
+        <div class="slide"><div class="big">Want something changed? You tell us.</div>
+          <img class="lg" src="https://prep.solidbookedpro.com/assets/img/site-roofing.png" alt="A finished site built for a roofing company" loading="lazy"></div>
+        <div class="slide"><div class="big">One owner put it best.</div><p>"I don't know nothing, that's why I'm calling you." That is the right answer. It is the whole reason the job exists.</p></div>
+      </div></div>
+
+      <div class="deck" data-deck><div class="slides">
+        <div class="slide q"><div class="big">Why did you build it before asking us for anything?</div><p>You probably noticed this is backwards.</p></div>
+        <div class="slide"><div class="big">Not because we're generous.</div><p>If we describe a website to you, you have to take our word for it. You have probably taken somebody's word for it before and it cost you.</p></div>
+        <div class="slide"><div class="big">Looking at the real thing, there's nothing to take our word for.</div>
+          <img src="https://prep.solidbookedpro.com/assets/img/site-roofing-mobile.png" alt="A finished site on a phone" loading="lazy"></div>
+        <div class="slide"><div class="big">You can tell us it's wrong.</div><p>That we got your services wrong, or the colours are ugly, or that is not even what you do anymore. That is a better use of time than us talking at you.</p></div>
+      </div></div>
+
+      <div class="deck" data-deck><div class="slides">
+        <div class="slide q"><div class="big">Who does this not work for?</div><p>It will save us both an hour if one of these is you.</p></div>
+        <div class="slide"><div class="big">It works best if three things are true.</div><p>You do good work. You have helped enough people recently. And you have room to take more on.</p></div>
+        <div class="slide"><div class="big">Too new to have that history?</div><p>Nothing wrong with being new. There is just nothing for us to pull on yet.</p></div>
+        <div class="slide"><div class="big">Need this to save the business?</div><p>If it is the last thing you are trying, the timing is wrong. This works as something you build while you are steady, not as a rescue.</p></div>
+        <div class="slide"><div class="big">Only question is who's cheapest?</div><p>We are not, and we are not trying to be.</p></div>
+      </div></div>
+
+      <div class="deck" data-deck><div class="slides">
+        <div class="slide q"><div class="big">What happens after we say yes?</div><p>Day one, day two, and the first week.</p></div>
+        <div class="slide"><div class="big">Day one.<br>You look at it.</div><p>You get a link to the site and mark anything you want changed.</p>
+          <img src="https://prep.solidbookedpro.com/assets/img/site-roofing.png" alt="A finished site built for a roofing company" loading="lazy"></div>
+        <div class="slide"><div class="big">Day two.<br>Reviews start.</div>
+          <img src="https://prep.solidbookedpro.com/assets/img/review-request.png" alt="A review request message" loading="lazy"></div>
+        <div class="slide"><div class="big">Inside the first week.</div><p>We get you set up to show up when people search, including the receptionist ones, and the traffic starts coming your way.</p></div>
+        <div class="slide"><div class="big">What we need from you is one thing.</div><p>The customers you have already worked with, so we can ask them how it went.</p></div>
+      </div></div>
+
+    </div>
+  </div>
+</section>
+<section>
+  <div class="wrap stack g3">
+    <div class="narrow center stack g2">
+      <p class="eyebrow rv">The work</p>
+      <h2 class="rv">Before and After</h2>
+      <p class="lede rv">Same business, same services, same owner. Only the first impression changed.</p>
+    </div>
+    <div class="bagrid rv">
+      <figure class="bacard"><img src="https://prep.solidbookedpro.com/assets/img/ba-oma-t.jpg" data-full="https://prep.solidbookedpro.com/assets/img/ba-oma.jpg" width="680" height="680" alt="A skincare brand site before and after" loading="lazy" decoding="async"></figure>
+      <figure class="bacard"><img src="https://prep.solidbookedpro.com/assets/img/ba-rebrandit-t.jpg" data-full="https://prep.solidbookedpro.com/assets/img/ba-rebrandit.jpg" width="680" height="658" alt="A pet grooming site before and after" loading="lazy" decoding="async"></figure>
+      <figure class="bacard"><img src="https://prep.solidbookedpro.com/assets/img/ba-thrst-t.jpg" data-full="https://prep.solidbookedpro.com/assets/img/ba-thrst.jpg" width="680" height="658" alt="A fitness app site before and after" loading="lazy" decoding="async"></figure>
+      <figure class="bacard"><img src="https://prep.solidbookedpro.com/assets/img/ba-parcelcube-t.jpg" data-full="https://prep.solidbookedpro.com/assets/img/ba-parcelcube.jpg" width="680" height="658" alt="A logistics site before and after" loading="lazy" decoding="async"></figure>
+      <figure class="bacard"><img src="https://prep.solidbookedpro.com/assets/img/ba-ashley-t.jpg" data-full="https://prep.solidbookedpro.com/assets/img/ba-ashley.jpg" width="680" height="658" alt="A speaker coaching site before and after" loading="lazy" decoding="async"></figure>
+      <figure class="bacard"><img src="https://prep.solidbookedpro.com/assets/img/ba-eleni-t.jpg" data-full="https://prep.solidbookedpro.com/assets/img/ba-eleni.jpg" width="680" height="658" alt="A hypnotherapy practice site before and after" loading="lazy" decoding="async"></figure>
+      <figure class="bacard"><img src="https://prep.solidbookedpro.com/assets/img/ba-kendall-t.jpg" data-full="https://prep.solidbookedpro.com/assets/img/ba-kendall.jpg" width="680" height="658" alt="A coaching site before and after" loading="lazy" decoding="async"></figure>
+      <figure class="bacard"><img src="https://prep.solidbookedpro.com/assets/img/ba-zubalenok-t.jpg" data-full="https://prep.solidbookedpro.com/assets/img/ba-zubalenok.jpg" width="680" height="658" alt="A fitness program site before and after" loading="lazy" decoding="async"></figure>
+      <figure class="bacard"><img src="https://prep.solidbookedpro.com/assets/img/ba-rtt-t.jpg" data-full="https://prep.solidbookedpro.com/assets/img/ba-rtt.jpg" width="680" height="658" alt="A therapy training site before and after" loading="lazy" decoding="async"></figure>
+    </div>
+  </div>
+</section>
+<section class="dark" style="padding-block:clamp(2rem,5.5vw,3.6rem)">
+  <div class="wrap narrow center stack g3">
+    <div class="stack g2">
+      <p class="eyebrow">Your call is booked</p>
+      <h1>You've booked your call.<br><span class="ul">Great work<svg viewBox="0 0 200 12" preserveAspectRatio="none"><path d="M3 8 C48 2, 96 10, 197 4"/></svg></span>.</h1>
+      <p class="lede" style="color:#B9C2D0">Watch the video below for what happens next, then get any question answered before we speak.</p>
+    </div>
+    <div class="player paused" id="player">
+      <video id="v" playsinline preload="auto" autoplay muted loop
+        poster="https://prep.solidbookedpro.com/assets/img/poster-tof-intro.jpg" data-vid="walkthrough"
+        data-full="https://prep.solidbookedpro.com/assets/video/tof-intro.mp4"><source src="https://prep.solidbookedpro.com/assets/video/tof-intro.mp4" type="video/mp4"></video>
+      <div class="loadbar"><div class="lfill" id="lfill"></div></div>
+      <div class="tap-sound" id="tapSound">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
+          <path d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path></svg>
+        Enable sound
+      </div>
+      <div class="bigplay" id="bigplay"><i></i></div>
+    </div>
+  </div>
+</section>
+<section class="dark">
+  <div class="wrap stack g3">
+    <div class="narrow center stack g2">
+      <p class="eyebrow rv">In their words</p>
+      <h2 class="rv">Owners talking it through</h2>
+          </div>
+    <div class="reels rv">
+      <article class="reel"><video controls preload="metadata" playsinline poster="https://prep.solidbookedpro.com/assets/img/poster-reel-deonco.jpg" data-vid="reel-deonco"><source src="https://prep.solidbookedpro.com/assets/video/reel-deonco.mp4" type="video/mp4"></video>
+        <div class="meta"><b>"You walked me through it. I seen what I've been doing wrong. I've been needed you"</b>Deonco, Black Mold Guys. $12,000 on SEO over three months got him tire kickers. A rebrand plus filters that screen out tire kickers took his win rate from 20% to 52%.</div></article>
+      <article class="reel"><video controls preload="metadata" playsinline poster="https://prep.solidbookedpro.com/assets/img/poster-reel-ijeoma.jpg" data-vid="reel-ijeoma"><source src="https://prep.solidbookedpro.com/assets/video/reel-ijeoma.mp4" type="video/mp4"></video>
+        <div class="meta"><b>"By year 5 I expected to be in a better position"</b>Ijeoma, Oma Organics. Five years of loyal customers, but she wanted growth. A premium rebrand, a website upsell to lift average order value, and traffic to her site.</div></article>
+    </div>
+  </div>
+</section></div>
 <section class="plan-picker"><div class="pp-inner"><h2 class="pp-h2">The Site That Only Costs You Something If It Works</h2><div class="pp-diagram"><div class="pp-side pp-left" data-tier="2"><span class="pp-side-label">5-Star Outreach System</span><span class="pp-arrow">&#8594;</span></div><div class="pp-center"><div class="pp-preview"><div class="pp-preview-bar"><i></i><i></i><i></i></div><div class="pp-preview-body"><b>Site Preview</b><span>Your live demo</span></div></div><div class="pp-down" data-tier="3"><span class="pp-arrow pp-arrow-down">&#8595;</span><span class="pp-side-label">24/7 Receptionist Follow&#8209;Up</span></div></div><div class="pp-side pp-right" data-tier="3"><span class="pp-arrow">&#8592;</span><span class="pp-side-label">Monthly Qualified Prospect Guarantee</span></div></div><div class="pp-included"><h3>What&rsquo;s included:</h3><ul class="pp-list"><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Full custom Home Care website built in 3 days</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">SEO + AEO foundation indexed</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Hosting + SSL</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Google Business Profile, optimized, syncing reviews</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Mobile-first design that converts on a 5-inch screen</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Same-day consultation booking via live form</span></li><li class="pp-item" data-tier="2"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">5-Star Outreach System to increase reviews &amp; ranking</span></li><li class="pp-item" data-tier="3"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">24/7 Missed Call &amp; Follow-Up Receptionist</span></li></ul></div><h3 class="pp-q">Which option will be right for you?</h3><div class="pp-plans"><button class="pp-plan" data-plan="1"><span>One Time</span><b>$297</b></button><button class="pp-plan" data-plan="2"><span>One Time</span><b>$497</b></button><button class="pp-plan" data-plan="3"><span>One Time</span><b>$997</b></button></div></div></section>
 
 
@@ -3811,7 +4233,7 @@ document.addEventListener('DOMContentLoaded', function(){
   // Juan can tick/untick / edit / add / remove items inline once Edit mode is on.
   var DEFAULT_CHECKLIST = [
     'Full custom home care website built in 3 days',
-    'AI lead-handling stack live: 60-second callback + chatbot',
+    'receptionist lead-handling stack live: 60-second callback + chatbot',
     'SEO + AEO foundation indexed across 8 cities',
     'Google Business Profile claimed, optimized, syncing reviews',
     'Real verified reviews showing above the fold',
@@ -4277,5 +4699,165 @@ document.addEventListener('DOMContentLoaded', function(){
 })();
 </script>
 
-<script>(function(){var p=document.querySelector('.plan-picker');if(!p)return;var P=p.querySelectorAll('.pp-plan'),I=p.querySelectorAll('[data-tier]');function s(n){n=+n;P.forEach(function(b){b.classList.toggle('pp-selected',+b.dataset.plan===n)});I.forEach(function(e){e.classList.toggle('pp-off',+e.getAttribute('data-tier')>n)})}P.forEach(function(b){b.addEventListener('click',function(){s(b.dataset.plan)})});s(3);})();</script></body>
+<script>(function(){var p=document.querySelector('.plan-picker');if(!p)return;var P=p.querySelectorAll('.pp-plan'),I=p.querySelectorAll('[data-tier]');function s(n){n=+n;P.forEach(function(b){b.classList.toggle('pp-selected',+b.dataset.plan===n)});I.forEach(function(e){e.classList.toggle('pp-off',+e.getAttribute('data-tier')>n)})}P.forEach(function(b){b.addEventListener('click',function(){s(b.dataset.plan)})});s(3);})();</script><script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)})(window,document,"clarity","script","xpktis36jn");
+window.SBP_TRACK='https://n8n.americanlifeteam.com/webhook/sbp-funnel-track';
+
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function ev(n,p){if(typeof clarity==='function'){try{clarity('event',n)}catch(e){}}}
+
+  /* ---- main video: demo.scalingsos.com player pattern ---- */
+  var P=document.getElementById('player'),V=document.getElementById('v'),
+      LF=document.getElementById('lfill'),TS=document.getElementById('tapSound'),BP=document.getElementById('bigplay');
+  if(P&&V){
+    var unmuted=false, FEEL_EXP=0.60;   /* lower = early progress feels faster */
+    /* fake progress: races ahead of real playback early, converges at the end */
+    function paintBar(){
+      var d=V.duration;
+      if(!d||!isFinite(d)||d<=0)return;
+      var p=Math.min(1,Math.max(0,V.currentTime/d));
+      LF.style.width=(Math.pow(p,FEEL_EXP)*100).toFixed(2)+'%';
+    }
+    V.addEventListener('timeupdate',paintBar);
+    V.addEventListener('loadedmetadata',paintBar);
+    function setPlaying(on){
+      P.classList.toggle('playing',!!on);
+      P.classList.toggle('paused',!on);
+    }
+    function unmute(e){
+      if(e)e.stopPropagation();
+      V.muted=false;V.loop=false;V.currentTime=0;unmuted=true;
+      TS.classList.add('gone');
+      setPlaying(true);                      /* set directly: no new play event fires */
+      var pr=V.play();if(pr&&pr.catch)pr.catch(function(){setPlaying(false)});
+      ev('video_unmute',{video:'walkthrough'});
+    }
+    function toggle(){
+      if(!unmuted){unmute();return}
+      if(V.paused){V.play();setPlaying(true)}else{V.pause();setPlaying(false)}
+    }
+    V.addEventListener('play',function(){if(unmuted)setPlaying(true)});
+    V.addEventListener('pause',function(){if(unmuted)setPlaying(false)});
+    V.addEventListener('ended',function(){setPlaying(false)});
+    TS.addEventListener('click',unmute);
+    BP.addEventListener('click',toggle);
+    V.addEventListener('click',toggle);
+    P.tabIndex=0;
+    P.addEventListener('keydown',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();toggle()}});
+    var a=V.play();if(a&&a.catch)a.catch(function(){P.classList.add('paused')});
+  }
+
+  /* ---- slideshows ---- */
+  document.querySelectorAll('[data-deck]').forEach(function(deck,di){
+    var track=deck.querySelector('.slides'),n=deck.querySelectorAll('.slide').length,i=0;
+    var bar=document.createElement('div');bar.className='deck-bar';
+    var dots=document.createElement('div');dots.className='dots';
+    for(var k=0;k<n;k++){var d=document.createElement('button');d.className='dot';
+      d.setAttribute('aria-label','Slide '+(k+1));d.dataset.k=k;dots.appendChild(d)}
+    var ct=document.createElement('span');ct.className='ct';
+    var pv=document.createElement('button');pv.className='arw';pv.innerHTML='&#8249;';pv.setAttribute('aria-label','Previous');
+    var nx=document.createElement('button');nx.className='arw';nx.innerHTML='&#8250;';nx.setAttribute('aria-label','Next');
+    var ctr=document.createElement('div');ctr.className='deck-ctr';ctr.append(ct,dots);
+    bar.append(pv,ctr,nx);deck.appendChild(bar);
+    function go(t,rep){i=Math.max(0,Math.min(n-1,t));
+      track.style.transform='translateX('+(-i*100)+'%)';
+      dots.querySelectorAll('.dot').forEach(function(d,k){d.setAttribute('aria-current',k===i?'true':'false')});
+      ct.textContent=(i+1)+' / '+n;pv.disabled=i===0;nx.disabled=i===n-1;
+      if(rep)ev('slide_view',{deck:di+1,slide:i+1,of:n})}
+    pv.onclick=function(){go(i-1,1)};nx.onclick=function(){go(i+1,1)};
+    dots.onclick=function(e){if(e.target.dataset.k!==undefined)go(+e.target.dataset.k,1)};
+    deck.tabIndex=0;
+    deck.addEventListener('keydown',function(e){
+      if(e.key==='ArrowRight'){e.preventDefault();go(i+1,1)}
+      if(e.key==='ArrowLeft'){e.preventDefault();go(i-1,1)}});
+    var x0=null;
+    deck.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+    deck.addEventListener('touchend',function(e){if(x0===null)return;
+      var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>45)go(dx<0?i+1:i-1,1);x0=null},{passive:true});
+    go(0,0);
+  });
+
+  if(window.gsap&&window.ScrollTrigger&&!reduce){
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.rv').forEach(function(el){
+      el.classList.add('rv-armed');
+      gsap.to(el,{opacity:1,y:0,duration:.55,ease:'power2.out',
+        scrollTrigger:{trigger:el,start:'top 97%',once:true}});
+    });
+    ScrollTrigger.refresh();
+    /* safety net: anything still hidden after 2.5s is revealed regardless */
+    setTimeout(function(){document.querySelectorAll('.rv-armed').forEach(function(el){
+      if(parseFloat(getComputedStyle(el).opacity)<0.05){el.style.opacity=1;el.style.transform='none'}})},2500);
+  }
+
+  /* ---- Solid Booked Pro funnel beacon (matches demo.solidbookedpro.com) ---- */
+  (function(){
+    var URL=window.SBP_TRACK; if(!URL)return;
+    function uid(){try{var a=new Uint8Array(8);crypto.getRandomValues(a);
+      return Array.prototype.map.call(a,function(b){return('0'+b.toString(16)).slice(-2)}).join('')}
+      catch(e){return 't'+(performance.now()|0)}}
+    var vid=localStorage.getItem('sbp_vid');if(!vid){vid=uid();localStorage.setItem('sbp_vid',vid)}
+    var sid=sessionStorage.getItem('sbp_sid');if(!sid){sid=uid();sessionStorage.setItem('sbp_sid',sid)}
+    function utm(){var p=new URLSearchParams(location.search),o={};
+      ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){if(p.get(k))o[k]=p.get(k)});return o}
+    function post(body,beacon){try{var d=JSON.stringify(body);
+      if(beacon&&navigator.sendBeacon){navigator.sendBeacon(URL,new Blob([d],{type:'application/json'}));return}
+      fetch(URL,{method:'POST',headers:{'Content-Type':'application/json'},body:d,keepalive:!!beacon}).catch(function(){})}catch(e){}}
+    post({kind:'visit',visitor_id:vid,session_id:sid,path:location.pathname,referrer:document.referrer,
+      user_agent:navigator.userAgent,utm:utm(),
+      tz:(function(){try{return Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(_){return ''}})(),
+      lang:navigator.language||''});
+    var reached=false;
+    function progress(bcn){post({kind:'presentation',visitor_id:vid,session_id:sid,video_id:'prep',reached_cta:reached,utm:utm()},bcn)}
+    var cap=document.getElementById('capture');
+    if(cap&&'IntersectionObserver' in window){
+      new IntersectionObserver(function(es){es.forEach(function(en){
+        if(en.isIntersecting&&!reached){reached=true;progress(false)}})},{threshold:.25}).observe(cap);
+    }
+    document.addEventListener('visibilitychange',function(){if(document.hidden)progress(true)});
+    window.addEventListener('pagehide',function(){progress(true)});
+  })();
+
+  /* ---- analytics ---- */
+  ev('brief_view',{device:matchMedia('(max-width:767px)').matches?'mobile':matchMedia('(max-width:1023px)').matches?'tablet':'desktop',
+    viewport_w:innerWidth,referrer:document.referrer||'direct'});
+  var marks=[25,50,75,90,100],hit={};
+  function depth(){var h=document.documentElement;
+    var pct=Math.min(100,Math.round((h.scrollTop+h.clientHeight)/h.scrollHeight*100));
+    marks.forEach(function(m){if(pct>=m&&!hit[m]){hit[m]=1;ev('scroll_depth',{percent:m})}})}
+  if(window.gsap&&!reduce){ScrollTrigger.create({trigger:document.body,start:'top top',end:'bottom bottom',onUpdate:depth})}
+  else{marks.forEach(function(m){var s=document.createElement('div');
+    s.style.cssText='position:absolute;width:1px;height:1px;left:0;top:'+m+'%';document.body.appendChild(s);
+    new IntersectionObserver(function(en){if(en[0].isIntersecting&&!hit[m]){hit[m]=1;ev('scroll_depth',{percent:m})}}).observe(s)})}
+  var t0=Date.now(),bk=[15,30,60,120,300],dn={};
+  var tm=setInterval(function(){var s=Math.round((Date.now()-t0)/1000);
+    bk.forEach(function(b){if(s>=b&&!dn[b]){dn[b]=1;ev('time_on_page',{seconds:b})}});
+    if(s>=300)clearInterval(tm)},5000);
+  addEventListener('visibilitychange',function(){if(document.visibilityState==='hidden'){
+    ev('brief_exit',{seconds:Math.round((Date.now()-t0)/1000),
+      max_depth:Math.max.apply(null,Object.keys(hit).map(Number).concat([0]))})}});
+  document.querySelectorAll('.faq details').forEach(function(d){d.addEventListener('toggle',function(){
+    if(d.open)ev('faq_open',{q:d.querySelector('summary').textContent.trim().slice(0,60)})})});
+
+  /* ---- before/after lightbox ---- */
+  (function(){
+    var lb=document.getElementById('lbx'),img=document.getElementById('lbxImg'),x=document.getElementById('lbxX');
+    if(!lb)return;
+    function openLb(src,alt){img.src=src;img.alt=alt||'';lb.classList.add('on');document.body.style.overflow='hidden';ev('lightbox_open',{})}
+    function closeLb(){lb.classList.remove('on');document.body.style.overflow='';img.src=''}
+    document.querySelectorAll('.bacard img').forEach(function(i){
+      i.addEventListener('click',function(){openLb(i.dataset.full||i.currentSrc||i.src,i.alt)})});
+    lb.addEventListener('click',function(e){if(e.target===lb)closeLb()});
+    x.addEventListener('click',closeLb);
+    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&lb.classList.contains('on'))closeLb()});
+  })();
+  document.querySelectorAll('video[data-vid]').forEach(function(v){var q={};
+    v.addEventListener('play',function(){ev('video_play',{video:v.dataset.vid})},{once:true});
+    v.addEventListener('timeupdate',function(){if(!v.duration)return;var p=v.currentTime/v.duration;
+      [.25,.5,.75,.95].forEach(function(m){if(p>=m&&!q[m]){q[m]=1;ev('video_progress',{video:v.dataset.vid,percent:Math.round(m*100)})}})})});
+})();
+</script>
+</body>
 </html>
