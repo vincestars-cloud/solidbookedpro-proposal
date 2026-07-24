@@ -1,0 +1,10 @@
+{
+  "industry_key": "home care",
+  "company_name": "Gihon Family Care Home",
+  "city": "Palm Coast",
+  "state": "FL",
+  "phone": "(470) 918-0516",
+  "slug": "gihon-family-care-home",
+  "preview_domain": "gihonfamilycare.com",
+  "first_name": "{{contact.first_name}}"
+}
