@@ -346,10 +346,18 @@ doc = doc.replace('</head>', PP_CSS + '</head>')
 doc = doc.replace('</body>', PP_JS + '</body>')
 doc = doc.replace('</head>', FIXES_CSS + '</head>')   # append LAST so responsive fixes win the cascade
 
+# ---- "How we write your site" comparison section (injected AFTER Three reasons) ----
+# Per-industry copy in cmp_section.INDUSTRY_COMPARE (23 verticals, keyed on industry_lc —
+# the same key n8n passes). Mirror into the n8n wrapper when built, like INDUSTRY_TERMS.
+from cmp_section import CMP_CSS, build_cmp
+doc = doc.replace('</head>', CMP_CSS + '</head>')
+doc, n_cmp = re.subn(r'(<section\b[^>]*section-three-reasons[^>]*>.*?</section>)',
+                     lambda m: m.group(1) + build_cmp(CFG), doc, count=1, flags=re.S)
+
 # strip dev/pipeline HTML comments (non-visible, keeps template clean)
 doc = re.sub(r'<!--.*?-->', '', doc, flags=re.S)
 open('index.html','w',encoding='utf-8').write(doc)
-print(f"built index.html {len(doc)} bytes | removed: proof={n_proof} accept={n_accept} openlive={n_live} roi={n_roi} carousel={n_car} footertag={n_ftag}")
+print(f"built index.html {len(doc)} bytes | removed: proof={n_proof} accept={n_accept} openlive={n_live} roi={n_roi} carousel={n_car} footertag={n_ftag} | added cmp={n_cmp}")
 for chk in ['OSAAT','Roofing','roofing','HOMEOWNERS','King Contractor','#eeb644','#ae312d','Texas','Killeen','Dean White']:
     c = doc.count(chk) if chk not in ('#eeb644','#ae312d') else len(re.findall(chk, doc, re.I))
     if c: print(f"  residual '{chk}': {c}")
