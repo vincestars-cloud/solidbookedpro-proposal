@@ -2055,7 +2055,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
 .prep-ported-block .slide .big{font-family:'Montserrat',sans-serif!important;letter-spacing:-0.01em}
 .prep-ported-block .slide .pop,.prep-ported-block .gold,.prep-ported-block .eyebrow{color:#2563EB!important}
 .prep-ported-block .eyebrow:before,.prep-ported-block .eyebrow:after{background:#2563EB!important}
-/* Before/After: osaat "Setting industry standards" type scale + full-image landscape-width cards */
+/* Before/After: "Setting industry standards" type scale + full-image landscape-width cards */
 .prep-ported-block .ba-title{font-weight:900!important;font-size:clamp(26px,3.4vw,34px)!important;letter-spacing:-0.012em!important}
 .prep-ported-block .ba-title .ba-accent{color:#2563EB}
 .prep-ported-block .ba-sub{font-family:'Open Sans',sans-serif;font-size:clamp(15px,1.9vw,19px)}
@@ -3393,7 +3393,7 @@ window.__KCA_ROI_UPDATERS = window.__KCA_ROI_UPDATERS || [];
 
 // Acceptance · date pickers + signature pad (per-side localStorage persisted)
 (function(){
-  var SLUG='osaat-home care-construction';
+  var SLUG='gihon-family-care-home';
   var dkey=function(side){return 'kca-proposal-date-'+side+'-'+SLUG};
   var skey=function(side){return 'kca-proposal-sig-'+side+'-'+SLUG};
 
@@ -3906,7 +3906,7 @@ const PAGE_DATA = {
 function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 
 // Resolved by tools/build-proposal.py from clients/[X]/Pipeline Data/deploy/vercel-url.txt
-const LIVE_PREVIEW_URL = "https://osaat-home care-construction.vercel.app";
+const LIVE_PREVIEW_URL = "https://demo.solidbookedpro.com/gihon-family-care-home";
 
 function openPage(id){
   const data = PAGE_DATA[id];
@@ -4197,7 +4197,7 @@ document.addEventListener('DOMContentLoaded', function(){
 // the footer "+ Add services" button persists per-client in localStorage so the proposal owner can
 // hand it to a senior with the same package they configured.
 (function(){
-  var CLIENT_KEY = 'osaat-home care-construction';
+  var CLIENT_KEY = 'gihon-family-care-home';
   var SETUP_KEY = 'kca-' + CLIENT_KEY + '-setup-fee';
   var MONTHLY_KEY = 'kca-' + CLIENT_KEY + '-monthly-base';
   var ADDON_KEY = 'kca-' + CLIENT_KEY + '-addons';
@@ -4478,7 +4478,7 @@ document.addEventListener('DOMContentLoaded', function(){
   };
 
   // ---- One-Time Offer (revealed on the price card) ----
-  var OFFER_KEY = 'kca-one-time-offer-osaat-home care-construction';
+  var OFFER_KEY = 'kca-one-time-offer-gihon-family-care-home';
   var OFFERON_KEY = 'kca-' + CLIENT_KEY + '-offer-revealed';
   function getOffer(){
     var v = localStorage.getItem(OFFER_KEY);
