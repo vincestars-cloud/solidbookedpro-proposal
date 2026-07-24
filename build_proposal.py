@@ -289,6 +289,8 @@ FIXES_CSS = '''<style id="sbp-fixes">
 .ba-dot.active{background:#2563EB;transform:scale(1.3)}
 /* In their words: keep the 2 testimonial videos 2-up from tablet down (was 820px) */
 @media(min-width:560px){.reels{grid-template-columns:1fr 1fr!important}}
+/* In their words: center the testimonial quote + caption */
+.reel .meta{text-align:center}
 </style>
 '''
 doc = doc.replace('</head>', BRAND_CSS + MOBILE_CSS + '</head>')
