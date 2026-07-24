@@ -2061,6 +2061,13 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
 .prep-ported-block .ba-sub{font-family:'Open Sans',sans-serif;font-size:clamp(15px,1.9vw,19px)}
 .prep-ported-block .ba-sub strong{color:#0F172A;font-weight:700}
 .bagrid{align-items:flex-start}
+/* Before/After carousel: dot navigation (autoplay handled in JS) */
+.ba-dots{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin-top:22px}
+.ba-dot{width:9px;height:9px;border-radius:50%;border:0;background:#CBD5E1;cursor:pointer;padding:0;-webkit-appearance:none;transition:background .25s,transform .25s}
+.ba-dot:hover{background:#93C5FD}
+.ba-dot.active{background:#2563EB;transform:scale(1.3)}
+/* In their words: keep the 2 testimonial videos 2-up from tablet down (was 820px) */
+@media(min-width:560px){.reels{grid-template-columns:1fr 1fr!important}}
 </style>
 <style id="cmp-css">
 .cmp-section{background:linear-gradient(180deg,#FFFFFF 0%,#F1F6FF 100%);padding:64px 24px 72px;font-family:'Open Sans',sans-serif}
@@ -3179,6 +3186,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
       </div>
       <button type="button" class="ba-nav ba-next" aria-label="Scroll right">&#8250;</button>
     </div>
+    <div class="ba-dots" id="ba-dots" aria-hidden="true"></div>
   </div>
 </section>
 <section class="dark" style="padding-block:clamp(2rem,5.5vw,3.6rem)">
@@ -4835,6 +4843,22 @@ window.SBP_TRACK='https://n8n.americanlifeteam.com/webhook/sbp-funnel-track';
 </script>
 <script id="fhow-mobile-fix">(function(){var panel=document.getElementById("formula-how-panel");if(!panel)return;var hp=panel.parentNode,hn=panel.nextSibling;function repo(){var mob=window.matchMedia("(max-width:900px)").matches;var a=document.querySelector(".formula-how-btn[aria-expanded='true']");if(mob&&a){var p=a.closest(".formula-pillar");if(p&&p.nextSibling!==panel)p.after(panel);}else if(!mob){if(hp&&panel.parentNode!==hp)hp.insertBefore(panel,hn);}}document.querySelectorAll(".formula-how-btn").forEach(function(b){b.addEventListener("click",function(){setTimeout(repo,0);});});window.addEventListener("resize",repo);})();</script>
 <script id="laptop-fill">(function(){var BASE=1440,TH=920;function fit(){document.querySelectorAll(".laptop-viewport").forEach(function(vp){var fr=vp.querySelector(".laptop-iframe");if(!fr)return;fr.style.maxWidth="none";fr.style.width=BASE+"px";fr.style.height=TH+"px";fr.style.transformOrigin="top left";var s=vp.clientWidth/BASE,sh=vp.clientHeight/TH;if(sh>s)s=sh;fr.style.transform="scale("+s+")";});}window.addEventListener("load",fit);window.addEventListener("resize",fit);setTimeout(fit,150);setTimeout(fit,600);setTimeout(fit,1600);})();</script>
-<script id="ba-scroll">(function(){var g=document.getElementById("bagrid");if(!g)return;var sc=g.closest(".ba-scroller");if(!sc)return;function by(d){var c=g.querySelector(".bacard");var w=c?c.getBoundingClientRect().width+16:340;g.scrollBy({left:d*w,behavior:"smooth"});}var p=sc.querySelector(".ba-prev"),n=sc.querySelector(".ba-next");if(p)p.addEventListener("click",function(){by(-1);});if(n)n.addEventListener("click",function(){by(1);});})();</script>
+<script id="ba-scroll">(function(){
+  var g=document.getElementById("bagrid");if(!g)return;
+  var sc=g.closest(".ba-scroller");if(!sc)return;
+  var cards=[].slice.call(g.querySelectorAll(".bacard"));var n=cards.length;if(!n)return;
+  var dotsWrap=document.getElementById("ba-dots");var cur=0,timer=null,DELAY=4500;
+  function posOf(i){return cards[i].offsetLeft-cards[0].offsetLeft;}
+  function setDots(){if(!dotsWrap)return;var ds=dotsWrap.children;for(var k=0;k<ds.length;k++)ds[k].classList.toggle("active",k===cur);}
+  function go(i,smooth){cur=(i%n+n)%n;g.scrollTo({left:Math.max(0,posOf(cur)),behavior:smooth===false?"auto":"smooth"});setDots();}
+  if(dotsWrap){for(var i=0;i<n;i++){(function(i){var d=document.createElement("button");d.type="button";d.className="ba-dot"+(i===0?" active":"");d.setAttribute("aria-label","Slide "+(i+1));d.addEventListener("click",function(){go(i);reset();});dotsWrap.appendChild(d);})(i);}}
+  var p=sc.querySelector(".ba-prev"),nx=sc.querySelector(".ba-next");
+  if(p)p.addEventListener("click",function(){go(cur-1);reset();});
+  if(nx)nx.addEventListener("click",function(){go(cur+1);reset();});
+  var st;g.addEventListener("scroll",function(){clearTimeout(st);st=setTimeout(function(){var sl=g.scrollLeft,best=0,bd=1e9;for(var k=0;k<n;k++){var dd=Math.abs(posOf(k)-sl);if(dd<bd){bd=dd;best=k;}}if(best!==cur){cur=best;setDots();}},120);});
+  function tick(){go(cur+1);}function start(){if(!timer)timer=setInterval(tick,DELAY);}function stop(){if(timer){clearInterval(timer);timer=null;}}function reset(){stop();start();}
+  sc.addEventListener("mouseenter",stop);sc.addEventListener("mouseleave",start);
+  if(!(window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches))start();
+})();</script>
 </body>
 </html>

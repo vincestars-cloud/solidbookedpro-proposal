@@ -282,6 +282,13 @@ FIXES_CSS = '''<style id="sbp-fixes">
 .prep-ported-block .ba-title .ba-accent{color:#2563EB}
 .prep-ported-block .ba-sub{font-family:'Open Sans',sans-serif;font-size:clamp(15px,1.9vw,19px)}
 .prep-ported-block .ba-sub strong{color:#0F172A;font-weight:700}
+/* Before/After carousel dots (autoplay JS lives in index.html #ba-scroll: setInterval 4.5s + dot nav + left-align) */
+.ba-dots{display:flex;justify-content:center;flex-wrap:wrap;gap:9px;margin-top:22px}
+.ba-dot{width:9px;height:9px;border-radius:50%;border:0;background:#CBD5E1;cursor:pointer;padding:0;-webkit-appearance:none;transition:background .25s,transform .25s}
+.ba-dot:hover{background:#93C5FD}
+.ba-dot.active{background:#2563EB;transform:scale(1.3)}
+/* In their words: keep the 2 testimonial videos 2-up from tablet down (was 820px) */
+@media(min-width:560px){.reels{grid-template-columns:1fr 1fr!important}}
 </style>
 '''
 doc = doc.replace('</head>', BRAND_CSS + MOBILE_CSS + '</head>')
