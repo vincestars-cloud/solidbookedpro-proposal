@@ -1987,7 +1987,28 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
 .pp-plan.pp-selected{background:linear-gradient(135deg,#2563EB 0%,#1D4ED8 100%);border-color:#1D4ED8;color:#fff;box-shadow:0 16px 32px rgba(37,99,235,.35)}
 .pp-plan.pp-selected span{color:rgba(255,255,255,.85)}
 .pp-plan.pp-selected b{color:#fff}
-@media(max-width:680px){.pp-systems{grid-template-columns:1fr;max-width:420px}.pp-showcase{max-width:100%}.pp-laptop .laptop-iframe{transform:scale(0.30)}.pp-laptop .laptop-viewport{height:268px}}
+/* laptop iframes must NOT be capped by the global iframe{max-width:100%} reset */
+.laptop-iframe{max-width:none!important}
+/* plan-picker arrow diagram + laptop */
+.pp-center{display:flex;flex-direction:column;align-items:center;gap:8px}
+.pp-center .pp-laptop{width:100%;max-width:430px}
+.pp-center .pp-laptop .laptop-viewport{height:auto;aspect-ratio:16/10}
+.pp-center .pp-laptop-cap{margin-top:6px}
+.pp-diagram{align-items:center}
+.pp-side-label{color:#0F172A}
+.pp-arrow{color:#2563EB}
+/* before/after horizontal click-scroll */
+.ba-scroller{position:relative;max-width:1120px;margin:0 auto}
+.bagrid{display:flex!important;grid-template-columns:none!important;overflow-x:auto;scroll-snap-type:x proximity;gap:16px;scroll-behavior:smooth;padding:4px 4px 12px;-webkit-overflow-scrolling:touch}
+.bagrid::-webkit-scrollbar{height:8px}
+.bagrid::-webkit-scrollbar-track{background:transparent}
+.bagrid::-webkit-scrollbar-thumb{background:#c7d2e6;border-radius:5px}
+.bagrid .bacard{flex:0 0 clamp(258px,42vw,384px);scroll-snap-align:center}
+.ba-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:4;width:46px;height:46px;border-radius:50%;border:none;background:#2563EB;color:#fff;font-size:26px;font-weight:700;line-height:1;cursor:pointer;box-shadow:0 10px 24px rgba(37,99,235,.38);display:flex;align-items:center;justify-content:center;transition:background .2s,transform .12s}
+.ba-nav:hover{background:#1D4ED8}
+.ba-nav:active{transform:translateY(-50%) scale(.94)}
+.ba-prev{left:-6px}.ba-next{right:-6px}
+@media(max-width:600px){.ba-nav{width:38px;height:38px;font-size:22px}.ba-prev{left:2px}.ba-next{right:2px}}
 </style>
 </head>
 <body>
@@ -2165,11 +2186,11 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
             <h4 class="feature-card-title"><span class="fc-emoji">&#128100;</span> Owner photo, name &amp; story on every key page</h4>
             <span class="feature-card-tag feature-card-tag-trust">TRUST</span>
           </div>
-          <p class="feature-card-meta">[First Name] in 6 placements &middot; faces beat logos at every step</p>
+          <p class="feature-card-meta">{{contact.first_name}} in 6 placements &middot; faces beat logos at every step</p>
           <ul class="feature-card-bullets">
             <li><strong>6 placements</strong> , hero owner card, About commander's desk, truck band, mission control, footer, form card.</li>
             <li><strong>Same face across the site</strong> , story stops feeling like marketing, starts feeling like a neighbor.</li>
-            <li><strong>By name and signature</strong> , [First Name] isn't a brand mark, he's the caregiver at the door.</li>
+            <li><strong>By name and signature</strong> , {{contact.first_name}} isn't a brand mark, he's the caregiver at the door.</li>
           </ul>
           <div class="feature-card-stat-callout">
             <div class="feature-card-stat-num">+47%</div>
@@ -2424,9 +2445,9 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
             </div>
             <div class="ai-chatwin-body">
               <div class="ai-chatwin-msg them">Do you take new clients in</div>
-              <div class="ai-chatwin-msg ai">We do, and the first consultation is free. I can have [First Name] reach out tomorrow morning. What is the best address?</div>
+              <div class="ai-chatwin-msg ai">We do, and the first consultation is free. I can have {{contact.first_name}} reach out tomorrow morning. What is the best address?</div>
               <div class="ai-chatwin-msg them">123 Main St. Morning works.</div>
-              <div class="ai-chatwin-msg ai">You are all set for 8 AM. Connecting [First Name] now to confirm the details.</div>
+              <div class="ai-chatwin-msg ai">You are all set for 8 AM. Connecting {{contact.first_name}} now to confirm the details.</div>
             </div>
             <div class="ai-chatwin-input"><span>Type a message...</span><div class="ai-chatwin-send" aria-hidden="true">&#10148;</div></div>
           </div>
@@ -2540,11 +2561,11 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
                   <div class="ai-review-avatar">MW</div>
                   <div class="ai-review-meta"><span class="ai-review-name">Mary W.</span><span class="ai-review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="ai-review-date">2 days ago</span></div>
                 </div>
-                <p class="ai-review-text">[First Name] and the team have been wonderful with my mother, patient, dependable, and genuinely kind. For the first time in months, I sleep at night.<strong>Best care provider experience we've had in Palm Coast.</strong></p>
+                <p class="ai-review-text">{{contact.first_name}} and the team have been wonderful with my mother, patient, dependable, and genuinely kind. For the first time in months, I sleep at night.<strong>Best care provider experience we've had in Palm Coast.</strong></p>
               </div>
               <div class="ai-mock-msg ai-mock-msg-ai ai-mock-msg-reply">
                 <div class="ai-mock-msg-tag"><span class="ai-mock-msg-tag-dot"></span>Receptionist &middot; auto-reply</div>
-                <div class="ai-mock-msg-bubble">Thank you so much, that truly means the world to us. I will pass it along to [First Name] and the whole team. Welcome to the Gihon Family Care Home family.</div>
+                <div class="ai-mock-msg-bubble">Thank you so much, that truly means the world to us. I will pass it along to {{contact.first_name}} and the whole team. Welcome to the Gihon Family Care Home family.</div>
               </div>
             </div>
           </aside>
@@ -2960,7 +2981,9 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
       <h2 class="rv">Before and After</h2>
       <p class="lede rv">Same business, same services, same owner. Only the first impression changed.</p>
     </div>
-    <div class="bagrid rv">
+    <div class="ba-scroller rv">
+      <button type="button" class="ba-nav ba-prev" aria-label="Scroll left">&#8249;</button>
+      <div class="bagrid" id="bagrid">
       <figure class="bacard"><img src="https://prep.solidbookedpro.com/assets/img/ba-oma-t.jpg" data-full="https://prep.solidbookedpro.com/assets/img/ba-oma.jpg" width="680" height="680" alt="A skincare brand site before and after" loading="lazy" decoding="async"></figure>
       <figure class="bacard"><img src="https://prep.solidbookedpro.com/assets/img/ba-rebrandit-t.jpg" data-full="https://prep.solidbookedpro.com/assets/img/ba-rebrandit.jpg" width="680" height="658" alt="A pet grooming site before and after" loading="lazy" decoding="async"></figure>
       <figure class="bacard"><img src="https://prep.solidbookedpro.com/assets/img/ba-thrst-t.jpg" data-full="https://prep.solidbookedpro.com/assets/img/ba-thrst.jpg" width="680" height="658" alt="A fitness app site before and after" loading="lazy" decoding="async"></figure>
@@ -2970,6 +2993,8 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
       <figure class="bacard"><img src="https://prep.solidbookedpro.com/assets/img/ba-kendall-t.jpg" data-full="https://prep.solidbookedpro.com/assets/img/ba-kendall.jpg" width="680" height="658" alt="A coaching site before and after" loading="lazy" decoding="async"></figure>
       <figure class="bacard"><img src="https://prep.solidbookedpro.com/assets/img/ba-zubalenok-t.jpg" data-full="https://prep.solidbookedpro.com/assets/img/ba-zubalenok.jpg" width="680" height="658" alt="A fitness program site before and after" loading="lazy" decoding="async"></figure>
       <figure class="bacard"><img src="https://prep.solidbookedpro.com/assets/img/ba-rtt-t.jpg" data-full="https://prep.solidbookedpro.com/assets/img/ba-rtt.jpg" width="680" height="658" alt="A therapy training site before and after" loading="lazy" decoding="async"></figure>
+      </div>
+      <button type="button" class="ba-nav ba-next" aria-label="Scroll right">&#8250;</button>
     </div>
   </div>
 </section>
@@ -3009,7 +3034,7 @@ footer{background:var(--navy);color:#93A0B4;padding-block:2.2rem;text-align:cent
     </div>
   </div>
 </section></div>
-<section class="plan-picker"><div class="pp-inner"><div class="pp-eyebrow">The Offer</div><h2 class="pp-h2">The Site That Only Costs You Something If It Works</h2><div class="pp-showcase"><div class="pp-laptop"><div class="laptop-screen"><div class="laptop-chrome"><div class="laptop-dots"><span></span><span></span><span></span></div><div class="laptop-url">&#128274;  gihonfamilycare.com</div></div><div class="laptop-viewport"><iframe class="laptop-iframe" src="https://demo.solidbookedpro.com/gihon-family-care-home/" style="pointer-events:none" tabindex="-1" loading="lazy" title="Gihon Family Care Home live preview"></iframe></div></div><div class="laptop-tray"></div></div><div class="pp-laptop-cap">Your live demo</div></div><div class="pp-mini-eyebrow">Plus the systems that keep it working</div><div class="pp-systems"><div class="pp-sys" data-tier="2"><span class="pp-sys-ic"><svg viewBox="0 0 24 24"><path d="M12 4.2l2.3 4.7 5.2.7-3.8 3.6.9 5.1-4.6-2.5-4.6 2.5.9-5.1L4.5 9.6l5.2-.7z"/></svg></span><span>5-Star Outreach System</span></div><div class="pp-sys" data-tier="3"><span class="pp-sys-ic"><svg viewBox="0 0 24 24"><path d="M6.5 3.5h3l1.4 3.8-2 1.4a11 11 0 0 0 4.6 4.6l1.4-2 3.8 1.4v3a2 2 0 0 1-2.2 2A15.5 15.5 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5z"/></svg></span><span>24/7 Receptionist Follow-Up</span></div><div class="pp-sys" data-tier="3"><span class="pp-sys-ic"><svg viewBox="0 0 24 24"><path d="M12 3.4l6.5 2.6v4.4c0 4.1-2.8 7.4-6.5 9-3.7-1.6-6.5-4.9-6.5-9V6z"/><path d="M9.2 12l2 2 3.6-3.8"/></svg></span><span>Monthly Qualified Prospect Guarantee</span></div></div><div class="pp-included"><h3>What&rsquo;s included:</h3><ul class="pp-list"><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Full custom Home Care website built in 3 days</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">SEO + AEO foundation indexed</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Hosting + SSL</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Google Business Profile, optimized, syncing reviews</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Mobile-first design that converts on a 5-inch screen</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Same-day consultation booking via live form</span></li><li class="pp-item" data-tier="2"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">5-Star Outreach System to increase reviews &amp; ranking</span></li><li class="pp-item" data-tier="3"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">24/7 Missed Call &amp; Follow-Up Receptionist</span></li></ul></div><h3 class="pp-q">Which option will be right for you?</h3><div class="pp-plans"><button class="pp-plan" data-plan="1"><span>One Time</span><b>$297</b></button><button class="pp-plan" data-plan="2"><span>One Time</span><b>$497</b></button><button class="pp-plan" data-plan="3"><span>One Time</span><b>$997</b></button></div></div></section>
+<section class="plan-picker"><div class="pp-inner"><div class="pp-eyebrow">The Offer</div><h2 class="pp-h2">The Site That Only Costs You Something If It Works</h2><div class="pp-diagram"><div class="pp-side pp-left" data-tier="2"><span class="pp-side-label">5-Star Outreach System</span><span class="pp-arrow">&#8594;</span></div><div class="pp-center"><div class="pp-laptop"><div class="laptop-screen"><div class="laptop-chrome"><div class="laptop-dots"><span></span><span></span><span></span></div><div class="laptop-url">&#128274;  gihonfamilycare.com</div></div><div class="laptop-viewport"><iframe class="laptop-iframe" src="https://demo.solidbookedpro.com/gihon-family-care-home/" style="pointer-events:none" tabindex="-1" loading="lazy" title="Gihon Family Care Home live preview"></iframe></div></div><div class="laptop-tray"></div></div><div class="pp-laptop-cap">Your live demo</div><div class="pp-down" data-tier="3"><span class="pp-arrow pp-arrow-down">&#8595;</span><span class="pp-side-label">24/7 Receptionist Follow&#8209;Up</span></div></div><div class="pp-side pp-right" data-tier="3"><span class="pp-arrow">&#8592;</span><span class="pp-side-label">Monthly Qualified Prospect Guarantee</span></div></div><div class="pp-included"><h3>What&rsquo;s included:</h3><ul class="pp-list"><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Full custom Home Care website built in 3 days</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">SEO + AEO foundation indexed</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Hosting + SSL</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Google Business Profile, optimized, syncing reviews</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Mobile-first design that converts on a 5-inch screen</span></li><li class="pp-item" data-tier="1"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">Same-day consultation booking via live form</span></li><li class="pp-item" data-tier="2"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">5-Star Outreach System to increase reviews &amp; ranking</span></li><li class="pp-item" data-tier="3"><span class="pp-check"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span><span class="pp-item-text">24/7 Missed Call &amp; Follow-Up Receptionist</span></li></ul></div><h3 class="pp-q">Which option will be right for you?</h3><div class="pp-plans"><button class="pp-plan" data-plan="1"><span>One Time</span><b>$297</b></button><button class="pp-plan" data-plan="2"><span>One Time</span><b>$497</b></button><button class="pp-plan" data-plan="3"><span>One Time</span><b>$997</b></button></div></div></section>
 
 
 
@@ -3420,7 +3445,7 @@ const PAGE_DATA = {
       ["Sticky utility bar", "Phone, service area, available-now dot. Visible on every scroll.", "Trust"],
       ["Trust strip", "Google + Facebook + BBB + manufacturer pills above the fold.", "Trust"],
       ["Reviews carousel", "Top Google + Facebook reviews. Auto-rotating, click-through to source.", "Proof"],
-      ["Founder section", "[First Name] on camera. Story, signature, real photo.", "Trust"],
+      ["Founder section", "{{contact.first_name}} on camera. Story, signature, real photo.", "Trust"],
       ["Services grid", "3 service tiles. Each links to its dedicated silo page.", "SEO"],
       ["Why Choose Us", "4 differentiators. Owner-led, warranty, in-house crew, response time.", "Pitch"],
       ["Our Work gallery", "Drone shots and before/after sliders for completed jobs.", "Proof"],
@@ -3442,7 +3467,7 @@ const PAGE_DATA = {
       ["Team grid", "Office staff, project managers, install crews. Names and headshots.", "Team"],
       ["Behind-the-scenes gallery", "Truck wraps, install-day photos, community moments.", "Proof"],
       ["Awards and certifications", "Manufacturer certs, BBB rating, locally-issued credentials.", "Trust"],
-      ["Final CTA", "Lead form. 'Talk to [First Name] directly'.", "Convert"],
+      ["Final CTA", "Lead form. 'Talk to {{contact.first_name}} directly'.", "Convert"],
     ]
   },
   "services/home care": {
@@ -3638,7 +3663,7 @@ const PAGE_DATA = {
     url: "/about",
     sections: [
       ["WhyChooseUs section on homepage", "4 differentiators. Owner-led, warranty, in-house crew, response.", "Pitch"],
-      ["Founder section on About page", "Same [First Name] story, deeper. Signature + values.", "Trust"],
+      ["Founder section on About page", "Same {{contact.first_name}} story, deeper. Signature + values.", "Trust"],
       ["Awards strip", "Manufacturer certs + BBB + local credentials.", "Trust"],
       ["Final CTA", "Lead form. 'See why for yourself.'", "Convert"],
     ]
@@ -4626,5 +4651,7 @@ window.SBP_TRACK='https://n8n.americanlifeteam.com/webhook/sbp-funnel-track';
 })();
 </script>
 <script id="fhow-mobile-fix">(function(){var panel=document.getElementById("formula-how-panel");if(!panel)return;var hp=panel.parentNode,hn=panel.nextSibling;function repo(){var mob=window.matchMedia("(max-width:900px)").matches;var a=document.querySelector(".formula-how-btn[aria-expanded='true']");if(mob&&a){var p=a.closest(".formula-pillar");if(p&&p.nextSibling!==panel)p.after(panel);}else if(!mob){if(hp&&panel.parentNode!==hp)hp.insertBefore(panel,hn);}}document.querySelectorAll(".formula-how-btn").forEach(function(b){b.addEventListener("click",function(){setTimeout(repo,0);});});window.addEventListener("resize",repo);})();</script>
+<script id="laptop-fill">(function(){var BASE=1440,TH=920;function fit(){document.querySelectorAll(".laptop-viewport").forEach(function(vp){var fr=vp.querySelector(".laptop-iframe");if(!fr)return;fr.style.maxWidth="none";fr.style.width=BASE+"px";fr.style.height=TH+"px";fr.style.transformOrigin="top left";var s=vp.clientWidth/BASE,sh=vp.clientHeight/TH;if(sh>s)s=sh;fr.style.transform="scale("+s+")";});}window.addEventListener("load",fit);window.addEventListener("resize",fit);setTimeout(fit,150);setTimeout(fit,600);setTimeout(fit,1600);})();</script>
+<script id="ba-scroll">(function(){var g=document.getElementById("bagrid");if(!g)return;var sc=g.closest(".ba-scroller");if(!sc)return;function by(d){var c=g.querySelector(".bacard");var w=c?c.getBoundingClientRect().width+16:340;g.scrollBy({left:d*w,behavior:"smooth"});}var p=sc.querySelector(".ba-prev"),n=sc.querySelector(".ba-next");if(p)p.addEventListener("click",function(){by(-1);});if(n)n.addEventListener("click",function(){by(1);});})();</script>
 </body>
 </html>
