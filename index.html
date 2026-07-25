@@ -5181,8 +5181,8 @@ else{window.addEventListener("scroll",function(){ready(window.scrollY>(hero?hero
   try{ if(window.clarity){ clarity("set","proposal_slug",SLUG); if(CO) clarity("set","company",CO); if(CID) clarity("identify",CID); } }catch(e){}
   var VIEW="https://n8n.americanlifeteam.com/webhook/sbp-proposal-view";
   function send(p){ try{ var body=JSON.stringify(p);
-    if(navigator.sendBeacon){ navigator.sendBeacon(VIEW, new Blob([body],{type:'application/json'})); }
-    else { fetch(VIEW,{method:'POST',headers:{'Content-Type':'application/json'},body:body,keepalive:true}).catch(function(){}); }
+    if(navigator.sendBeacon){ navigator.sendBeacon(VIEW, new Blob([body],{type:'text/plain'})); }
+    else { fetch(VIEW,{method:'POST',headers:{'Content-Type':'text/plain'},body:body,keepalive:true}).catch(function(){}); }
   }catch(e){} }
   var base={contactId:CID,slug:SLUG,company:CO,industry:IND,url:location.href,ref:document.referrer||"",ua:navigator.userAgent};
   base.ts=new Date().toISOString();
