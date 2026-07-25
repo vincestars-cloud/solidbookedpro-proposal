@@ -51,7 +51,8 @@ for _k in ('traffic', 'trust', 'conversion'):
     _raw = h[_si:_ei]
     _block = (_raw.replace('https://demo.solidbookedpro.com/gihon-family-care-home/', '{{DEMO_URL}}')
                   .replace('Palm Coast', '{{CITY}}')
-                  .replace('Gihon Family Care Home', '{{COMPANY_NAME}}'))
+                  .replace('Gihon Family Care Home', '{{COMPANY_NAME}}')
+                  .replace('Gihon', '{{COMPANY_NAME}}'))  # bare "Gihon" left in card copy
     open(f'blocks/home-care/how_{_k}.html', 'w', encoding='utf-8').write(_block)
     h = h[:_si] + '{{HOW_' + _k.upper() + '}}' + h[_ei:]
     report.append(('ok', f'how panel {_k} -> block', 1))
@@ -103,6 +104,10 @@ sub('home-care-proof-layered.png', '{{ASSET_PROOF}}', 'proof asset')
 
 # ---------------------------------------------------------------- 2. client identity (longest first)
 sub('Gihon Family Care Home', '{{COMPANY_NAME}}', 'company name')
+# bare "Gihon" left in the gated blueprint page-data (founder-section descriptions)
+sub('Gihon on camera', '{{COMPANY_NAME}} on camera', 'blueprint gihon 1', required=False)
+sub('Talk to Gihon directly', 'Talk to {{COMPANY_NAME}} directly', 'blueprint gihon 2', required=False)
+sub('Same Gihon story', 'Same {{COMPANY_NAME}} story', 'blueprint gihon 3', required=False)
 sub('gihon-family-care-home', '{{COMPANY_SLUG}}', 'company slug')
 sub('gihonfamilycare.com', '{{PREVIEW_DOMAIN}}', 'preview domain')
 sub('Palm Coast, FL', '{{CITY}}, {{STATE_ABBR}}', 'city, state')
