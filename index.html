@@ -5174,5 +5174,24 @@ else{window.addEventListener("scroll",function(){ready(window.scrollY>(hero?hero
 .revwall-card p{font-size:12.5px;line-height:1.45;color:#3a4658;margin:0}
 .revwall-badge{align-self:center;background:#EAF1FF;color:#123a8f;font-weight:700;font-size:12.5px;padding:7px 16px;border-radius:999px}
 </style>
+<!-- Proposal view tracking: geo (ipapi) + Clarity identify + beacon to n8n -> GHL proposal_status -->
+<script>
+(function(){
+  var CID="", SLUG="gihon-family-care-home", CO="Gihon Family Care Home", IND="Home Care";
+  try{ if(window.clarity){ clarity("set","proposal_slug",SLUG); if(CO) clarity("set","company",CO); if(CID) clarity("identify",CID); } }catch(e){}
+  var VIEW="https://n8n.americanlifeteam.com/webhook/sbp-proposal-view";
+  function send(p){ try{ var body=JSON.stringify(p);
+    if(navigator.sendBeacon){ navigator.sendBeacon(VIEW, new Blob([body],{type:'application/json'})); }
+    else { fetch(VIEW,{method:'POST',headers:{'Content-Type':'application/json'},body:body,keepalive:true}).catch(function(){}); }
+  }catch(e){} }
+  var base={contactId:CID,slug:SLUG,company:CO,industry:IND,url:location.href,ref:document.referrer||"",ua:navigator.userAgent};
+  base.ts=new Date().toISOString();
+  fetch("https://ipapi.co/json/").then(function(r){return r.json();}).then(function(g){
+    base.city=(g&&g.city)||""; base.region=(g&&g.region_code)||""; base.country=(g&&g.country_name)||""; base.ip=(g&&g.ip)||"";
+    send(Object.assign({event:"view"},base));
+  }).catch(function(){ send(Object.assign({event:"view"},base)); });
+  setTimeout(function(){ send(Object.assign({event:"engaged_30s"},base)); },30000);
+})();
+</script>
 </body>
 </html>

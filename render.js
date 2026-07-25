@@ -109,6 +109,7 @@
         i === 0 ? '<button class="msf-opt sel">' + s + '<span class="msf-ck">&#10003;</span></button>'
                 : '<button class="msf-opt">' + s + '</button>').join('') + '</div>',
       SERVICE_FIRST: (ind.services || dflt.services || [tc(svc)])[0],
+      CONTACT_ID: cfg.contact_id || '',
       REASON_SPECIALIST_BODY: ind.specialist_body || (
         'We build for ' + industry.toLowerCase() + ' and nothing else, so we know what makes ' + cn +
         (city ? ' in ' + city : '') + ' pick one ' + prov + ' and skip the rest. ' +

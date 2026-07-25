@@ -126,6 +126,8 @@ while True:
 report.append(('ok' if _nchips else 'MISS', 'form options -> SERVICE_CHIPS', _nchips))
 # receptionist lead-notification service line -> first service token
 sub('Service: Personal Care', 'Service: {{SERVICE_FIRST}}', 'notify service line', required=False)
+# view-tracking beacon: inject the GHL contactId so the webhook can map the view to the contact
+sub('var CID=""', 'var CID="{{CONTACT_ID}}"', 'beacon contact id', required=False)
 
 # ---------------------------------------------------------------- 2. client identity (longest first)
 sub('Gihon Family Care Home', '{{COMPANY_NAME}}', 'company name')

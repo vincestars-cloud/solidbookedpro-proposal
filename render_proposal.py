@@ -130,6 +130,7 @@ def build_ctx(cfg, ind):
              else f'<button class="msf-opt">{s}</button>')
             for i, s in enumerate((ind.get('services') or d.get('services', []))[:4])) + '</div>',
         'SERVICE_FIRST': (ind.get('services') or d.get('services') or [svc.title()])[0],
+        'CONTACT_ID': cfg.get('contact_id', ''),
         'REASON_SPECIALIST_BODY': ind.get('specialist_body') or (
             f'We build for {industry.lower()} and nothing else, so we know what makes {cn}'
             f'{" in " + city if city else ""} pick one {prov} and skip the rest. '
