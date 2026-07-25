@@ -27,7 +27,7 @@
       "outcome": "repair more vehicles",
       "outcome_result": "More Vehicles Repaired",
       "worker_term": "estimator",
-      "proof_slug": "_default"
+      "proof_slug": "body-shop"
     },
     "cleaning": {
       "industry": "Cleaning",
@@ -56,7 +56,7 @@
       "outcome": "repair more vehicles",
       "outcome_result": "More Vehicles Repaired",
       "worker_term": "estimator",
-      "proof_slug": "_default"
+      "proof_slug": "collision"
     },
     "dental": {
       "industry": "Dental",
