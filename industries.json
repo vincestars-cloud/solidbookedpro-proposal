@@ -379,6 +379,16 @@
       "outcome": "sign more clients",
       "outcome_result": "More Clients Signed",
       "worker_term": "attorney"
+    },
+    "collision": {
+      "industry": "Collision & Auto Hail Repair",
+      "customer_noun": "drivers",
+      "customer_noun_s": "driver",
+      "provider_term": "body shop",
+      "service_term": "estimate",
+      "outcome": "repair more vehicles",
+      "outcome_result": "More Vehicles Repaired",
+      "worker_term": "estimator"
     }
   }
 }
