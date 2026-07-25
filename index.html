@@ -4887,9 +4887,9 @@ else{window.addEventListener("scroll",function(){ready(window.scrollY>(hero?hero
 /* #2 — Trust section: single column so the proof reads big; split reddit/fb */
 #search-language .pgrid-2{grid-template-columns:1fr;max-width:820px;margin-inline:auto;gap:34px;}
 .proof-split{display:flex;gap:18px;align-items:flex-start;}
-.proof-split img{flex:1 1 0;min-width:0;width:100%;height:auto;border-radius:12px;
+.proof-split img{flex:1 1 0;min-width:0;width:100%;aspect-ratio:1400/1466;height:auto;object-fit:contain;object-position:top;background:#fff;border-radius:12px;
   box-shadow:0 10px 26px rgba(15,23,42,.12);border:1px solid rgba(15,23,42,.10);cursor:zoom-in;}
-@media(max-width:640px){.proof-split{flex-direction:column;gap:16px;}}
+@media(max-width:640px){.proof-split{flex-direction:column;gap:16px;}.proof-split img{aspect-ratio:auto;background:none;}}
 
 /* #3 — live "Results" comparison sits flush in the bare cell */
 .pcell-results .cmp-cols{margin-top:2px;}
