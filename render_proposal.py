@@ -62,6 +62,8 @@ def build_ctx(cfg, ind):
     company = cfg['company_name']
     slug    = cfg.get('slug') or slugify(company)
     city    = cfg.get('city', '')
+    # which research-proof image set to use (defaults to the slugified industry key)
+    proof_slug = ind.get('proof_slug') or ind.get('_block_dir') or slugify(ind.get('industry_key', ''))
 
     d = ind.get('_defaults', {})
     jar = ind.get('jargon', {})
@@ -119,6 +121,15 @@ def build_ctx(cfg, ind):
         'CUSTOMER_QUERY': cus.get('query') or f'{industry.lower()} near me',
         'CUSTOMER_VOLUME': cus.get('volume') or d.get('customer_volume', '~2,900'),
         'SERVICES_LIST': ''.join(f'<li>{s}</li>' for s in (ind.get('services') or d.get('services', []))),
+        'SERVICE_CARDS': '<div class="mp-cards">' + ''.join(
+            f'<div class="mp-card"><span class="mp-thumb"></span><span class="mp-cn">{s}</span>'
+            f'<span class="mp-go">View page &rarr;</span></div>'
+            for s in (ind.get('services') or d.get('services', []))[:6]) + '</div>',
+        'SERVICE_CHIPS': '<div class="msf-opts">' + ''.join(
+            (f'<button class="msf-opt sel">{s}<span class="msf-ck">&#10003;</span></button>' if i == 0
+             else f'<button class="msf-opt">{s}</button>')
+            for i, s in enumerate((ind.get('services') or d.get('services', []))[:4])) + '</div>',
+        'SERVICE_FIRST': (ind.get('services') or d.get('services') or [svc.title()])[0],
         'REASON_SPECIALIST_BODY': ind.get('specialist_body') or (
             f'We build for {industry.lower()} and nothing else, so we know what makes {cn}'
             f'{" in " + city if city else ""} pick one {prov} and skip the rest. '
@@ -127,6 +138,9 @@ def build_ctx(cfg, ind):
         'ASSET_MULTIPAGE': assets.get('multipage', ''),
         'ASSET_PROOF': assets.get('proof', ''),
         'BLUEPRINT_PDF': assets.get('blueprint', ''),
+        # per-industry research proof screenshots (bespoke path, else derived from the proof slug)
+        'ASSET_PROOF_REDDIT': assets.get('proof_reddit') or f'assets/research/{proof_slug}-reddit.png',
+        'ASSET_PROOF_FB': assets.get('proof_fb') or f'assets/research/{proof_slug}-facebook.png',
         # ---- demo site: real URL for a saved client, else the GHL merge field ----
         'DEMO_URL': cfg.get('demo_url') or '{{contact.demo_url}}',
         # ---- Google-review card (bespoke per industry, else a sensible default) ----

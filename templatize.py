@@ -101,6 +101,31 @@ sub('We build for home care and nothing else, so we know what makes seniors and 
 sub('kca-assets/ultimate-home care-website-blueprint.pdf', '{{BLUEPRINT_PDF}}', 'blueprint pdf', required=False)
 sub('home-care-multipage.png', '{{ASSET_MULTIPAGE}}', 'multipage asset')
 sub('home-care-proof-layered.png', '{{ASSET_PROOF}}', 'proof asset')
+# per-industry research proof screenshots (Reddit + Facebook thread that matches the vertical)
+sub('src="proof-reddit.png"', 'src="{{ASSET_PROOF_REDDIT}}"', 'proof reddit', required=False)
+sub('src="proof-facebook.png"', 'src="{{ASSET_PROOF_FB}}"', 'proof facebook', required=False)
+
+# multipage "good" side: the inline per-service card grid -> {{SERVICE_CARDS}} (built per industry at render)
+_mc = h.find('<div class="mp-cards">')
+if _mc >= 0:
+    _mce = _match_div(h, _mc)
+    h = h[:_mc] + '{{SERVICE_CARDS}}' + h[_mce:]
+    report.append(('ok', 'multipage cards -> SERVICE_CARDS', 1))
+else:
+    report.append(('MISS', 'multipage cards', 0))
+
+# multi-step form options -> {{SERVICE_CHIPS}} (both the requirements form + the receptionist journey form)
+_nchips = 0
+while True:
+    _sc = h.find('<div class="msf-opts">')
+    if _sc < 0:
+        break
+    _sce = _match_div(h, _sc)
+    h = h[:_sc] + '{{SERVICE_CHIPS}}' + h[_sce:]
+    _nchips += 1
+report.append(('ok' if _nchips else 'MISS', 'form options -> SERVICE_CHIPS', _nchips))
+# receptionist lead-notification service line -> first service token
+sub('Service: Personal Care', 'Service: {{SERVICE_FIRST}}', 'notify service line', required=False)
 
 # ---------------------------------------------------------------- 2. client identity (longest first)
 sub('Gihon Family Care Home', '{{COMPANY_NAME}}', 'company name')

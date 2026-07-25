@@ -48,6 +48,7 @@
     const company = cfg.company_name;
     const slug = cfg.slug || slugify(company);
     const city = cfg.city || '';
+    const proofSlug = ind.proof_slug || ind._block_dir || slugify(cfg.industry_key || '');
     const dflt = ind._defaults || {};
     const jar = ind.jargon || {};
     const cus = ind.customer || {};
@@ -101,6 +102,13 @@
       CUSTOMER_QUERY: cus.query || (industry.toLowerCase() + ' near me'),
       CUSTOMER_VOLUME: cus.volume || dflt.customer_volume || '~2,900',
       SERVICES_LIST: (ind.services || dflt.services || []).map(s => '<li>' + s + '</li>').join(''),
+      SERVICE_CARDS: '<div class="mp-cards">' + (ind.services || dflt.services || []).slice(0, 6).map(s =>
+        '<div class="mp-card"><span class="mp-thumb"></span><span class="mp-cn">' + s +
+        '</span><span class="mp-go">View page &rarr;</span></div>').join('') + '</div>',
+      SERVICE_CHIPS: '<div class="msf-opts">' + (ind.services || dflt.services || []).slice(0, 4).map((s, i) =>
+        i === 0 ? '<button class="msf-opt sel">' + s + '<span class="msf-ck">&#10003;</span></button>'
+                : '<button class="msf-opt">' + s + '</button>').join('') + '</div>',
+      SERVICE_FIRST: (ind.services || dflt.services || [tc(svc)])[0],
       REASON_SPECIALIST_BODY: ind.specialist_body || (
         'We build for ' + industry.toLowerCase() + ' and nothing else, so we know what makes ' + cn +
         (city ? ' in ' + city : '') + ' pick one ' + prov + ' and skip the rest. ' +
@@ -108,6 +116,8 @@
       ASSET_MULTIPAGE: assets.multipage || '',
       ASSET_PROOF: assets.proof || '',
       BLUEPRINT_PDF: assets.blueprint || '',
+      ASSET_PROOF_REDDIT: assets.proof_reddit || ('assets/research/' + proofSlug + '-reddit.png'),
+      ASSET_PROOF_FB: assets.proof_fb || ('assets/research/' + proofSlug + '-facebook.png'),
       DEMO_URL: cfg.demo_url || '{{contact.demo_url}}',
       REVIEW_TEXT: ind.review_text || (
         'The team was fantastic &mdash; professional, honest, and did exactly what they said. ' +
