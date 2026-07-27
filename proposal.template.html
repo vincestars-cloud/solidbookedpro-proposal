@@ -4616,8 +4616,12 @@ window.SBP_TRACK='https://n8n.americanlifeteam.com/webhook/sbp-funnel-track';
       new IntersectionObserver(function(es){es.forEach(function(en){
         if(en.isIntersecting&&!reached){reached=true;progress(false)}})},{threshold:.25}).observe(cap);
     }
-    document.addEventListener('visibilitychange',function(){if(document.hidden)progress(true)});
-    window.addEventListener('pagehide',function(){progress(true)});
+    var _st=Date.now(),_ms=0;
+    function _sp(){var h=document.documentElement,bd=document.body,sh=Math.max(h.scrollHeight,bd.scrollHeight||0),ch=h.clientHeight;if(sh<=ch)return 100;var y=h.scrollTop||bd.scrollTop||window.pageYOffset||0;return Math.min(100,Math.round((y+ch)/sh*100));}
+    addEventListener('scroll',function(){var p=_sp();if(p>_ms)_ms=p;},{passive:true});
+    function _eng(){var p=_sp();if(p>_ms)_ms=p;post({kind:'engagement',visitor_id:vid,session_id:sid,path:location.pathname,dwell_ms:Date.now()-_st,max_scroll:_ms},true);}
+    document.addEventListener('visibilitychange',function(){if(document.hidden){progress(true);_eng();}});
+    window.addEventListener('pagehide',function(){progress(true);_eng();});
   })();
 
   /* ---- analytics ---- */
