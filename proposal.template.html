@@ -2317,6 +2317,7 @@ html{scroll-behavior:smooth}
 @media(max-width:900px){.pgrid-3{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:640px){.pgrid-3,.pgrid-2{grid-template-columns:1fr}.pcell-title{font-size:15px}}
 </style>
+<meta name="robots" content="noindex,nofollow,noarchive,nosnippet,noimageindex">
 </head>
 <body>
 
@@ -4605,7 +4606,7 @@ window.SBP_TRACK='https://n8n.americanlifeteam.com/webhook/sbp-funnel-track';
     function post(body,beacon){try{var d=JSON.stringify(body);
       if(beacon&&navigator.sendBeacon){navigator.sendBeacon(URL,new Blob([d],{type:'application/json'}));return}
       fetch(URL,{method:'POST',headers:{'Content-Type':'application/json'},body:d,keepalive:!!beacon}).catch(function(){})}catch(e){}}
-    post({kind:'visit',visitor_id:vid,session_id:sid,path:location.pathname,referrer:document.referrer,
+    post({kind:'visit',visitor_id:vid,session_id:sid,path:location.pathname,host:location.host,referrer:document.referrer,
       user_agent:navigator.userAgent,utm:utm(),
       tz:(function(){try{return Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(_){return ''}})(),
       lang:navigator.language||''});
@@ -4619,7 +4620,7 @@ window.SBP_TRACK='https://n8n.americanlifeteam.com/webhook/sbp-funnel-track';
     var _st=Date.now(),_ms=0;
     function _sp(){var h=document.documentElement,bd=document.body,sh=Math.max(h.scrollHeight,bd.scrollHeight||0),ch=h.clientHeight;if(sh<=ch)return 100;var y=h.scrollTop||bd.scrollTop||window.pageYOffset||0;return Math.min(100,Math.round((y+ch)/sh*100));}
     addEventListener('scroll',function(){var p=_sp();if(p>_ms)_ms=p;},{passive:true});
-    function _eng(){var p=_sp();if(p>_ms)_ms=p;post({kind:'engagement',visitor_id:vid,session_id:sid,path:location.pathname,dwell_ms:Date.now()-_st,max_scroll:_ms},true);}
+    function _eng(){var p=_sp();if(p>_ms)_ms=p;post({kind:'engagement',visitor_id:vid,session_id:sid,path:location.pathname,host:location.host,dwell_ms:Date.now()-_st,max_scroll:_ms},true);}
     document.addEventListener('visibilitychange',function(){if(document.hidden){progress(true);_eng();}});
     window.addEventListener('pagehide',function(){progress(true);_eng();});
   })();
